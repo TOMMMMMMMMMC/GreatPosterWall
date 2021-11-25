@@ -1,0 +1,18 @@
+/* alert info */
+/*
+a.cmp-alert-info
+*/
+.cmp-alert-info {
+  background: var(--alert-info-bg);
+  color: var(--alert-info-text);
+  opacity: var(--alert-info-opacity);
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.cmp-alert-info:hover {
+  opacity: var(--alert-info-opacity-hover);
+  color: var(--alert-info-text);
+}

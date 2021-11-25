@@ -1,0 +1,51 @@
+/* btn primary */
+/*
+a.cmp-btn-primary
+*/
+#header #alerts > div.alertbar.notice > a.button,
+.cmp-btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: var(--btn-primary-border);
+  box-shadow: var(--btn-primary-shadow);
+  display: inline-block;
+  text-align: center;
+  padding: 2px 8px;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  text-decoration: none;
+}
+#header #alerts > div.alertbar.notice > a.button:hover,
+.cmp-btn-primary:hover {
+  background: var(--btn-primary-bg-hover);
+  color: var(--btn-primary-text-hover);
+  box-shadow: var(--btn-primary-show-hover);
+}
+
+/* Loading Button
+ *
+ * <button class="btn loading">  is-loading
+ *   <span class="text">Next</span>
+ *   <span class="icon"></span>
+ * </button>
+ */
+.btn.loading {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+}
+.btn:disabled {
+  cursor: not-allowed;
+}
+.btn.loading .icon {
+  display: none;
+  background: url(assets/loading.svg);
+  background-size: 100% 100%;
+  width: 26px;
+  height: 26px;
+}
+.btn.loading.is-loading .icon {
+  display: block;
+}

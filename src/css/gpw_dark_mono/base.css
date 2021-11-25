@@ -1,0 +1,100 @@
+html {
+  font-size: 13px;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  line-height: 1.5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+/* utilities */
+.hidden {
+  display: none;
+}
+.block {
+  display: block;
+}
+
+.important-text {
+  color: #ff4373;
+}
+.invalid,
+.warning,
+.error {
+  color: #ff0000;
+}
+
+pre {
+  font-family: monospace;
+}
+
+
+/* Selection */
+::selection {
+  background: #3d81b1;
+  color: #fff;
+}
+
+/* Scrollbar */
+blockquote::-webkit-scrollbar,
+textarea::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 10px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+blockquote::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  background-color: var(--scrollbar-thumb-bg);
+  box-shadow: var(--scrollbar-thumb-shadow);
+}
+blockquote::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: var(--scrollbar-track-shadow);
+  background: var(--scrollbar-track-bg);
+  border-radius: 10px;
+}
+
+/* Link */
+a {
+  text-decoration: none;
+  color: var(--a-color);
+  transition: 0.1s;
+}
+
+a img {
+  border: none;
+}
+
+a:hover {
+  color: var(--a-color-hover);
+}
+
+a strong:hover {
+  text-shadow: 0 0 2px;
+}
+
+span.remove > a {
+  color: #ff4373;
+}
+
+optgroup {
+  background-color: #222;
+}

@@ -1,0 +1,3000 @@
+img {
+  transform: translateZ(0);
+}
+
+.box h3 {
+  font-size: 140%;
+}
+
+.box h4 {
+  font-size: 130%;
+}
+
+.box h5 {
+  font-size: 120%;
+}
+
+.box h6 {
+  font-size: 110%;
+}
+
+pre br {
+  line-height: 0px;
+  display: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+ul.rules {
+  list-style-type: none;
+}
+
+div.rule_short {
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+div.rule_wrap {
+  display: inline-table;
+  width: 96%;
+}
+
+a.rule_link {
+  display: inline-table;
+  font-weight: bold;
+  font-size: 10pt;
+  width: 4%;
+}
+
+.golden_rules {
+  list-style-type: none !important;
+}
+
+ul.collage_images {
+  padding: 0px;
+  width: 590px;
+  border-collapse: collapse;
+}
+
+.collage_images {
+  display: table;
+}
+
+ul.collage_images li {
+  border: none;
+  float: left;
+  margin: 0;
+  width: 118px;
+  height: 118px;
+  list-style: none;
+  list-style-type: none;
+}
+
+ul.collage_images li a {
+  display: block;
+  height: 118px;
+  overflow: hidden;
+}
+
+ul.collage_images img {
+  height: 118px;
+  width: 118px;
+}
+
+.selected a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.collage td {
+  padding: 0px;
+  border: none;
+}
+
+.line_new {
+  color: green;
+}
+
+.line_deleted {
+  color: red;
+}
+
+.line_moved {
+  color: blue;
+}
+
+.line_unchanged {
+}
+
+.log1 {
+}
+
+.log2 {
+  color: yellow;
+}
+
+.log3 {
+  color: #0e88c6;
+}
+
+.log4 {
+  /* font-weight: bold; */
+}
+
+.log5 {
+  text-decoration: underline;
+}
+
+#logchecker blockquote > pre > strong {
+  font-weight: normal;
+}
+
+.good {
+  /* font-weight: bold; */
+  color: green;
+}
+
+.bad {
+  /* font-weight: bold; */
+  color: red;
+}
+
+.goodish {
+  /* font-weight: bold; */
+  color: #35bf00;
+}
+
+.badish {
+  /* font-weight: bold; */
+  color: #e5b244;
+}
+
+pre {
+  overflow: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.disable_grouping {
+  display: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+form textarea,
+form input {
+  max-width: 100%;
+}
+
+a.beta {
+  font-weight: bold;
+  color: #ff0000;
+}
+
+strong.important_text {
+  color: red;
+  font-weight: bold;
+}
+
+strong.important_text_alt {
+  color: green;
+  font-weight: bold;
+}
+
+span.remove > a {
+  color: #ed5454;
+}
+
+span.important_text {
+  color: red;
+}
+
+span.important_text_alt {
+  color: green;
+}
+
+.invalid,
+.warning,
+.error,
+.new {
+  color: #ff0000;
+}
+
+/* Make [+] on add multiple artists stay at the bottom (on torrent details page) */
+div#AddArtists {
+  position: relative;
+}
+
+div#AddArtists a {
+  position: absolute;
+  right: 0pt;
+  bottom: 0pt;
+}
+
+.clear:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.new-subscriptions {
+  font-weight: bold;
+}
+
+#forums #quickpost {
+  width: 95%;
+}
+
+.rippywrap {
+  z-index: 25;
+  display: block;
+  position: fixed;
+  color: black;
+  text-align: center;
+  width: 190px;
+  height: 180px;
+  bottom: 0px;
+  right: 0px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.rippywrap div.rippy {
+  z-index: 25;
+  height: 111px;
+  width: 190px;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+td.label {
+  /* vertical-align: top; */
+}
+
+span.rbt {
+  display: block;
+  padding: 8px 0 0;
+  background: url('../rippy/rippy_top.gif') no-repeat top;
+}
+
+span.rbm {
+  display: block;
+  background: url('../rippy/rippy_middle.gif') repeat bottom;
+  padding: 0 5px;
+}
+
+span.rbb {
+  display: block;
+  padding: 4px 0px 18px;
+  margin-bottom: 5px;
+  background: url('../rippy/rippy_bottom.gif') no-repeat bottom;
+}
+
+span.secondary_class {
+  font-size: 85%;
+  font-weight: bold;
+}
+
+.breadcrumbs {
+  font-weight: bold;
+  text-align: right;
+}
+
+.paranoia_override {
+  font-style: italic;
+}
+
+#manage_collage_table.ui-sortable .drag {
+  cursor: n-resize;
+}
+
+#manage_collage_table.ui-sortable .ui-sortable-helper.drag {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+#manage_collage_table .ui-sortable-helper td,
+#manage_collage_table .ui-sortable-placeholder {
+  border: 0;
+}
+
+.drag_drop_save {
+  padding: 6px 0;
+  overflow: hidden;
+}
+
+.headerSort {
+  cursor: pointer;
+}
+
+.headerSort span {
+  background: url('../common/table-order.png') no-repeat scroll right -38px transparent;
+  padding: 0px 20px 0 0;
+}
+
+.headerSortDown span {
+  background: url('../common/table-order.png') no-repeat scroll right 4px
+    transparent;
+}
+
+.headerSortUp span {
+  background: url('../common/table-order.png') no-repeat scroll right -79px transparent;
+}
+
+.headerSort.sorter-false,
+.headerSort.sorter-false span {
+  background-image: none;
+  cursor: default;
+}
+
+.album_votes {
+  text-align: center;
+}
+
+.favoritecount {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.favoritecount_small {
+  font-size: 110%;
+  font-weight: bold;
+}
+
+ul.votedalbums li {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+}
+
+tr.torrent .bookmark > a:before {
+  text-decoration: none;
+  font-weight: normal;
+}
+
+tr.torrent .bookmark > a:after {
+  text-decoration: none;
+  font-weight: normal;
+}
+
+#sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+}
+
+#sortable li {
+  padding: 0px;
+  font-size: 1.2em;
+  height: 1.5em;
+}
+
+.ui-state-highlight {
+  background: #007dc6 /*{bgColorHighlight}*/;
+  opacity: 0.15;
+  width: 50%;
+}
+
+.navigation_list,
+.navigation_list ol {
+  list-style-position: inside;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.navigation_list > li {
+  list-style-type: upper-roman !important;
+}
+
+.navigation_list li li {
+  list-style-type: upper-alpha;
+}
+
+.navigation_list li li li {
+  list-style-type: decimal;
+}
+
+.navigation_list li li li li {
+  list-style-type: lower-alpha;
+}
+
+.voted_type {
+  font-weight: bold;
+}
+
+.torrent_table .group .votes_info_td strong {
+  font-size: inherit;
+}
+
+.preview_wrap {
+  text-align: left;
+}
+
+.text_preview {
+  min-height: 100px;
+}
+
+#lastfm_compatibilitybar_container {
+  width: 100%;
+  height: 5px;
+  background: #969696;
+}
+
+#lastfm_compatibilitybar {
+  height: 100%;
+}
+
+.brackets {
+  text-indent: 0px;
+  white-space: nowrap;
+}
+
+.votespan.brackets:before {
+  content: '( ';
+}
+
+.votespan.brackets:after {
+  content: ' )';
+}
+
+.brackets:before {
+  content: '[';
+}
+
+.brackets:after {
+  content: ']';
+}
+
+#userinfo .brackets:before,
+#userinfo .brackets:after {
+  content: '';
+}
+
+.group_image {
+  overflow: hidden;
+}
+
+.float_left {
+  float: left;
+}
+
+.float_right {
+  float: right;
+}
+
+.float_clear {
+  clear: both;
+}
+
+.group_image + .group_info {
+  margin-left: 100px;
+}
+
+.group_image img {
+  cursor: pointer;
+  position: relative;
+}
+
+.user_title {
+  font-weight: normal;
+}
+
+/*
+ * Fix long filename tables overflowing (Chrome only).
+ * Stop various release page containers from overflowing with long input.
+ * !! Be sure to test all major browsers before changing this section. !!
+ * Fix report information tables overflowing long reports (all browsers).
+ * Fix long release descriptions overflowing containers (all browsers).
+ * Fix flowing issues in the report resolving pages.
+ */
+.wrap_overflow,
+.filelist_table td,
+.reportinfo_table,
+.torrentdetails blockquote {
+  word-break: normal;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  /* Note that IE will have different behavior on word-break,
+	 * but this is required to keep the layout from breaking. */
+  -ms-word-break: break-all;
+}
+
+/* Non-web-standard for webkit */
+.torrentdetails blockquote {
+  word-break: break-word;
+}
+
+/* Fix long filename tables overflowing (Chrome only). */
+.filelist_table td:first-child {
+  word-break: break-all;
+}
+
+/* Fix long overflow for Opera (doesn't support word-break). */
+.reportinfo_table {
+  table-layout: fixed;
+}
+
+/* Wrap release info for consistent DOM and to limit table expansion. */
+.no_overflow {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Stylesheet gallery in user profile editing */
+#css_gallery {
+  display: none;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.preview_wrapper {
+  position: relative;
+  display: inline-block;
+  width: 29%;
+  height: 120px;
+  margin: 0 10px;
+}
+
+.preview_image {
+  display: block;
+  height: 80px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.preview_image img {
+  width: 100%;
+}
+
+.preview_name {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.option_group {
+  margin-bottom: 10px;
+}
+
+.option_group:last-child {
+  margin-bottom: 0px;
+}
+
+.autocomplete-suggestions {
+  margin-top: 5px;
+  border: 1px solid #393939;
+  background: #111;
+  overflow: auto;
+  padding: 2px;
+}
+
+.autocomplete-suggestion {
+  padding: 2px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.autocomplete-selected {
+  background: #222;
+}
+
+.autocomplete-suggestions strong {
+  font-weight: normal;
+  color: #3399ff;
+}
+
+.process_info {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.process_info_pid {
+  width: 70px;
+}
+
+.process_info_data {
+  overflow: auto;
+}
+
+.setting_description > * {
+  margin: 1em 0 0 0;
+}
+
+.settings_sidebar {
+  min-height: 385px;
+}
+
+#settings_sections {
+  /* position: absolute; */
+}
+
+#settings_sections.fixed {
+  position: fixed;
+  top: 0px;
+}
+
+#settings_sections #submit,
+#settings_sections #settings_search {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+}
+
+#settings_sections h2 {
+  text-align: left;
+}
+
+.donor_icon {
+  margin-left: 2px;
+  width: 15px;
+  height: 13px;
+}
+
+.donation_info {
+  padding: 10px 10px 10px 20px;
+  /* margin-left: 10px; */
+  /* margin-right: 10px; */
+  margin-bottom: 20px;
+}
+
+.donation_info:last-child {
+  margin-bottom: 0;
+}
+
+.donation_info_title {
+  display: block;
+  font-size: 1.75em;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.number_column {
+  text-align: right;
+}
+
+.wide_input_text {
+  width: 95%;
+}
+
+.top_artist_list li {
+  margin-left: 25px;
+  margin-bottom: 5px;
+  list-style-type: decimal;
+  font-size: 150%;
+}
+
+.permission_subcontainer {
+  margin-bottom: 10px;
+}
+
+.vote_tag_up,
+.vote_artist_up,
+.vote_album_up {
+  font-weight: bolder;
+}
+
+.vote_tag_down,
+.vote_artist_down,
+.vote_album_down {
+  font-weight: bolder;
+}
+
+.noborder {
+  border: none;
+}
+
+.two_columns {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.field_div {
+  margin-bottom: 10px;
+}
+
+.field_div:last-of-type {
+  margin-bottom: 0;
+}
+
+.field_div .label,
+.submit_div .label {
+  float: left;
+  padding: 0 5px;
+  text-align: right;
+  width: 150px;
+}
+
+.field_div .input,
+.submit_div .input {
+  padding: 0 5px;
+}
+
+.small_label {
+  text-align: right;
+  width: auto;
+}
+
+.scale_image {
+  max-width: 500px;
+}
+
+.sidebar img {
+  max-width: 220px;
+}
+
+.forum_post td img {
+  width: auto;
+  max-width: 100%;
+}
+
+#collage #reply_box img,
+#forums #reply_box img {
+  /* max-width: 650px; */
+  max-width: 100%;
+}
+
+#artistcomments #reply_box img,
+#request_comments #reply_box img,
+#torrent_comments #reply_box img {
+  /* max-width: 400px; */
+  max-width: 100%;
+}
+
+#artistcomments img,
+#request_comments img,
+#torrent_comments img {
+  max-width: 417px;
+}
+
+.blog_post img {
+  max-width: 100%;
+}
+
+#artist_information img,
+.box_request_desc img,
+.news_post img,
+.torrent_description img,
+.wiki_article img {
+  max-width: 100%;
+}
+
+.torrentdetails img {
+  max-width: 100%;
+}
+
+#inbox #preview img,
+#staffpm #reply_box img,
+#wiki .create_form img,
+#wiki .edit_form img {
+  max-width: 100%;
+}
+
+#inbox .body img {
+  max-width: 100%;
+}
+
+#userform img {
+  max-width: 100%;
+}
+
+.profileinfo img {
+  max-width: 100%;
+}
+
+#reportsv2 .manage_form img {
+  max-width: 100%;
+}
+
+/* make Safari treat <input type="search" /> as a regular text box */
+input[type='search'] {
+  -webkit-appearance: textfield;
+  /*font-size: medium;
+	background: #fff;*/
+}
+
+#pad_next {
+  display: block;
+  margin-top: 10px;
+}
+
+.last_edited {
+  display: block;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #363636;
+}
+
+.avatar_container img {
+  max-height: 400px;
+  max-width: 150px;
+}
+
+.avatar_container > div {
+  width: 0;
+  overflow: visible;
+  display: inline-block;
+  vertical-align: top;
+  transition: opacity 500ms;
+}
+
+.avatar_container > :last-child {
+  opacity: 0;
+}
+
+.avatar_container > :first-child {
+  opacity: 1;
+}
+
+.avatar_container:hover > :first-child {
+  opacity: 0;
+}
+
+.avatar_container:hover > :last-child {
+  opacity: 1;
+}
+
+#user .avatar_container > :last-child {
+  /* margin-right: 150px */
+}
+
+#user .avatar_container:hover > :last-child {
+  /* margin-right: 150px */
+}
+
+#content .sidebar img {
+  width: auto;
+  height: auto;
+  max-height: 400px;
+  max-width: 100%;
+}
+
+#user .avatar_container > :last-child {
+  margin-right: 0px;
+}
+
+div.sidebar > div.box_image > div.head + div {
+  overflow: hidden;
+}
+
+td.avatar img {
+  max-height: 400px;
+  /* max-width: 175px!important; */
+  width: unset;
+}
+
+/* .avatar_container>div {
+    width: 100%;
+}
+.avatar_container>div:first-child:last-child {
+    display: block !important;
+}
+.avatar_container> :first-child {
+    display: block;
+}
+.avatar_container> :nth-child(2) {
+    display: none;
+    opacity: 0;
+}
+.avatar_container:hover> :first-child {
+    display: none;
+}
+.avatar_container:hover> :nth-child(2) {
+    display: block;
+    opacity: 1;
+} */
+
+@media only screen and (min-width: 768px) {
+  .avatar_container > :last-child {
+    /* margin-right: 150px */
+  }
+
+  .avatar_container:hover > :last-child {
+    /* margin-right: 150px */
+  }
+}
+
+#recovery table td > pre {
+  max-width: 800px;
+}
+
+#user .twofa_text {
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+#forums
+  > #wrapper
+  > #content
+  > .thin
+  > div.table_container
+  > .forum_post
+  > tbody
+  > tr
+  > .body
+  > div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+#tools table#table-select {
+  margin-top: 20px;
+}
+
+#tools table#table-select a {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+#tools div#salary-table {
+  width: 100%;
+  /* border: 1px solid #363636; */
+  /* box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1); */
+  /* border-radius: 5px; */
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+#tools div#salary-table > div#table-head-left > div,
+#tools div#salary-table > div#table-right-scroll > div#table-head-top > div,
+#tools div#salary-table > div#table-right-scroll > div#table-content > div {
+  padding: 7px 5px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#tools div#salary-table > div#table-head-left {
+  display: grid;
+  grid-template-columns: 50px 100px;
+  grid-template-rows: 86px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+#tools div#salary-table > div#table-head-left > div {
+  /* border-right: 1px solid #363636; */
+}
+
+#tools div#salary-table > div#table-head-left > div.group-name {
+  /* background-color: #eeeeee !important; */
+  align-items: center;
+  /* border-top: 1px solid #363636; */
+}
+
+#tools div#salary-table > div#table-head-left > div.group-name:last-of-type {
+  /* border-bottom-left-radius: 4px; */
+}
+
+#tools
+  div#salary-table
+  > div#table-head-left
+  > div.group-name:first-of-type
+  ~ div.group-name,
+#tools
+  div#salary-table
+  > #table-head-left
+  > div:nth-child(2)
+  ~ div.div-username {
+  /* border-top: 1px solid #363636; */
+}
+
+#tools div#salary-table > div#table-head-left > div {
+  align-items: center;
+}
+
+#tools div#salary-table > div#table-head-left > div.row1 {
+  /* background-color: #eeeeee; */
+}
+
+#tools div#salary-table > div#table-head-left > div.th-span2 {
+  grid-column-start: span 2;
+  /* background-color: #eeeeee; */
+  border-top-left-radius: 4px;
+}
+
+#tools div#salary-table > div#table-head-left > div.row2 {
+  /* border-top: 1px solid #363636; */
+  /* background-color: #eeeeee; */
+}
+
+#tools #table-select + h2 {
+  margin-bottom: 20px;
+}
+
+#tools div#salary-table > div#table-right-scroll {
+  display: block;
+  overflow-x: auto;
+}
+
+#tools div#salary-table > div#table-right-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+#tools div#salary-table > div#table-right-scroll > div#table-head-top {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: auto 53px;
+  /* background-color: #eeeeee; */
+  min-width: 800px;
+  border-top-right-radius: 4px;
+}
+
+#tools div#salary-table > div#table-right-scroll > div#table-head-top.fixed {
+  position: fixed !important;
+  top: 0px;
+}
+
+#tools div#salary-table > div#table-right-scroll > div#table-head-top > div {
+  /* border-right: 1px solid #363636; */
+  /* border-bottom: 1px solid #363636; */
+  align-items: center;
+  text-align: center;
+}
+
+#tools
+  div#salary-table
+  > div#table-right-scroll
+  > div#table-head-top
+  > div.row1.col-tail {
+  /* border-top-right-radius: 4px; */
+}
+
+#tools
+  div#salary-table
+  > div#table-right-scroll
+  > div#table-head-top
+  > div.th-span2 {
+  grid-column-start: span 2;
+}
+
+#tools
+  div#salary-table
+  > div#table-right-scroll
+  > div#table-head-top
+  > div.th-span3 {
+  grid-column-start: span 3;
+}
+
+#tools
+  div#salary-table
+  > div#table-right-scroll
+  > div#table-head-top
+  > div.th-span4 {
+  grid-column-start: span 4;
+}
+
+#tools
+  div#salary-table
+  > div#table-right-scroll
+  > div#table-head-top
+  > div.col-tail {
+  border-right: none !important;
+}
+
+#tools div#salary-table > div#table-right-scroll > div#table-content {
+  display: grid;
+  min-width: 800px;
+  /* border-bottom-right-radius: 4px; */
+}
+
+#tools div#salary-table > div#table-head-left > div.rowodd,
+#tools
+  div#salary-table
+  > div#table-right-scroll
+  > div#table-content
+  > div.rowodd {
+  /* background-color: #f9f9f9; */
+}
+
+#tools div#salary-table > div#table-right-scroll > div#table-content > div {
+  /* border-right: 1px solid #363636; */
+  /* border-top: 1px solid #363636; */
+}
+
+#tools
+  div#salary-table
+  > div#table-right-scroll
+  > div#table-content
+  > div:last-child {
+  /* border-bottom-right-radius: 4px; */
+}
+
+#tools
+  div#salary-table
+  > div#table-right-scroll
+  > div#table-content
+  > div.col-tail {
+  border-right: none;
+}
+
+#tools
+  div#salary-table
+  > div#table-right-scroll
+  > div#table-content
+  > div.row3 {
+  border-top: none;
+}
+
+#reportsv2
+  #all_reports
+  .manage_form
+  table.box.layout
+  > tbody
+  > tr
+  > td.label
+  + td
+  > table {
+  width: unset;
+}
+
+#reportsv2
+  #all_reports
+  .manage_form
+  table.box.layout
+  > tbody
+  > tr
+  > td.label
+  + td
+  > table
+  td {
+  padding: 0 3px;
+}
+
+#reportsv2
+  #all_reports
+  .manage_form
+  table.box.layout
+  > tbody
+  > tr
+  > td.label
+  + td
+  > table
+  td:first-child,
+#reportsv2
+  #all_reports
+  .manage_form
+  table.box.layout
+  > tbody
+  > tr
+  > td.label
+  + td
+  > table
+  td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+td blockquote > hr {
+  margin: 13px 0 !important;
+  border-width: 0.5px;
+}
+
+td blockquote > hr + table {
+  width: 100% !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin: 0 0 3px 0 !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+td blockquote > hr + table * {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+td blockquote > hr + table > tbody > tr {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+td blockquote > hr + table > tbody > tr > td {
+  vertical-align: top;
+  padding: 0 !important;
+}
+
+td blockquote > hr + table td:first-child {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* padding-right: 0; */
+}
+
+td blockquote > hr + table td:last-child {
+  width: 99%;
+}
+
+#torrents .thin > .header ~ .box.pad > form.rename_form > div > table {
+  display: blcok;
+}
+
+#torrents .thin > .header ~ .box.pad > form.rename_form > div > table > tbody {
+  display: blcok;
+}
+
+#torrents
+  .thin
+  > .header
+  ~ .box.pad
+  > form.rename_form
+  > div
+  > table
+  > tbody
+  > tr {
+  display: grid;
+  grid-template-columns: 1fr minmax(100px, 500px) 1fr;
+  align-items: center;
+}
+
+#torrents .thin > .header ~ .box.pad > form.rename_form > div > table + div {
+  width: 100%;
+}
+
+#torrents
+  .thin
+  > .header
+  ~ .box.pad
+  > form.rename_form
+  > div
+  > table
+  + div
+  > input {
+  text-align: center;
+}
+
+#tools #forum_control_panel .rowa td:first-of-type,
+#tools #forum_control_panel .rowb td:first-of-type {
+  white-space: nowrap;
+  overflow: visible hidden;
+  text-overflow: ellipsis;
+}
+
+#user #content > .thin > .header > h2 > #thumb {
+  float: right;
+  margin-right: 5px;
+}
+
+#forums h3.reward_head {
+  margin-top: 2rem;
+  width: 410px;
+  font-size: 12px;
+  padding: 0;
+  text-align: right;
+}
+
+#forums h3.reward_head {
+  border-bottom: 1px solid #363636;
+  margin-bottom: 0;
+}
+
+#forums .reward_head + dl.rate {
+  width: 410px;
+  padding: 7px;
+  margin: 0;
+}
+
+#forums .reward_head + dl.rate table {
+  background-color: transparent !important;
+  border: none !important;
+  margin: 0;
+}
+
+#forums .reward_head + dl.rate table tr {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+#forums .reward_head + dl.rate table.ratl th,
+#forums .reward_head + dl.rate table.ratl td {
+  padding: 4px;
+  text-align: left;
+  vertical-align: top;
+}
+
+#forums .reward_head + dl.rate table.ratl thead th:nth-child(1) {
+  width: 100px;
+}
+
+#forums .reward_head + dl.rate table.ratl thead th:nth-child(2) {
+  width: 70px;
+}
+
+.edited_and_bonus > hr:first-child {
+  margin-top: 2rem;
+}
+
+code {
+  display: inline-block;
+}
+
+.forum_post > tbody > tr > td.body > div {
+  table-layout: fixed;
+  overflow: hidden;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+.forum_post > tbody > tr > td.body > div > blockquote {
+  max-width: 100%;
+}
+
+.forum_post > tbody > tr > td.body > div > blockquote > img {
+  max-width: 100%;
+  height: auto;
+}
+
+#requests .main_column table.layout:first-child > tbody > tr#bounty {
+  border-bottom: 1px solid #363636;
+}
+
+.iconshell {
+  transform: rotate(45deg);
+  color: #ddbe80;
+  display: inline-block;
+}
+
+.fas.fa-thumbs-up,
+.far.fa-thumbs-up {
+  color: #da7171 !important;
+}
+
+.torrentdetails_sendbonus {
+  text-align: center;
+  margin: 10px 0 15px;
+}
+
+#torrents tr.torrentdetails.pad > td[colspan='5'] > div.linkbox {
+  margin-bottom: 0;
+}
+
+#torrents
+  tr.torrentdetails.pad
+  > td[colspan='5']
+  > div.linkbox:last-child
+  > blockquote {
+  margin-bottom: 0;
+}
+
+.torrentdetails_sendbonus ~ * {
+  text-align: left;
+}
+
+tr.torrentdetails.pad
+  > td[colspan='5']
+  > div.linkbox:last-child
+  > div.torrentdetails_sendbonus
+  > a,
+tr.torrentdetails.pad
+  > td[colspan='5']
+  > div.linkbox:last-child
+  > div
+  > table
+  a {
+  padding: 0 !important;
+}
+
+tr.torrentdetails.pad > td[colspan='5'] > div > h4 {
+  display: none;
+}
+
+div#icon-cnt {
+  float: right;
+}
+
+div#icon-cnt .fa-thumbs-up {
+  font-size: 16px;
+}
+
+/* tr.torrentdetails.pad>td[colspan="5"]>div.linkbox:last-child>div>table{
+    text-align: unset;
+    display: block;
+}
+tr.torrentdetails.pad>td[colspan="5"]>div.linkbox:last-child>div>table>tbody{
+    display: block;
+    width: 100%;
+}
+tr.torrentdetails.pad>td[colspan="5"]>div.linkbox:last-child>div>table>tbody>tr:not(:last-child){
+    padding: 0 !important;
+	border-bottom: none !important;
+}
+tr.torrentdetails.pad>td[colspan="5"]>div.linkbox:last-child>div>table>tbody>tr>td{
+	border: none;
+}
+tr.torrentdetails.pad>td[colspan="5"]>div.linkbox:last-child>div.torrentdetails_peers>table tr{
+    display: grid;
+	grid-template-columns: auto 10% 15% 15% 10% 20%;
+}
+tr.torrentdetails.pad>td[colspan="5"]>div.linkbox:last-child>div.torrentdetails_snatches>table tr,
+tr.torrentdetails.pad>td[colspan="5"]>div.linkbox:last-child>div.torrentdetails_giver>table tr,
+tr.torrentdetails.pad>td[colspan="5"]>div.linkbox:last-child>div.torrentdetails_downloads>table tr{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+tr.torrentdetails.pad>td[colspan="5"]>div.linkbox:last-child>div.torrentdetails_files>table tr{
+    display: grid;
+    grid-template-columns: auto 80px;
+}
+tr.torrentdetails.pad>td[colspan="5"]>div.linkbox:last-child>div.torrentdetails_reported>table tr{
+    display: grid;
+    grid-template-columns: auto;
+}
+tr.torrentdetails.pad>td[colspan="5"]>div.linkbox:last-child>div.torrentdetails_viewlog>table tr{
+    display: grid;
+    grid-template-columns: auto;
+} */
+
+#upload #image_uploader {
+  text-align: center;
+}
+
+.warned-flag,
+.disabled_flag {
+  color: #c83f3f;
+  font-size: 12px;
+}
+
+.half-warned-flag {
+  color: #ffbf00;
+  font-size: 12px;
+}
+
+#user #content > .thin > .header > h2 > *:not(#thumb) {
+  margin-right: 2px;
+}
+
+#user h2 .warned-flag,
+#user h2 .half-warned-flag,
+#user h2 .disabled_flag {
+  position: relative;
+  /* margin: 0 2px; */
+  bottom: 2px;
+}
+
+table .warned-flag,
+table .half-warned-flag,
+table .disabled_flag {
+  transform: scale(0.8, 0.8);
+  bottom: 0;
+}
+
+#forums div.table_container > table.forum_post > tbody > tr:nth-child(2) {
+  display: grid;
+  grid-template-columns: 163px 1fr;
+}
+
+#forums table.forum_post td.body > div[id^='content'] {
+  min-height: 150px;
+}
+
+div.edited_and_bonus {
+  padding-top: 7px;
+  margin-top: auto;
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+}
+
+.edited_and_bonus > hr:first-child {
+  margin-top: 25px;
+}
+
+div.edited_and_bonus div.bonus_as_reward {
+  order: 2;
+}
+
+#upload #image_uploader + div#uploaded_img_container {
+  height: 50vh;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#upload #image_uploader + div#uploaded_img_container > img#uploaded_img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#add_cover_div ul.options_list select {
+  margin: 0 2px;
+}
+
+#user .box > .badge_display.pad {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+#user .box > .badge_display.pad > .badge_container {
+  width: auto;
+  height: 85px;
+  margin: 5px 9px;
+}
+
+#user .box > .badge_display.pad > .badge_container > img {
+  height: 100%;
+  width: auto;
+}
+
+#badges .badge_progress {
+  margin-bottom: 20px;
+}
+
+#badges .badge_progress > .head {
+  border-bottom: 2px solid #363636;
+  margin: 0 auto 15px;
+  width: 95%;
+}
+
+#badges .badge_progress > .head > h3 {
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: bold;
+  /* color: #666666; */
+  text-align: center;
+}
+
+#badges .badge_and_progress {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  /* height: 100px; */
+  align-items: center;
+  gap: 20px;
+  overflow: visible;
+  width: 90%;
+  margin: 0 auto 20px;
+}
+
+#badges .badge_and_progress.son {
+  transform: scale(0.9);
+}
+
+#badges .badge_and_progress > div.badge_img_container {
+  width: 100px;
+}
+
+#badges .badge_and_progress img {
+  width: auto;
+  max-width: 100%;
+}
+
+#badges .badge_and_progress img:hover {
+  transform: scale(1.5);
+  transition: all 1s;
+}
+
+#badges .badge_and_progress > div.title_and_progressbar {
+  display: grid;
+  grid-template-rows: 1fr 30px 1fr;
+  gap: 3px;
+}
+
+#badges .badge_and_progress > div.title_and_progressbar > h4 {
+  font-size: 15px;
+  font-weight: bold;
+  align-self: flex-end;
+  margin: 0;
+}
+
+#badges .badge_and_progress > div.title_and_progressbar > div.progressbar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr auto);
+  align-items: center;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div {
+  background-color: #eeeeee;
+  /* overflow: hidden; */
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.circle_container {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.3);
+  padding: 3px;
+  z-index: 999;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.progress_container {
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.3);
+  padding: 3px;
+  margin: 0 -3px;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.circle_container
+  > div.circle {
+  background-color: #0274c1;
+  /* box-shadow: 0 0 6px #999999; */
+  border-radius: 50%;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.progress_container
+  > div.progress {
+  /* background-image: linear-gradient(to bottom, #f9f9fb, #afaec9 60%,#f9fafb); */
+  background-color: #0274c1;
+  /* box-shadow: 0 0 6px #999999; */
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.progress_container.level1
+  > div.progress {
+  border-top-left-radius: 5.5px;
+  border-bottom-left-radius: 5.5px;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.circle_container
+  > div.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.circle_container.current
+  > div.circle {
+  height: 100%;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.circle_container.achieved
+  > div.circle {
+  height: 100%;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.circle_container.current
+  > div.circle
+  > i {
+  font-size: 18px;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.circle_container
+  > div.circle
+  > i {
+  color: #ffffff;
+  font-size: 12px;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.progress_container.level1 {
+  border-top-left-radius: 5.5px;
+  border-bottom-left-radius: 5.5px;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.circle_container.current {
+  width: 30px;
+  height: 30px;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.progress_container {
+  height: 11px;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.progress_container
+  > div.level1.progress {
+  width: 100%;
+  height: 100%;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.progress_container
+  > div.level2.progress {
+  width: 100%;
+  height: 100%;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.progress_container
+  > div.level3.progress {
+  width: 100%;
+  height: 100%;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.progress_container
+  > div.level4.progress {
+  width: 100%;
+  height: 100%;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.progressbar
+  > div.progress_container
+  > div.level5.progress {
+  width: 70%;
+  height: 100%;
+}
+
+#badges .badge_and_progress > div.title_and_progressbar > div.level_numbers {
+  align-self: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr repeat(6, 2fr);
+  justify-items: flex-end;
+}
+
+#badges
+  .badge_and_progress
+  > div.title_and_progressbar
+  > div.level_numbers
+  > span:first-child {
+  justify-self: flex-start;
+}
+
+#badges .badge_and_progress > div.total_percent {
+  width: 80px;
+}
+
+#badges .badge_and_progress > div.total_percent > span {
+  font-family: Georgia;
+  font-size: 26px;
+  margin-left: 5px;
+  /* font-style: italic; */
+}
+
+#badges .card_container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+#badges .card_container > .card {
+  width: 195px;
+  height: 300px;
+  margin: 10px;
+  border: 2px solid #a7bfe8;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+  border-radius: 7px;
+  padding: 5px;
+}
+
+#badges .card_container > .card:hover {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+#badges .card_container > .card > .card_inside {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid #a7bfe8;
+  display: grid;
+  grid-template-rows: auto auto 1fr 27px;
+}
+
+#badges .card_container > .card > .card_inside > .badge_container {
+  padding: 15px 0;
+  text-align: center;
+}
+
+#badges .card_container > .card > .card_inside > .badge_container > img {
+  width: auto;
+  height: 100px;
+  cursor: pointer;
+}
+
+#badges .card_container > .card > .card_inside > .badge_title {
+}
+
+#badges .card_container > .card > .card_inside > .badge_title > h4 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+  padding: 2px;
+}
+
+#badges .card_container > .card > .card_inside > .badge_introduction {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+}
+
+#badges .card_container > .card > .card_inside > .badge_introduction > div {
+  word-wrap: break-word;
+  /* word-break: break-all; */
+}
+
+#badges .card_container > .card > .card_inside > .badge_display_btns {
+  text-align: center;
+  font-size: 18px;
+}
+
+#badges .card_container > .card > .card_inside > .badge_display_btns > a {
+  margin: 0 5px;
+}
+
+#badges .badge_level_display {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#badges .badge_level_display > img {
+  width: auto;
+  height: 200px;
+  margin: 20px;
+  max-width: unset;
+  max-height: unset;
+  box-shadow: none;
+  cursor: default;
+}
+
+#badges .badge_log_container,
+#badges .badge_store_container {
+  /* border: 1px solid #363636; */
+  overflow: hidden;
+}
+
+/* #badges .badge_log_container>table tr, */
+#badges .badge_store_container > table tr td.badge_name,
+#badges .badge_store_container > table tr.colhead {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#badges .badge_log_container > table tr:not(.colhead),
+#badges .badge_store_container > table tr:not(.colhead) {
+  /* border-top: 1px solid #363636; */
+}
+
+#badges .badge_log_container > table .colhead > td:nth-child(2),
+#badges .badge_store_container > table td.badge_introduction {
+  width: 90%;
+}
+
+#badges .badge_store_container > table td.badge_preview > img {
+  height: 100px;
+  width: auto;
+}
+
+#tools #badge_management_table td {
+  padding: 0;
+}
+
+#user .user_profile_badges {
+  height: 16px;
+  margin: 4px 3px 0;
+  display: inline-block;
+}
+
+#user .user_profile_badges > img {
+  height: 100%;
+  width: auto;
+}
+
+.forum_post .post_username_badges {
+  height: 13px;
+  margin: 0 2px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+
+.forum_post .post_username_badges > img {
+  height: 100%;
+  width: auto;
+}
+
+#index .news_post ol.navigation_list {
+  display: none;
+}
+
+#collage_delete_box {
+  margin: 0 auto;
+  max-width: 600px;
+  grid-column: 1 / 3;
+}
+
+td.m_th_right {
+  text-align: right;
+}
+
+#activity_alert_container {
+  width: 100%;
+}
+
+#activity_alert_container > #activity_alert {
+  width: 40%;
+  min-width: 490px;
+  /* height: 20px; */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#activity_alert_container > #activity_alert > a {
+  /* font-weight: bold; */
+}
+
+#activity_alert_container > #activity_alert {
+  /* background-color: rgba(240, 110, 120, .6); */
+  /* border-bottom-left-radius: 5px; */
+  /* border-bottom-right-radius: 5px; */
+  z-index: -1;
+  /* box-shadow: 0 0 6px 0 rgba(0, 0, 0, .3); */
+  /* filter: blur(20px); */
+}
+
+#activity_alert_container > #activity_alert > a {
+  color: #fff;
+}
+
+.m_th_right,
+.m_td_right {
+  text-align: right;
+}
+
+#application_management_header {
+  display: grid;
+  grid-template-columns: 0 1fr auto auto;
+  list-style-type: none;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+#application_management_header > li {
+  margin: 0;
+}
+
+#application_management_header > li > h2 {
+  padding: 0;
+  margin: 0;
+}
+
+#application_record_list td button {
+  width: 28px;
+  padding: 2px;
+  margin: 1px;
+}
+
+.sidebar .box li > ul {
+  padding: 0;
+}
+
+.sidebar .box li > ul > li {
+  margin: 3px;
+}
+#poll_box {
+  padding: 10px;
+}
+#index #poll_container {
+  margin-bottom: 10px;
+}
+#poll_container > form#poll {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 5px;
+}
+
+#poll_container > form#poll > br {
+  display: none;
+}
+
+#poll_container > form#poll > input[type='checkbox'],
+#poll_container > form#poll > input[type='radio'] {
+  margin: 4px 0 0 4px;
+}
+
+#poll_container > form#poll > input[type='button'] {
+  grid-column: 1 / 3;
+  width: 50px;
+  margin-top: 10px;
+}
+
+#artist span.remove.remove_artist {
+  margin-left: 5px;
+}
+
+div.edited_and_bonus div.last_edited {
+  margin-left: auto;
+  padding: 0;
+  order: 3;
+}
+
+#torrents .divide_score_reasons {
+  border-top: 1px solid #363636;
+}
+
+#donate_progress_container {
+  width: 100%;
+  text-align: center;
+  margin: 5px 0;
+}
+
+#donate_information #donate_logo {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 250px;
+  display: block;
+  border-radius: 5px;
+}
+
+#donate_information #donate_progress {
+  margin: 5px auto;
+  width: 300px;
+}
+
+#tools #enable_requests_table tr.colhead {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#torrents div.submit_div.preview_submit {
+  text-align: center;
+}
+
+.box_addtocollage #select_collage {
+  width: 100%;
+}
+
+.box_addtocollage #SearchCollage {
+  display: grid;
+  grid-template-columns: 1fr 65px;
+}
+
+.box_addtocollage #selected_collage_category,
+.box_addtocollage #selected_collage_author,
+.box_addtocollage #selected_collage_description {
+  margin: 5px;
+}
+
+#donate #donor_ranks_container {
+  margin: 10px 0;
+  border: 1px solid #363636;
+}
+
+#donate #donor_ranks_container > table#donor_ranks_table td {
+  width: 18%;
+}
+
+#donate
+  #donor_ranks_container
+  > table#donor_ranks_table
+  tr:first-child
+  ~ tr
+  > td:not(.th) {
+  border-top: 1px solid #363636;
+}
+
+#donate #donor_ranks_container > table#donor_ranks_table td.th {
+  border-right: 1px solid #363636;
+  width: 80px;
+  text-align: right;
+}
+
+/* #donate #donate_ranks_container>div.donate_rank{
+	width: 250px;
+	margin: 5px;
+	border: 1px solid #363636;
+	padding: 5px;
+}
+#donate #donate_ranks_container>div.donate_rank>h4{
+	text-align: center;
+	border-bottom: 1px solid #363636;
+	font-weight: bold;
+	margin-bottom: 10px;
+} */
+#donate #donate_ranks_container > div.donate_rank > div > ul {
+  text-align: center;
+  list-style: none;
+}
+
+#donate #donate_ranks_container > div.donate_rank > div > ul > li {
+  margin: 5px;
+}
+
+#donate #about_donation,
+#donate #donate_explanation_body {
+  padding: 0 11px;
+}
+
+table.table_in_text th,
+table.table_in_text td {
+  border: 1px solid #363636;
+  padding: 5px;
+  text-align: unset;
+}
+
+#switcher {
+  list-style: none;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#switcher li {
+  display: inline;
+  margin: 0 5px;
+}
+
+#ssp #ssp_panel_container {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+}
+
+#ssp #ssp_panel_container > div.table_container.border {
+  grid-column: unset;
+}
+
+#shifu #info_container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+#shifu #info_container > .info_card {
+  display: grid;
+  width: 240px;
+  height: 400px;
+  margin: 10px;
+  border: 1px solid #363636;
+  grid-template-rows: 30px 160px 210px;
+}
+
+#shifu #info_container > .info_card > .username {
+  padding: 5px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+#shifu #info_container > .info_card > .avatar_container > img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 10px auto 0;
+}
+
+#shifu #info_container > .info_card > .introduction {
+  padding: 10px;
+}
+
+hr.report_inside_line {
+  border-top: 1px solid #363636;
+}
+
+.upload_form_note {
+  margin: 0;
+}
+
+div.sidebar > div.box_image > div.head + div {
+  /* padding: 0; */
+  margin: 0 auto;
+  overflow: hidden;
+  /* width: 240px; */
+}
+
+#user .box_image_avatar div:nth-of-type(2) img {
+  max-height: 400px;
+  max-width: 240px !important;
+  width: unset;
+}
+
+textarea#album_desc {
+  margin-top: 0;
+}
+
+td.padding_bottom_0 {
+  padding-bottom: 0;
+}
+
+/* movie_tracker */
+/* #specifications_contianer{
+	display: grid;
+	grid-template-columns: repeat(5, auto);
+	align-items: center;
+} */
+
+#subtitles_container div.grid_subtitles {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+#subtitles_container div > div > div.subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+img.national_flags,
+div#common_subtitles div.subtitle > label > img,
+#subtitles_container div > div > div.subtitle > label > img {
+  position: relative;
+  top: 2px;
+  height: 15px;
+  width: 20px;
+}
+
+table.forum_post.noavatar > tbody > tr > td.body {
+  grid-column: 1 / 3;
+}
+
+#tools #content > .thin > h3 + div.box.pad:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+#upload blockquote[id*='how_to_blockquote'] > ul {
+  margin-left: 5px;
+}
+
+#upload blockquote[id*='how_to_blockquote'] > div.examples > ul,
+#upload blockquote[id*='how_to_blockquote'] > div.examples {
+  margin-left: 15px;
+}
+
+.artbox > #artist_list {
+  margin-right: 18px;
+}
+
+#content .thin .torrent_imdb_info_container > .box {
+  border-radius: 5px;
+}
+
+#content .thin .torrent_imdb_info_container .body {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: 0;
+}
+
+.imdb_info {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  padding: 20px;
+  overflow: hidden;
+  column-gap: 20px;
+  row-gap: 15px;
+}
+
+.imdb_info.artist_imdb_info {
+  grid-template-columns: 250px 1fr;
+}
+
+.imdb_info > div:not(.img_box) {
+  grid-column: 2 / 3;
+}
+
+.imdb_info > div.imdb_artists {
+  align-self: flex-end;
+}
+
+.imdb_info > div.imdb_artists::-webkit-scrollbar {
+  display: none;
+}
+
+.imdb_info > div.imdb_artists > .imdb_artist > a > p {
+  margin-bottom: 0;
+}
+
+.imdb_info > .img_box {
+  grid-row: 1 / 5;
+  min-height: 300px;
+  position: relative;
+  z-index: 1;
+}
+
+.poltimg {
+  text-align: center;
+  zoom: 1;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.poltimg > img {
+  width: 100%;
+}
+
+.box h11 {
+  font-size: 30px;
+  line-height: 32px;
+  font-weight: 700;
+  position: relative;
+  bottom: 3px;
+}
+
+.imdb_info #right {
+  text-align: left;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
+
+.torrent_imdb_info_container .imdbratingb {
+  /* border-radius: 5px; */
+  /* background: #ddd; */
+  padding: 0;
+  margin-right: 15px;
+  /* color: #fff; */
+  /* width: 100%; */
+  /* height: 40px; */
+}
+
+#imdb_logo_svg {
+  height: 20px;
+  width: 40px;
+}
+
+.rating h13 {
+  float: left;
+  top: 7px;
+  padding-left: 20px;
+  padding: 10px 0px 10px 40px;
+}
+
+.cont li {
+  /* height: 38px; */
+  border-bottom: 1px dotted #999;
+  margin: 5px 15px;
+  font-size: 13px;
+}
+
+.cont li:last-child {
+  border-bottom: none;
+}
+
+.cont li > * {
+  padding: 8px 0;
+  display: inline-block;
+}
+
+.cont li strong {
+  margin-right: 15px;
+}
+
+#content .thin .torrent_imdb_info_container .body .poster_bg {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+#content .thin .torrent_imdb_info_container .body .poster_bg > img {
+  height: 80vh;
+}
+
+#content .thin .torrent_imdb_info_container .torrent_imdb_info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr auto;
+  padding: 30px;
+  max-height: 400px;
+  /* background: linear-gradient(to bottom, rgba(56, 57, 59, 0.2) 0%, rgba(46, 54, 69, 0.9) 70%);
+    text-shadow: 0 1px 1px black; */
+  overflow: hidden;
+  column-gap: 30px;
+}
+
+#content .thin .torrent_imdb_info_container .torrent_imdb_info .poster {
+  grid-row: 1 / 3;
+}
+
+#content .thin .torrent_imdb_info_container .torrent_imdb_info .poster > img {
+  height: 100%;
+}
+
+#content .thin .torrent_imdb_info_container .torrent_imdb_info .information {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  margin-top: 30px;
+  row-gap: 10px;
+}
+
+.bdinfo-table,
+.mediainfo-table {
+  border: 1px solid #363636;
+}
+
+.bdinfo-table caption,
+.mediainfo-table caption {
+  font-weight: bold;
+  border-bottom: 1px solid #363636;
+}
+
+.bdinfo-table > tbody > tr > td,
+.mediainfo-table > tbody > tr > td {
+  border: 1px solid #363636;
+  vertical-align: top;
+}
+
+.bdinfo-table > tbody > tr > td:last-child,
+.mediainfo-table > tbody > tr > td:last-child {
+  width: 40%;
+}
+
+.bdinfo-table > tbody > tr > td > table td,
+.mediainfo-table > tbody > tr > td > table td {
+  padding: 1px;
+}
+
+.bdinfo-bbcode > pre,
+.mediainfo-bbcode > pre {
+  border: 1px dashed #363636;
+  padding: 10px;
+  font-family: Lucida Console;
+}
+
+#content .main_column .pad blockquote pre,
+.blog_post .pad blockquote pre {
+  white-space: pre-wrap;
+}
+
+div.linkbox#torrent_filter {
+  margin-top: 0 !important;
+}
+
+#actual_rules > h4 {
+  font-size: 1.5rem !important;
+}
+
+#actual_rules > h5 {
+  font-size: 1.3rem !important;
+}
+
+td.label + td > div.textarea_wrap > textarea#mediainfo_bdinfo {
+  height: 80vh;
+}
+
+td.audio_track_number {
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.torrent_imdb_info_container .imdbtitle {
+  /* display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: flex-start; */
+  /* margin-bottom: 10px; */
+}
+
+.torrent_imdb_info_container .imdbtitle > h11 > small {
+  font-weight: normal;
+}
+
+.torrent_imdb_info_container .rating {
+  /* justify-self: flex-end; */
+  display: flex;
+  flex-flow: wrap;
+  /* margin-bottom: 10px; */
+}
+
+#rt_rating,
+#douban_rating,
+.imdbratingb {
+  display: flex;
+  align-items: center;
+}
+
+#rt_rating > span,
+#douban_rating > span,
+.imdbratingb span {
+  line-height: 1;
+  font-size: 20px;
+}
+
+#rt_rating > a,
+#douban_rating > a,
+.imdbratingb > a {
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#douban_logo {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #2f973e;
+  color: #2f973e;
+  padding: 0 5px;
+  font-weight: bold;
+  text-shadow: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#rt_logo {
+  width: 20px;
+  height: 20px;
+}
+
+.torrent_imdb_info_container .imdbname + h2,
+.torrent_imdb_info_container .imdbtitle + h2 {
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+
+.torrent_imdb_info_container .cont {
+  margin-bottom: 12px;
+}
+
+.torrent_table .group_info > .torrent_info {
+  margin-bottom: 10px;
+}
+
+.movie_info_crumbs {
+  padding: 3px 0;
+  margin: 0 5px 6px 0;
+  border-radius: 5px;
+  display: inline;
+  font-size: 12px;
+}
+
+.torrent_imdb_info_container .imdbcont > .cont {
+  padding: 3px 0;
+  margin: 0 5px 6px 0;
+  border-radius: 5px;
+  display: inline;
+}
+
+.torrent_imdb_info_container .tag_crumbs {
+  padding: 3px 5px;
+  margin: 0 5px 2px 0;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.movie_info_crumbs .info_crumbs {
+  display: inline-block;
+  padding: 0 8px;
+  border-right: 1px solid #393939;
+}
+
+.torrent_imdb_info_container .info_crumbs {
+  display: inline-block;
+  margin: 0 0 10px 0;
+  padding: 0 10px;
+  border-right: 1px solid #393939;
+}
+
+.movie_info_crumbs .info_crumbs:last-child,
+.torrent_imdb_info_container .info_crumbs:last-child {
+  /* padding-right: 5px; */
+  border-right: none;
+  /* margin-right: */
+}
+
+.torrent_imdb_info_container .info_crumbs:hover,
+.torrent_imdb_info_container .tag_crumbs:hover {
+  color: #fff;
+}
+
+.torrent_imdb_info_container .info_crumbs > span > a {
+  color: #b6b6b6;
+}
+
+.torrent_imdb_info_container .imdb_artists {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(6, 130px);
+  gap: 5px;
+  overflow-x: scroll;
+}
+
+.torrent_imdb_info_container .imdb_artist {
+  width: 130px;
+  text-align: center;
+}
+
+.torrent_imdb_info_container .imdb_artist img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  margin: 0 auto 5px;
+  border-radius: 4px;
+}
+
+div.sceditor-toolbar {
+  flex-shrink: 0;
+  overflow: hidden;
+  line-height: 0;
+  text-align: left;
+  user-select: none;
+  background-clip: padding-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+div.sceditor-group {
+  display: inline;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.sceditor-button {
+  padding: 4px;
+  margin: 2px 1px 2px 3px;
+  height: 20px;
+  border-radius: 12px;
+  background-clip: padding-box;
+  float: left;
+  cursor: pointer;
+  padding: 3px 5px;
+  width: 16px;
+  border-radius: 5px;
+  background-clip: padding-box;
+}
+
+.sceditor-button,
+.sceditor-button div {
+  display: block;
+}
+
+.sceditor-button svg {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin: 2px 0;
+  fill: white;
+  text-decoration: none;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.text-icon .sceditor-button.has-icon div,
+.sceditor-button.has-icon div,
+.text .sceditor-button div,
+.sceditor-button.text div {
+  padding: 0 2px;
+  background: none;
+}
+
+.sceditor-button.has-icon div {
+  display: none;
+}
+
+#subtitles_box > div .national_flags {
+  height: 14px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  margin: 0 2px;
+}
+
+#subtitles #subtitle_search_box {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  /* margin-left: 30px;
+	margin-left: 30px; */
+}
+
+#subtitles_box_title {
+  font-weight: bold;
+}
+
+#subtitles_box_header ~ div {
+  margin-top: 10px;
+}
+
+#subtitles #subtitle_search_box > input#subtitle_search_title {
+  width: 400px;
+}
+
+#subtitles #subtitle_search_box > input#subtitle_search_year {
+  width: 100px;
+}
+
+#subtitles #subtitle_browser {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px 1fr;
+  border: 1px solid #363636;
+  overflow: hidden;
+}
+
+#subtitles #subtitle_browser > .thead {
+  background: #111;
+  padding: 7px;
+}
+
+#subtitles #subtitle_browser > .tbody {
+  border-top: 1px solid #363636;
+  padding: 7px;
+}
+
+#subtitles #subtitle_upload_table td.right {
+  width: 20%;
+}
+
+#subtitles #subtitle_upload_table #subtitle_torrent_pl {
+  width: 100%;
+  max-width: 400px;
+}
+
+#subtitles #subtitle_detail_grid_container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+#subtitles .subtitle_detail_container {
+  border: 1px solid #363636;
+}
+
+#subtitles .subtitle_detail_container tr:not(.colhead) {
+  border-top: 1px solid #363636;
+}
+
+#subtitles .subtitle_detail_container td.right {
+  width: 30%;
+}
+
+.group_movie_title {
+  font-size: 20px;
+}
+
+.movie_cn_title {
+  font-size: 15px;
+  /* margin-top: -5px; */
+  margin-bottom: 12px;
+}
+
+div.group_info > div.torrent_specifications {
+  margin-bottom: 12px;
+  padding-left: 26px;
+}
+
+#subtitle_rules_box > ul {
+  padding-left: 10px;
+}
+
+#upload select#source,
+#upload select#codec,
+#upload select#container,
+#upload select#resolution,
+#upload select#processing {
+  width: 120px;
+}
+
+textarea#mediainfo {
+  min-height: 150px;
+}
+
+textarea#release_desc {
+  min-height: 250px;
+}
+
+textarea#staff_note {
+  min-height: 45px;
+}
+
+textarea#album_desc {
+  min-height: 100px;
+}
+
+.imdb_artist > a > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#database_ids_table td {
+  padding: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+  #subtitles_container div.grid_subtitles {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #subtitles #subtitle_browser {
+    grid-template-columns: 40px 1fr;
+  }
+
+  #subtitles #subtitle_browser > .thead:nth-child(3),
+  #subtitles #subtitle_browser > .thead:nth-child(4) {
+    display: none;
+  }
+
+  #subtitles #subtitle_detail_grid_container {
+    grid-template-columns: 1fr;
+  }
+
+  .imdb_info {
+    grid-template-rows: auto 1fr auto auto;
+  }
+
+  .imdb_info > div.img_box {
+    grid-row: 1 / 3;
+  }
+
+  .imdb_info > div#synopsis,
+  .imdb_info > div.imdb_artists {
+    grid-column: 1 / 3;
+  }
+
+  .torrent_imdb_info_container .imdbtitle {
+    grid-template-columns: 1fr;
+  }
+
+  .torrent_imdb_info_container .imdbtitle .rating {
+    justify-self: flex-start;
+  }
+
+  #subtitles_container div.grid_subtitles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.torrent_table .group_info.clear > div.display_name {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.torrent_table .group_info.clear > div.display_name + div.torrent_info {
+  padding-left: 12px;
+}
+.torrent_table
+  .group_info.clear
+  > div.display_name
+  + div.torrent_info
+  + div.tags {
+  margin-top: -5px;
+}
+
+table#database_ids_table {
+  margin-left: 10px;
+}
+
+#subtitles_box_external {
+  margin-top: 5px;
+}
+
+.torrent_imdb_info_container #synopsis > p {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.torrent_imdb_info_container #synopsis.overflown > p {
+  cursor: pointer;
+}
+
+.torrent_imdb_info_container #synopsis.expand > p {
+  -webkit-line-clamp: inherit;
+}
+
+div.comparison {
+  display: inline-block;
+}

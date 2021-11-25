@@ -1,0 +1,7 @@
+{% block subject %}
+Your {{ PrivilegeName }} privileges have been disabled
+{% endblock %}
+{% block body %}
+Your {{ PrivilegeName }} privileges have been disabled. The reason given was: [quote]{{ UserReason }}[/quote]
+If you would like to discuss this, please join {{ BOT_DISABLED_CHAN }} on our IRC network. Instructions can be found [url={{ SITE_URL }}/wiki.php?action=article&amp;name=irc]here[/url].
+{% endblock %}

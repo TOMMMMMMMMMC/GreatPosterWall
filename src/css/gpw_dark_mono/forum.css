@@ -1,0 +1,216 @@
+/* Cleanup */
+#forums h3.reward_head {
+  margin-top: 2rem;
+  width: 410px;
+  font-size: 12px;
+  padding: 0;
+  text-align: right;
+}
+#forums h3.reward_head {
+  border-bottom: 1px solid #363636;
+  margin-bottom: 0;
+}
+#forums .reward_head + dl.rate {
+  width: 410px;
+  padding: 7px;
+  margin: 0;
+}
+#forums .reward_head + dl.rate table {
+  background-color: transparent !important;
+  border: none !important;
+  margin: 0;
+}
+#forums .reward_head + dl.rate table tr {
+  background-color: transparent !important;
+  border: none !important;
+}
+#forums .reward_head + dl.rate table.ratl th,
+#forums .reward_head + dl.rate table.ratl td {
+  padding: 4px;
+  text-align: left;
+  vertical-align: top;
+}
+#forums .reward_head + dl.rate table.ratl thead th:nth-child(1) {
+  width: 100px;
+}
+#forums .reward_head + dl.rate table.ratl thead th:nth-child(2) {
+  width: 70px;
+}
+#forums div.mgb + div.breadcrumbs {
+  margin-top: 20px;
+}
+#forums .edit_form > table td.label {
+  width: 20%;
+}
+
+#forums .reward_head + dl.rate table.ratl > tbody {
+  display: block;
+}
+#forums .reward_head + dl.rate table.ratl tr {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100px 50px auto;
+}
+#forums form#newthreadform table#newthreadtext tr > td.label {
+  width: 60px;
+}
+#forums div#searchthread form.search_form table td:nth-child(2) {
+  text-align: left !important;
+}
+#forums div#searchthread form.search_form + br {
+  display: none;
+}
+#forums #quickpost {
+  margin: 0;
+  width: 100%;
+}
+#forums
+  #thread_notes
+  + a
+  + form
+  > #thread_notes_table
+  > tbody
+  > tr:last-child
+  > td
+  #topic_notes {
+  margin-bottom: 1rem !important;
+  width: 100% !important;
+}
+#forums form.search_form > table.layout {
+  border-bottom: 1px solid #363636;
+  margin-bottom: 20px;
+}
+#forums form.search_form > table.layout > tbody > tr > td:first-child {
+  width: 20%;
+  text-align: right;
+}
+#forums
+  form.search_form
+  > table.layout
+  > tbody
+  > tr
+  > td:first-child[colspan='2'] {
+  text-align: center;
+}
+#forums #searchthread h3 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+#forums #searchthread form.search_form > table.layout.border > tbody {
+  display: block;
+}
+#forums #searchthread form.search_form > table.layout.border tr {
+  display: grid;
+  grid-template-columns: 1fr 40% 1fr;
+  align-items: center;
+}
+#forums
+  #searchthread
+  form.search_form
+  > table.layout.border
+  tr
+  > td:first-child {
+  width: 100%;
+  text-align: right;
+}
+#forums
+  #searchthread
+  form.search_form
+  > table.layout.border
+  tr
+  > td:first-child:last-child {
+  grid-column: 1 / 4;
+  text-align: center;
+}
+#forums h3.reward_head {
+  margin-top: 2rem;
+  font-size: 12px;
+  padding: 0;
+  color: #777;
+  text-align: right;
+}
+#forums .reward_head + dl.rate {
+  /* border-top: 1px solid #393939; */
+  padding: 7px;
+}
+#forums .reward_head + dl.rate table.ratl th,
+#forums .reward_head + dl.rate table.ratl td {
+  padding: 4px;
+}
+#forums .reward_head + dl.rate table.ratl thead th:nth-child(1) {
+  width: 100px;
+}
+#forums .reward_head + dl.rate table.ratl thead th:nth-child(2) {
+  width: 70px;
+}
+
+/*
+table.forum_index   -> 论坛列表, 主题列表
+  colhead
+table.forum_list    -> 搜索列表
+table.forum_post    -> 帖子内容
+form.edit_form      -> 编辑主题
+*/
+
+/* table */
+#forums .forum_list{
+  margin-bottom: 20px;
+  background: var(box-bg);
+  border-radius: 5px;
+}
+#forums .threadpoll,
+#forums .forum_index,
+#forums .forum_post,
+#forums .edit_form {
+  margin-bottom: 20px;
+  background: var(--box-bg) !important;
+  border: var(--box-border) !important;
+  border-radius: 5px;
+}
+#forums .forum_index td,
+#forums .forum_list td,
+#forums .forum_post td {
+  border-top: var(--box-border);
+}
+#forums .forum_index .colhead td,
+#forums .forum_list .colhead td,
+#forums .forum_post .colhead_dark td {
+  border-top: 0;
+  background: var(--box-header);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 1.1rem;
+}
+
+/* forum post */
+/*
+.body
+  #content9
+    .content_text
+    .edited_and_bonus
+      .last_edited
+      .bonus_as_reward
+*/
+#forums .forum_post [id^='content'] {
+  line-height: 1.75em;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+/* edited and bonus */
+#forums .forum_post .edited_and_bonus {
+  margin-top: auto;
+  padding-top: 7px;
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+}
+#forums .forum_post .edited_and_bonus hr {
+  margin-top: 2rem;
+  margin-bottom: 3px;
+  width: 100%;
+}
+#forums .forum_post .edited_and_bonus .last_edited {
+  margin-left: auto;
+  order: 2;
+}

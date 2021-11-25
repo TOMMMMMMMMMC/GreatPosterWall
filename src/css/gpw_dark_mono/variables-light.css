@@ -1,0 +1,110 @@
+@media (prefers-color-scheme: light) {
+	[data-theme=auto]:root {
+		--bg: linear-gradient(#bbbbbc, #c4c4c4) white;
+		--text: #404040;
+
+		/* header */
+		--header-bg: #22283e;
+		--header-text: #ddd;
+		--header-shadow: 0 0 6px 0 rgba(0,0,0,.2);
+		--header-border: none;
+		/* header top */
+		--header-top-bg: #1e2538;
+		/* header bottom */
+		--header-bottom-bg: #1e2538;
+		/* header icon */
+		--header-icon-bg-hover: rgba(255, 255, 255, 0.1);
+		/* header link */
+		--header-link-text: #ddd;
+		--header-link-text-hover: white;
+		/* header dropdown */
+		--header-dropdown-bg: #1e2538;
+		--header-dropdown-border: none;
+
+		/* btn primary */
+		--btn-primary-bg: #4285f4; 
+		--btn-primary-text: white;
+		--btn-primary-border: none;
+		--btn-primary-shadow: none;
+		--btn-primary-bg-hover: #1958bd;
+		--btn-primary-text-hover: white;
+		--btn-primary-shadow-hover: none;
+
+		/* input */
+		--input-bg: rgba(0, 0, 0, 0.05);
+		--input-text: #404040;
+		--input-border: 1px solid rgba(0, 0, 0, 0.15);
+		--unchecked-box-color: #404040;
+		--checked-box-color: #000;
+
+		/* scrollbar */
+		--scrollbar-thumb-bg: #999;
+		--scrollbar-thumb-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+		--scrollbar-track-bg: #eee;
+		--scrollbar-track-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+
+		/* alert info */
+		--alert-info-bg: #f0df49;
+		--alert-info-text: black;
+		--alert-info-opacity: 0.8;
+		--alert-info-opacity-hover: 1;
+
+		/* content */
+		--content-bg: #fff;
+		--content-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+		--content-margin: 20px 20px 0;
+		
+		/* boxes */
+		--box-bg: #eee;
+		--box-padding: 0 5px;
+		--box-border: 1px solid #ddd;
+		--box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+		--box-header: #eee;
+		--box-header-bg: ;
+
+		/* nbboxes (no border boxes) */
+		--nbbox-bg: transparent;
+		--nbbox-padding: 0;
+		--nbbox-border: none;
+		--nbbox-header-border: 1px solid #ddd;
+		--nbbox-border-bottom: 1px dotted #ddd;
+		--nbbox-shadow: none;
+		--nbbox-header-bg: none;
+
+		/* info bar */
+		--info-bar-bg: #eee;
+		--info-bar-bg-hover: #ddd;
+		--info-bar-border: 1px solid #d9d9d9;
+		--info-bar-inside-border: 1px solid #d9d9d9;
+		--info-text-hover: #000;
+		--info-a: #4285f4;
+
+		/* info blockquote */
+		--info-bq-bg: #eee;
+		--info-bq-border: 1px solid #d9d9d9;
+
+		/* tooltipster */
+		--tooltipster-bg: #eee;
+		--tooltipster-border: 1px solid #d9d9d9;
+		--tooltipster-border-color: #d9d9d9;
+		--tooltipster-color: #404040;
+
+		/* text */
+		--h2-color: #004F9D;
+		--h3: #149999;
+		--h4: #4b87a7;
+		--h5: #4768b3;
+		--a-color: #4285f4;
+		--a-color-hover: #1958bd;
+		--a-color-active: #009107;
+		--important-color: #D8210D;
+
+		--strong-rule-color: #004F9D;
+
+		--opt-bg: #ddd;
+		--opt-color: #404040;
+		--opt-border: 1px solid #ddd;
+
+		--donate-color: #fff;
+	}
+}

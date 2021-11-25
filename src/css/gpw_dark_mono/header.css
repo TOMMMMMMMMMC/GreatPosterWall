@@ -1,0 +1,351 @@
+/*
+TOC
+  - header layout
+  - header main
+
+#header
+	#logo
+	#userinfo
+	#header #menu
+	#alerts
+	#searchbars
+*/
+
+/* Header */
+#header {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 220px auto 220px;
+  row-gap: 10px;
+  background: var(--header-bg);
+  color: var(--header-text);
+  box-shadow: var(--header-shadow);
+}
+@media (max-width: 768px) {
+  #header {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Link */
+#header a:not(.cmp-btn-primary):not(.cmp-alert-info) {
+  color: var(--header-link-text);
+}
+#header a:not(.cmp-btn-primary):not(.cmp-alert-info):hover {
+  color: var(--header-link-text-hover);
+}
+
+/* Logo */
+#header #logo {
+  grid-row: 2 / span 1;
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  min-height: 50px;
+}
+#header.has-alerts #logo {
+  grid-row: 2 / span 2;
+}
+#header #logo a {
+  display: block;
+  width: 100%;
+  background: url(assets/loginlogo.png) center / contain no-repeat;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  #header #logo {
+    padding-left: 0;
+    height: 50px;
+  }
+  #header #logo a {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Userinfo (desktop) */
+#header #userinfo {
+  order: 0;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 400px auto 400px;
+  align-items: center;
+  /* height: 40px; */
+  border-bottom: var(--header-border);
+  background: var(--header-top-bg);
+  box-shadow: var(--header-shadow);
+}
+#header #userinfo > ul {
+  padding: 0;
+}
+#header #userinfo > ul > li {
+  margin: 0;
+  text-align: left;
+  list-style: none;
+  height: 100%;
+}
+/* userinfo stats (desktop) */
+#header #userinfo #userinfo_stats {
+  order: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 0.95rem;
+  overflow: hidden;
+  height: 100%;
+}
+#header #userinfo #userinfo_stats li {
+  font-size: 0.95rem;
+  padding: 0 0 0 22px;
+  display: flex;
+  align-items: center;
+}
+#header #userinfo #userinfo_stats li:first-child {
+  padding-left: 0;
+}
+#header #userinfo #userinfo_stats li .item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#header #userinfo #userinfo_stats .icon {
+  width: 18px;
+  height: 18px;
+}
+#header #userinfo span.stat {
+  font-size: 13px;
+}
+/* userinfo major (desktop) */
+#header #userinfo #userinfo_major {
+  order: 2;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+}
+#header #userinfo #userinfo_major #nav_donate{
+  text-align: center;
+}
+#header #userinfo #userinfo_major #nav_donate .icon-container {
+}
+#header #userinfo #userinfo_major #nav_donate .icon-container > svg{
+}
+#donate_percent{
+  bottom: 18px;
+  left: 11px;
+  position: relative;
+  font-family: "Lucida Console";
+  font-size: 14px;
+  font-weight: bold;
+  transform: scale(0.75);
+  z-index: 100;
+  height: 10px;
+  color: #dadada;
+}
+#donate_percent > span{
+}
+#header #userinfo #userinfo_major .icon-container {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  justify-content: center;
+  height: 100%;
+}
+#header #userinfo #userinfo_major .icon-container:hover {
+  background-color: var(--header-icon-bg-hover);
+}
+#header #userinfo #userinfo_major #nav_profile > .profile {
+  width: auto;
+  gap: 10px;
+  padding: 0 10px;
+}
+#header #userinfo #userinfo_major .profile .icon.menu-extend {
+  width: 16px;
+  height: 16px;
+}
+#header #userinfo #userinfo_major .profile .avatar {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+/* userinfo profile (desktop) */
+#header #userinfo #userinfo_profile .menu {
+  position: absolute;
+}
+@media (max-width: 768px) {
+  /* userinfo (mobile) */
+  #header #userinfo {
+    grid-template-columns: auto;
+    height: auto;
+  }
+  /* userinfo status (mobile) */
+  #header #userinfo #userinfo_stats {
+    grid-column: 1 / -1;
+    order: 2;
+    height: 20px;
+  }
+  #header #userinfo #userinfo_stats li .item {
+    gap: 5px;
+  }
+  #header #userinfo #userinfo_stats .icon {
+    width: 14px;
+    height: 14px;
+  }
+  /* userinfo major (mobile) */
+  #header #userinfo #userinfo_major {
+    justify-content: center;
+    order: 0;
+    height: 40px;
+  }
+  #header #userinfo #userinfo_major > :first-child {
+    margin-right: auto;
+    width: 100px;
+  }
+  #header #userinfo #userinfo_major > :last-child {
+    margin-left: auto;
+    width: 100px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  #header #userinfo #userinfo_major .username {
+    display: none;
+  }
+}
+
+/* menu */
+#header #menu {
+  order: 4;
+  grid-column: 1 / -1;
+  line-height: 17px;
+  z-index: 3;
+  padding: 12px 0;
+  display: grid;
+  justify-items: center;
+  border-top: var(--header-border);
+  border-bottom: var(--header-border);
+  background: var(--header-bottom-bg);
+  box-shadow: var(--header-shadow);;
+}
+#header #menu > ul {
+  display: flex;
+  grid-template-columns: repeat(8, 100px);
+}
+#header #menu > ul > li {
+  width: 100px;
+}
+#header #menu ul * {
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+#header #menu ul li {
+  font-size: 16px;
+}
+#header #menu ul li.active {
+  font-weight: bold;
+}
+#header #menu > ul > li#nav_torrents ~ li {
+  border-left: var(--header-dropdown-border);
+}
+#header #menu ul li,
+#header #menu ul li a {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+#header #menu ul li a {
+  overflow: hidden;
+  padding: 0px 5px;
+  transition: all 0.3s ease;
+  visibility: visible;
+}
+#header #menu ul li a:hover:after {
+  left: 3px;
+  right: unset;
+  width: 78px;
+  z-index: 3;
+}
+@media (max-width: 803px) {
+  #header #menu > ul {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: auto auto;
+  }
+  #header #menu > ul > li:nth-child(2),
+  #header #menu > ul > li:nth-child(3),
+  #header #menu > ul > li:nth-child(4),
+  #header #menu > ul > li:nth-child(5) {
+    padding: 0 0 5px;
+  }
+  #header #menu > ul > li:nth-child(6),
+  #header #menu > ul > li:nth-child(7),
+  #header #menu > ul > li:nth-child(8),
+  #header #menu > ul > li:nth-child(9),
+  #header #menu > ul > li:nth-child(10) {
+    padding: 5px 0 0;
+  }
+  #header #menu > ul > li#nav_torrents ~ li#nav_top10 {
+    border-left: none;
+  }
+}
+
+/* Alerts 
+#header #alerts
+	.alertbar.notice
+		.button
+	.alertbar.notice
+		.button
+	.alertbar.admin
+		.button
+		.button
+*/
+#header #alerts {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Searchbars */
+#header #searchbars {
+  order: 3;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+#header.has-alerts #searchbars {
+  grid-row: span 1;
+}
+#header #searchbars ul {
+  display: grid;
+  margin: 0 auto;
+  max-width: 735px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 26px;
+}
+#header #searchbars ul li {
+  display: inline;
+  list-style: none;
+  position: relative;
+  margin: 2px 5px;
+}
+#header #searchbars ul li form {
+  display: inline;
+}
+#header #searchbars ul li ul {
+  visibility: visible;
+}
+@media (max-width: 803px) {
+  #header #searchbars ul {
+    grid-column: 1 / 4;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 26px 26px;
+    row-gap: 10px;
+    max-width: 370px;
+  }
+}

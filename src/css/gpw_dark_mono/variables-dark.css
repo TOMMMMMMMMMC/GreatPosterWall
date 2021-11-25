@@ -1,0 +1,100 @@
+:root {
+	--bg: url(assets/bg.png) repeat #111;
+	--text: #aaa;
+
+	/* header */
+	--header-bg: transparent;
+	--header-text: #aaa;
+	--header-shadow: none;
+	--header-border: 1px solid #464646;
+	/* header top */
+	--header-top-bg: rgba(221, 221, 221, 0.075);
+	/* header bottom */
+	--header-bottom-bg: rgba(221, 221, 221, 0.075);
+	/* header icon */
+	--header-icon-bg-hover: rgba(255, 255, 255, 0.1);
+	/* header link */
+	--header-link-text: #aaa;
+	--header-link-text-hover: #fff;
+	/* header dropdown */
+	--header-dropdown-bg: #111;
+	--header-dropdown-border: 1px solid #464646;
+
+	/* btn primary */
+	--btn-primary-bg: rgba(255, 255, 255, 0.1);
+	--btn-primary-text: #aaa;
+	--btn-primary-border: 1px solid #464646;
+	--btn-primary-shadow: 0 0 5px 2px rgba(37, 37, 37, 0.07);
+	--btn-primary-bg-hover: #555;
+	--btn-primary-text-hover: #fff;
+	--btn-primary-show-hover: none;
+
+	/* input */
+	--input-bg: rgba(221, 221, 221, 0.075);
+	--input-text: #aaa;
+	--input-border: 1px solid #464646;
+	--unchecked-box-color: #b6b6b6;
+	--checked-box-color: #ddd;
+
+	/* scrollbar */
+	--scrollbar-thumb-bg: #363636;
+	--scrollbar-track-bg: #000;
+	--scrollbar-track-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+
+	/* alert info */
+	--alert-info-bg: #ccbc33;
+	--alert-info-text: black;
+	--alert-info-opacity: 0.8;
+	--alert-info-opacity-hover: 1;
+
+	/* boxes */
+	--box-bg: rgba(221, 221, 221, 0.075);
+	--box-border: 1px solid #363636;
+	--box-header: #111;
+	--box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+	--box-header-bg: #111;
+
+	/* nbboxes (no border boxes) */
+	--nbbox-bg: transparent;
+	--nbbox-padding: 0;
+	--nbbox-border: 1px solid #363636;
+	--nbbox-header-border: #363636;
+	--nbbox-shadow: rgba(221, 221, 221, 0.075);
+	--nbbox-header-bg: #111;
+	--nbbox-border-bottom: 1px solid #363636;
+
+	/* info bar */
+	--info-bar-bg: #1a1a1a;
+	--info-bar-bg-hover: #000;
+	--info-bar-border: 1px solid #2a2a2a;
+	--info-bar-inside-border: 1px solid #393939;
+	--info-text-hover: #fff;
+	--info-a: #b6b6b6;
+
+	/* info blockquote */
+	--info-bq-bg: #1a1a1a;
+	--info-bq-border: 1px solid #2a2a2a;
+
+	/* tooltipster */
+	--tooltipster-bg: #1f1f1f;
+	--tooltipster-border: 1px solid #393939;
+	--tooltipster-border-color: #393939;
+	--tooltipster-color: #b6b6b6;
+
+	/* text */
+	--h2-color: #fff;
+	--h3: #03dddd;
+	--h4: #00afdb;
+	--h5: #638ef3;
+	--a-color: #3d81b1;
+	--a-color-hover: #42aacd;
+	--important-color: #ff4373;
+
+	--strong-rule-color: #a5bed0;
+
+	--opt-bg: #1f1f1f;
+	--opt-color: #aaa;
+	--opt-border: 1px solid #1f1f1f;
+
+	--donate-color: #fff;
+}

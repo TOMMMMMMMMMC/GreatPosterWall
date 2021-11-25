@@ -1,0 +1,35 @@
+/* Base */
+@import 'variables-light.css';
+@import 'variables-dark.css';
+@import 'origin-global.css';
+@import 'origin.css';
+@import 'base.css';
+
+/* Components */
+@import 'list.css';
+@import 'alert.css';
+@import 'btn.css';
+@import 'input.css';
+@import 'head-body.css';
+@import 'table.css';
+@import 'torrent-table.css';
+@import 'form-validation.css';
+@import 'screenshot-comparison.css';
+@import 'bbcode-toolbar.css';
+@import 'bbcode-preview.css';
+@import 'lightbox.css';
+@import 'tooltipster.css';
+@import 'dropdown-menu.css';
+
+/* Sections */
+@import 'header.css';
+@import 'sidebar.css';
+@import 'movie-info.css';
+
+/* Pages */
+@import 'torrents.css';
+@import 'torrents-details.css';
+@import 'forum.css';
+@import 'upload.css';
+@import 'requests.css';
+@import 'reports.css';

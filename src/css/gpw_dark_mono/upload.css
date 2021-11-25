@@ -1,0 +1,69 @@
+#upload form:not(.autofilled, .no-imdb-id) .collapse {
+  display: none;
+}
+
+#upload .create_form,
+#requests .request_form {
+  background: var(--box-bg);
+  border: var(box-border);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Paddings */
+#upload form#upload_table {
+  padding: 10px 20px;
+}
+#upload .toolbar > td {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#upload .toolbar + tr > td {
+  padding-top: 2px;
+}
+#upload :is(input, textarea, select) {
+  margin: 0;
+}
+#upload .items .item:not(:first-of-type) {
+  margin-top: 10px;
+}
+#upload .items .item.artist > :is(input, select) {
+  margin-right: 5px;
+}
+
+#imdb_autofill_table {
+  margin-bottom: 3px;
+}
+
+#upload tr#movie_feature_tr > td {
+  border-bottom: var(box-border);
+}
+
+#upload tr#movie_synopsis_tr > td,
+#upload tr#movie_edition_information_tr > td,
+#upload tr#movie_feature_tr > td,
+#upload tr#marks_tr > td,
+#upload tr#edition_title > td {
+  padding-bottom: 18px !important;
+}
+
+#upload tr#movie_feature_tr + tr > td,
+#upload tr.section_tr > td,
+#upload tr#releasetype_tr > td {
+  padding-top: 18px !important;
+}
+
+#upload tr > td.label {
+  vertical-align: top;
+  width: 20%;
+}
+
+#upload #dynamic_form > table:first-child + table {
+  margin-top: 18px;
+}
+
+:is(#upload, #torrents.edit) .toolbar .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}

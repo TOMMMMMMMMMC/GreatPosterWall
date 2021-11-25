@@ -1,0 +1,6 @@
+{% block subject %}
+{{ Username }} recommended you {{ Article }} {{ Type }}!
+{% endblock %}
+{% block body %}
+{{ Username }} recommended you the {{ Type }} [url={{ SITE_URL }}/{{ Link }}]{{ Name }}[/url].
+{% endblock %}

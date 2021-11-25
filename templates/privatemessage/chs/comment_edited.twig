@@ -1,0 +1,6 @@
+{% block subject %}
+你的评论 #{{ PostID }} 已被编辑
+{% endblock %}
+{% block body %}
+你有一条评论已被 [url={{ SITE_URL }}/user.php?id={{ UserID }}]{{ Username }}[/url] 编辑：[url]{{ SITE_URL }}/comments.php?action=jump&postid={{ PostID }}[/url]。
+{% endblock %}

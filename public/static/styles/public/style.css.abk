@@ -1,0 +1,137 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: #041813;
+	font-family: Bitstream Vera Sans, Tahoma, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+}
+
+
+table {
+	font-size: inherit;
+}
+
+a {
+	color: #f7f4f4;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #888888;
+}
+
+input[type="text"], input[type="password"] {
+	padding: 1px 3px 0px 3px;
+	font-family: "tahoma", "arial", "helvetica", "sans-serif";
+	font-size: 8pt;
+	width: 200px;
+}
+
+input[type="text"]:valid, input[type="password"]:valid {
+	border-style: none;
+}
+
+input[type="text"]:invalid, input[type="password"]:invalid {
+	border-top-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-right-style: solid 2px;
+	border-color: red;
+}
+
+#head, #foot {
+	height: 6%;
+	min-height: 25px;
+	width: 100%;
+	background-color: #041813;
+	overflow: hidden;
+}
+
+#foot {
+	text-align: center;
+}
+
+#foot > span,#head > span {
+	top: 35%;
+	position: relative;
+	padding: 20px;
+}
+
+#foot > span {
+	color: #393939;
+}
+#link {
+	height: 2%;
+	padding-left: 50px;
+	width: 90%;
+	background-color: #041813;
+	overflow: hidden;
+}
+#foot > a {
+	color: #393939;
+}
+
+#maincontent {
+	width: 100%;
+	height: 88%;
+}
+
+#logo {
+                background-size:100%;
+	height: 145px;
+	width: 200px;
+	background-repeat: no-repeat;
+	background-image: url('images/loginlogo.png');
+	background-position: top center;
+	padding: 10px 0 0 0;
+	text-align: center;
+}
+
+#logo ul {
+	float: left;
+	left: 49%;
+	margin: 0 auto;
+	position: relative;
+}
+
+#logo ul li {
+	float: left;
+	position: relative;
+	right: 50%;
+	margin: 9.5em 1em 0 0;
+	list-style: none;
+}
+
+#logo ul li:last-child {
+	margin: 9.5em 0 0 0;
+}
+
+.auth_form .layout {
+	padding-right: 40px;
+}
+
+.poetry {
+	width: 320px;
+}
+
+.hidden {
+	display: none;
+}
+
+.info {
+	color: green;
+	font-weight: bold;
+}
+
+.warning {
+	color: red;
+	font-weight: bold;
+}

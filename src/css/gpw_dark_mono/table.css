@@ -1,0 +1,145 @@
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+table.table_in_text {
+  border-collapse: collapse;
+}
+table td,
+table th {
+  padding: 7px;
+}
+table td.center {
+  vertical-align: middle;
+}
+table td.center[colspan='2'] {
+  display: table-cell;
+}
+table td.center[colspan='2'] > span[style='float: right;'] {
+  float: none !important;
+  margin-left: 20px;
+}
+table .colhead td,
+table .colhead_dark td {
+  font-size: 1.1rem;
+}
+
+/* HeadBody Table */
+/*
+- #torrents .requests_list 请求格式
+- #torrents .reportinfo_table  查看报告信息
+*/
+#user table,
+#donate table,
+#tools #application_record_list,
+#tools .permissions table,
+#bonus table,
+#inbox table,
+#friends table,
+#donation_manager,
+#torrents .requests_list table,
+#torrents .reportinfo_table,
+#upload #dnulist table {
+  margin-bottom: 20px;
+  background: var(--box-bg);
+  border: var(--box-border);
+  border-radius: 5px;
+}
+#donation_manager .colhead td,
+#user table .colhead td,
+#user table .colhead_dark td,
+#donate table .colhead td,
+#donate table .colhead_dark td,
+#tools #application_record_list .colhead td,
+#tools .permissions table .colhead td,
+/* #reportsv2 table .colhead td, */
+#bonus table .colhead td,
+#inbox table .colhead td,
+#friends table .colhead td,
+#torrents .requests_list table .colhead td,
+#torrents .reportinfo_table .colhead_dark td,
+#upload #dnulist table .colhead td {
+  padding: 10px;
+  background: var(--box-header);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  /* border-bottom: 1px solid #363636; */
+  font-size: 1.1rem;
+}
+#torrents .requests_list table {
+  width: 95%;
+}
+
+/* Search Table */
+#torrents #content .search_form,
+#requests #content .search_form {
+  background: var(--nbbox-bg);
+  margin-bottom: 15px;
+  border: var(--nbbox-border);
+  border-radius: 5px;
+  padding: 10px;
+  border-bottom: var(--nbbox-border-bottom);
+}
+#torrents #content .search_form.headbody {
+  padding: 0; /* 修复电影页搜索 */
+}
+#torrents #content .search_form .head {
+  background: var(--nbbox-header-bg);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: var(--nbbox-header-border);
+  font-size: 1.1rem;
+}
+#torrents .filter_torrents .head span:last-child {
+  margin-left: auto;
+}
+#torrents .filter_torrents tbody {
+  overflow: unset;
+}
+#torrents .filter_torrents .submit {
+  display: flex;
+  padding: 8px;
+}
+#torrents .filter_torrents .submit span:first-child {
+  margin-right: auto;
+  align-self: center;
+}
+#torrents .filter_torrents #ft_container > table.ft_cat_list.cat_list tr {
+  display: flex;
+  justify-content: center;
+}
+#torrents #ft_container #taglist tbody tr {
+  grid-template-columns: repeat(7, 1fr);
+}
+#torrents #ft_container > table.layout:nth-of-type(1) tr {
+  display: grid;
+  position: relative;
+  align-items: center;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 170px 170px 170px 1fr;
+}
+#torrents #ft_container > table.layout:nth-of-type(1) tr#director_year {
+  grid-template-columns: 1fr 260px 80px 170px 1fr;
+}
+@media (max-width: 425px) {
+  #torrents #ft_container > table.layout:nth-of-type(1) tr {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  #torrents #ft_container > table.layout:nth-of-type(1) tr#director_year {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.poltimg > img {
+  border-radius: 5px;
+}
+
+.imdbrating {
+  /* border-bottom: 1px solid #393939; */
+}
+#tools .permissions table .colhead + tr > td,
+#reportsv2 table tr.colhead ~ tr > td,
+table:not(.torrent_table):not(.cmp-torrent-table) tr.colhead_dark + tr > td {
+  border-top: var(--box-border);
+}

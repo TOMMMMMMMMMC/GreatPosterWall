@@ -1,0 +1,55 @@
+.bbcode-preview-html,
+.bbcode-preview-text {
+  min-height: 250px;
+}
+
+/* MediaInfo  */
+:is(.mediainfo-table, .bdinfo-table) {
+  border: 1px solid #393939;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+:is(.mediainfo-table, .bdinfo-table) > tbody > tr > td {
+  border: 1px solid #393939;
+  padding: 5px;
+}
+
+:is(.mediainfo-table, .bdinfo-table) > tbody > tr > td:nth-child(1) {
+  min-width: 160px;
+}
+
+:is(.mediainfo-table, .bdinfo-table) > tbody > tr > td:nth-child(2) {
+  min-width: 260px;
+}
+
+:is(.mediainfo-table, .bdinfo-table)
+  > tbody
+  > tr
+  > td
+  > table
+  > tbody
+  > tr
+  > td {
+  padding: 0 2px;
+}
+
+:is(.mediainfo-table, .bdinfo-table) caption {
+  font-weight: 700;
+  border-bottom: 1px solid #393939;
+}
+
+:is(.mediainfo-table, .bdinfo-bbcode) > pre {
+  border: 1px solid #393939;
+  padding: 10px;
+}
+
+:is(.mediainfo-table, .bdinfo-bbcode) .General .key {
+  min-width: 60px;
+}
+:is(.mediainfo-table, .bdinfo-bbcode) .Video .key {
+  min-width: 70px;
+}
+:is(.mediainfo-table, .bdinfo-bbcode) .Audio .key {
+  min-width: 15px;
+}

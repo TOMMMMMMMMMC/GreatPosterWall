@@ -1,0 +1,340 @@
+/*
+Torrent table -> see torrent-table
+  .movie_info_crumbs 
+Torrent Detail
+  .torrent_imdb_info_container
+*/
+
+#content .thin .torrent_imdb_info_container > .box {
+  border-radius: 5px;
+}
+
+#content .thin .torrent_imdb_info_container .body {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: 0;
+}
+
+.torrent_imdb_info_container .imdbtitle > h11 > small {
+  font-weight: normal;
+}
+
+.torrent_imdb_info_container .rating {
+  /* justify-self: flex-end; */
+  display: flex;
+  flex-flow: wrap;
+  /* margin-bottom: 10px; */
+}
+
+#rt_rating,
+#douban_rating,
+.imdbratingb {
+  display: flex;
+  align-items: center;
+}
+
+#rt_rating > span,
+#douban_rating > span,
+.imdbratingb span {
+  line-height: 1;
+  font-size: 20px;
+}
+
+#rt_rating > a,
+#douban_rating > a,
+.imdbratingb > a {
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#douban_logo {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #2f973e;
+  color: #2f973e;
+  padding: 0 5px;
+  font-weight: bold;
+  text-shadow: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#rt_logo {
+  width: 20px;
+  height: 20px;
+}
+
+.torrent_imdb_info_container .imdbname + h2,
+.torrent_imdb_info_container .imdbtitle + h2 {
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+
+
+.torrent_imdb_info_container #synopsis > p {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.torrent_imdb_info_container #synopsis.overflown > p {
+  cursor: pointer;
+}
+
+.torrent_imdb_info_container #synopsis.expand > p {
+  -webkit-line-clamp: inherit;
+}
+
+
+
+.torrent_imdb_info_container .tag_crumbs {
+  padding: 3px 5px;
+  margin: 0 5px 2px 0;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+
+
+.torrent_imdb_info_container .info_crumbs:last-child {
+  border-right: none;
+}
+
+.torrent_imdb_info_container .info_crumbs:hover,
+.torrent_imdb_info_container .tag_crumbs:hover {
+  color: #fff;
+}
+
+.torrent_imdb_info_container .info_crumbs > span > a {
+  color: #b6b6b6;
+}
+
+.torrent_imdb_info_container .imdb_artists {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(6, 130px);
+  gap: 5px;
+  overflow-x: scroll;
+}
+
+.torrent_imdb_info_container .imdb_artist {
+  width: 130px;
+  text-align: center;
+}
+
+.torrent_imdb_info_container .imdb_artist img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  margin: 0 auto 5px;
+  border-radius: 4px;
+}
+
+
+.imdb_info {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  padding: 20px;
+  overflow: hidden;
+  column-gap: 20px;
+  row-gap: 15px;
+}
+
+.imdb_info.artist_imdb_info {
+  grid-template-columns: 250px 1fr;
+}
+
+.imdb_info > div:not(.img_box) {
+  grid-column: 2 / 3;
+}
+
+.imdb_info > div.imdb_artists {
+  align-self: flex-end;
+}
+
+.imdb_info > div.imdb_artists::-webkit-scrollbar {
+  display: none;
+}
+
+.imdb_info > div.imdb_artists > .imdb_artist > a > p {
+  margin-bottom: 0;
+}
+
+.imdb_info > .img_box {
+  grid-row: 1 / 5;
+  min-height: 300px;
+  position: relative;
+  z-index: 1;
+}
+
+.imdb_info #right {
+  text-align: left;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
+
+.torrent_imdb_info_container .imdbratingb {
+  /* border-radius: 5px; */
+  /* background: #ddd; */
+  padding: 0;
+  margin-right: 15px;
+  /* color: #fff; */
+  /* width: 100%; */
+  /* height: 40px; */
+}
+
+#imdb_logo_svg {
+  height: 20px;
+  width: 40px;
+}
+
+.rating h13 {
+  float: left;
+  top: 7px;
+  padding-left: 20px;
+  padding: 10px 0px 10px 40px;
+}
+
+.cont li {
+  /* height: 38px; */
+  border-bottom: 1px dotted #999;
+  margin: 5px 15px;
+  font-size: 13px;
+}
+
+.cont li:last-child {
+  border-bottom: none;
+}
+
+.cont li > * {
+  padding: 8px 0;
+  display: inline-block;
+}
+
+.cont li strong {
+  margin-right: 15px;
+}
+
+#content .thin .torrent_imdb_info_container .body .poster_bg {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+#content .thin .torrent_imdb_info_container .body .poster_bg > img {
+  height: 80vh;
+}
+
+#content .thin .torrent_imdb_info_container .torrent_imdb_info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr auto;
+  padding: 30px;
+  max-height: 400px;
+  /* background: linear-gradient(to bottom, rgba(56, 57, 59, 0.2) 0%, rgba(46, 54, 69, 0.9) 70%);
+    text-shadow: 0 1px 1px black; */
+  overflow: hidden;
+  column-gap: 30px;
+}
+
+#content .thin .torrent_imdb_info_container .torrent_imdb_info .poster {
+  grid-row: 1 / 3;
+}
+
+#content .thin .torrent_imdb_info_container .torrent_imdb_info .poster > img {
+  height: 100%;
+}
+
+#content .thin .torrent_imdb_info_container .torrent_imdb_info .information {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  margin-top: 30px;
+  row-gap: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .imdb_info {
+    grid-template-rows: auto 1fr auto auto;
+  }
+
+  .imdb_info > div.img_box {
+    grid-row: 1 / 3;
+  }
+
+  .imdb_info > div#synopsis,
+  .imdb_info > div.imdb_artists {
+    grid-column: 1 / 3;
+  }
+
+  .torrent_imdb_info_container .imdbtitle {
+    grid-template-columns: 1fr;
+  }
+
+  .torrent_imdb_info_container .imdbtitle .rating {
+    justify-self: flex-start;
+  }
+}
+
+div.torrent_imdb_info_container {
+  border: 1px solid #393939;
+  border-radius: 5px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px !important;
+  overflow: hidden;
+}
+
+.torrent_imdb_info_container .imdbtitle > h11 > small {
+  color: #777;
+}
+
+
+.torrent_imdb_info_container .imdb_artists {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.torrent_imdb_info_container .imdb_artists::-webkit-scrollbar {
+  display: none;
+}
+
+.torrent_imdb_info_container .imdb_artist img.default_photo {
+  content: url('https://ptpimg.me/72j48o.png');
+}
+
+.torrent_imdb_info_container .cont {
+  margin-bottom: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  height: 30px;
+}
+.torrent_imdb_info_container .imdbcont > .cont,
+.torrent_imdb_info_container .tag_crumbs {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+}
+
+.torrent_imdb_info_container .info_crumbs {
+  padding: 0 10px;
+  border-right: 1px solid #393939;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 5px;
+  color: var(--text);
+}
+
+.torrent_imdb_info_container .info_crumbs .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.torrent_imdb_info_container .lack_of_info {
+  filter: grayscale(1);
+}

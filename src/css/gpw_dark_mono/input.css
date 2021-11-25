@@ -1,0 +1,69 @@
+/* cleanup */
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='text'],
+input[type='url'] {
+  outline: none;
+  box-sizing: border-box;
+  height: 26px;
+  margin: 5px 2px;
+  max-width: 100%;
+  transition: all 0.3s ease;
+  background-color: var(--input-bg);
+  border: var(--input-border);
+  border-radius: 5px;
+  color: var(--input-text);
+  padding: 4px 7px;
+}
+textarea {
+  background-color: var(--input-bg);
+  border: var(--input-border);
+  border-radius: 5px;
+  color: var(--input-text);
+  min-height: 200px;
+  outline: none;
+  box-sizing: border-box;
+  margin: 5px 0;
+  max-width: 100%;
+  transition: all 0.3s ease;
+  padding: 4px 7px;
+  line-height: 17px;
+  resize: vertical;
+  width: 100%;
+}
+input[style*='width: 98%'],
+textarea[style*='width: 98%'] {
+  width: 100% !important;
+}
+form[name='notification'] textarea {
+  min-height: 60px;
+}
+form textarea,
+form input {
+  max-width: 100%;
+}
+#torrents .edit_form textarea {
+  min-height: 100px;
+}
+
+/* cmp-input */
+/*
+<input class="cmp-input" />
+*/
+input.cmp-input {
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: var(--input-border);
+  box-shadow: none;
+  box-sizing: border-box;
+  font-size: 1rem;
+  height: 26px;
+  margin: 0;
+  padding: 2px 9px;
+  position: relative;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+}

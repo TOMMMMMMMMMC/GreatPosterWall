@@ -1,0 +1,31 @@
+
+/* 
+.cmp-list
+  .list-item
+    .list-actions
+      .list-action vote-up hover-to-show
+			..
+*/
+.cmp-list .list-item {
+  display: flex;
+	align-items: center;
+}
+.cmp-list .list-actions {
+	display: flex;
+	align-items: center;
+  margin-left: auto;
+}
+/* override link color */
+.cmp-list a.list-action  {
+  color: var(--text-color);
+}
+.cmp-list .icon {
+	width: 16px;
+	height: 16px;
+}
+.cmp-list .list-action.hover-to-show {
+  visibility: hidden;
+}
+.sidebar .list-item:hover .list-action.hover-to-show {
+	visibility: visible;
+}

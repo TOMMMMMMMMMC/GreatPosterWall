@@ -1,0 +1,7 @@
+{% block subject %}
+你已被警告
+{% endblock %}
+{% block body %}
+你被 [url={{ SITE_URL }}/wiki.php?action=article&amp;name=警告]警告了 {{ WarnLengthWeeks }}[/url]，处理人是 [user]{{ LoggedUserUsername }}[/user]。理由如下：
+[quote]{{ WarnReason }}[/quote]
+{% endblock %}

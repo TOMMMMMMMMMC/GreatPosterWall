@@ -1,0 +1,491 @@
+/* Torrent Table
+TOC
+  begin
+  movie info
+  description
+
+<table class="cmp-torrent-table torrent_table">
+  <tr class="colhead">
+  <tr class="group">     海报
+  <tr class="editon">    高清
+  <tr class="edition_1"> 种子
+  <tr class="edition_1 torrentdetails hidden"> 种子介绍
+</table>
+- #torrents  电影浏览, 电影浏览未分组, 电影详情, 我的发布
+- #artist    艺术家
+- #reportsv2 种子报告
+- #bookmarks 我的收藏
+ */
+
+/* TODO: cleanup */
+#collage .thin .collage_table {
+  grid-column: 1 / 3;
+  max-width: 1160px;
+}
+.noty_bar .noty_message,
+#log #log_table tr.colhead,
+#dynamicImg + table .colhead,
+#forums .thin > .forum_index .colhead,
+#staffpm #inbox .vertical_space .head,
+#staff .thin table.staff .colhead,
+#collage #discog_table > tbody > tr.colhead_dark,
+#collage #discog_table > table > tbody > tr.colhead_dark,
+#wiki #content .thin > .header + table > tbody > tr.colhead {
+  min-height: 30px;
+  vertical-align: middle;
+  background-color: var(--box-header);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#collage #discog_table > tbody > tr.colhead_dark > td:nth-child(4),
+#collage #discog_table > tbody > tr.colhead_dark > td:nth-child(5),
+#collage #discog_table > tbody > tr.colhead_dark > td:nth-child(6),
+#collage #discog_table > tbody > tr.colhead_dark > td:nth-child(7),
+#collage #discog_table > table > tbody > tr.colhead_dark > td:nth-child(3),
+#collage #discog_table > table > tbody > tr.colhead_dark > td:nth-child(4),
+#collage #discog_table > table > tbody > tr.colhead_dark > td:nth-child(5),
+#collage #discog_table > table > tbody > tr.colhead_dark > td:nth-child(6) {
+  justify-content: flex-end;
+  text-align: right;
+}
+#forums .forum_list .forum_index > tbody > tr > td:last-child,
+#forums .forum_list .forum_index > tbody > tr > td:nth-last-child(2),
+#inbox #messageform .message_table > tbody > tr > td:nth-last-child(2) {
+  padding-right: 1rem;
+  justify-content: flex-end;
+  text-align: right;
+}
+div.post_container.border {
+  display: block;
+  border-radius: 5px;
+  overflow: hidden;
+  border: var(--box-border);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+#artist .torrent_table:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+#better .torrent_table > tbody > tr.colhead {
+  display: table-row;
+}
+
+/* begin */
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table,
+.cmp-torrent-table) {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(221, 221, 221, 0.075);
+  border: var(--box-border);
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody
+> tr.group {
+  /* background-color: rgba(0, 0, 0, 0.3); */
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody
+> tr[class*='edition'] {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody
+> tr[class*='edition_'] {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody > tr:not(.torrentdetails)
+> td {
+  /* .torrentdetails 电影详情种子描述 */
+  padding: 7px;
+  align-items: center;
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody > tr:not(.torrentdetails)
+> td.cats_col {
+  padding: 0px !important;
+  width: 0px;
+}
+:is(#torrents .torrent_table.show, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table.large-head) > tbody > tr.colhead_dark
+> td {
+  padding: 10px; /* 和侧栏艺术家对齐 */
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody > :is(tr.colhead, tr.colhead_dark)
+> td {
+  background: var(--box-header);
+  font-size: 1.1rem;
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody > tr:not(:last-child)
+> td {
+  border-bottom: var(--box-border);
+}
+:is(#torrents .torrent_table.show, #artist .torrent_table.show, .cmp-torrent-table.is-last-tr-hidden) > tbody > tr:nth-last-child(2)
+> td {
+  border-bottom: none; /* 电影详情最后一个tr是hidden */
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody > :is(tr.colhead, tr.colhead_dark)
+> td:first-child {
+  border-top-left-radius: 5px;
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody > :is(tr.colhead, tr.colhead_dark)
+> td:last-child {
+  border-top-right-radius: 5px;
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody >
+  :is(tr.colhead, tr.colhead_dark) .icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text);
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody > tr
+> td.m_hidden {
+  /* 报告空Poster */
+  width: 0px;
+  padding: 0px;
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody > tr.group
+> td:first-child {
+  width: 40px;
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody > tr
+> td.number_column {
+  text-align: right;
+}
+:is(#torrents .torrent_table, .cmp-torrent-table.special-number-column) > tbody > tr >
+td.number_column {
+  padding: 0 20px !important;
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody > tr > td.td_info
+> span {
+  /* DL links */
+  float: right;
+  padding-left: 20px;
+}
+:is(#torrents .torrent_table, #artist .torrent_table, #reportsv2 .torrent_table, #bookmarks .torrent_table, .cmp-torrent-table) > tbody > tr > td
+> strong {
+  font-weight: normal;
+}
+@media (max-width: 468px) {
+  :is(#torrents .torrent_table, .cmp-torrent-table.special-number-column) > tbody > tr >
+  td.number_column {
+    padding: 0 2px !important;
+  }
+}
+
+/* Torrent Poster
+  *
+  */
+#top10 h3 + table#discog_table {
+  display: block;
+  background-color: rgba(221, 221, 221, 0.075);
+  overflow: hidden;
+  /* overflow-x: auto;
+    overflow-y: hidden; */
+  border: var(--box-border);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+#top10 h3 + table#discog_table tr.colhead_dark {
+  min-height: 30px;
+  vertical-align: middle;
+  background-color: var(--box-header);
+}
+#log #log_table,
+#top10 .torrent_table,
+#requests .request_table {
+  border-radius: 5px;
+  border: var(--box-border);
+  /* border-bottom: none; */
+  background: rgba(221, 221, 221, 0.075);
+}
+#log #log_table .colhead,
+#top10 .torrent_table .colhead,
+#requests .request_table .colhead_dark {
+  background: var(--box-header);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 1.1rem;
+}
+
+/* Bookmark */
+:is(#torrents, #bookmarks, #top10, #artist) :is(.remove_bookmark, .add_bookmark) svg {
+  color: #777;
+}
+:is(#torrents, #bookmarks, #top10, #artist)
+  :is(.add_bookmark svg.remove-icon, .remove_bookmark svg.add-icon) {
+  display: none;
+}
+
+/* Slot */
+/* slot-filters */
+.cmp-torrent-table .slot-filters
+.slot_filter_button {
+  font-size: 14px;
+  opacity: .4;
+  margin: 0 7px;
+}
+.cmp-torrent-table .slot-filters
+.slot_filter_button:hover {
+  opacity: 0.8;
+}
+.cmp-torrent-table .slot-filters
+.slot_filter_button.is-active {
+  opacity: 1;
+}
+.cmp-torrent-table .slot-filters
+.slot_filter_button#slot_filter_all_quality_slot > i {
+  color: #afd2ff !important
+}
+.cmp-torrent-table .slot-filters
+.slot_filter_button#slot_filter_clear_slot{
+  color: #ff4373
+}
+.cmp-torrent-table .slot-filters
+.slot_filter_button#slot_filter_cn_quality_slot{
+  color: #FFCD8C
+}
+.cmp-torrent-table .slot-filters
+.slot_filter_button#slot_filter_en_quality_slot{
+  color: #FF99E0
+}
+.cmp-torrent-table .slot-filters
+:is(.slot_filter_button#slot_filter_retention_slot, .slot_filter_button#slot_filter_feature_slot) {
+  color: #86DB79
+}
+.cmp-torrent-table .slot-filters
+:is(.slot_filter_button#slot_filter_remux_slot, .slot_filter_button#slot_filter_untouched_slot, .slot_filter_button#slot_filter_diy_slot) {
+  color: #91daee
+}
+/* slot-container */
+td.empty_slot_container{
+  color: #777;
+}
+td.highlight_slot_name{
+  color: #ddd;
+}
+td.no_padding{
+  padding: 0 !important;
+}
+.cmp-torrent-table > tbody >
+tr > td.slot-container {
+  padding: 0 !important;
+}
+.cmp-torrent-table > tbody >
+tr[data-slot="cn_quality"] > td.slot-container {
+  border-right: 1px solid #FFCD8C;
+}
+.cmp-torrent-table > tbody >
+tr[data-slot="en_quality"] > td.slot-container {
+  border-right: 1px solid #FF99E0;
+}
+.cmp-torrent-table > tbody >
+tr[data-slot="quality"] > td.slot-container {
+  border-right: 1px solid #FF99E0;
+}
+.cmp-torrent-table > tbody >
+tr:is([data-slot="retention"], [data-slot="feature"]) > td.slot-container {
+  border-right: 1px solid #86DB79;
+}
+.cmp-torrent-table > tbody >
+tr:is([data-slot="diy"], [data-slot="remux"], [data-slot="untouched"]) > td.slot-container {
+  border-right: 1px solid #91daee;
+}
+.cmp-torrent-table > tbody >
+tr:is([data-slot="empty"]) > td.slot-container {
+  border-right: 1px solid transparent;
+}
+tr.submit_tr>td{
+  background-color: var(--box-header);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+select.slot_selector{
+  width: 200px;
+}
+
+/* Torrent Label */
+.torrent_table .torrent_label.torrent_discount {
+  color: #fff;
+  padding: 0 3.5px;
+  border-radius: 3px;
+  font-weight: 400 !important;
+  font-size: 13px;
+  display: inline-block;
+  transform: scale(0.85, 0.72) translateY(2px);
+}
+.torrent_table .torrent_label.torrent_discount.free {
+  background-color: #0055ff;
+}
+.torrent_table .torrent_label.torrent_discount.three_fourth_off {
+  background-color: #622ca8;
+}
+.torrent_table .torrent_label.torrent_discount.two_fourth_off {
+  background-color: #8d4b44;
+}
+.torrent_table .torrent_label.torrent_discount.one_fourth_off {
+  background-color: #3e6e7b;
+}
+.torrent_table .torrent_label.torrent_discount.neutral {
+  background-color: #55666f;
+}
+.torrent_table .torrent_label.tl_notice {
+  font-weight: bold;
+}
+.torrent_table .torrent_label.tl_reported {
+  color: #d39911;
+}
+.torrent_table .torrent_label.tl_trumpable {
+  color: #d46d3d;
+}
+.torrent_table .torrent_label.tl_snatched {
+  color: #00bc8c;
+}
+.torrent_table .torrent_label.tl_free {
+  font-weight: bold;
+}
+
+.tablesorter-header-inner {
+  text-align: left;
+}
+
+/* movie info
+.movie-info
+  .movie-info-poster
+  .movie-info-content
+    .movie-info-title
+    .movie-info-subtitle
+    .movie-info-facts
+      .movie-info-facts-item
+    .movie-info-tags
+      .tags-item
+    .movie-info-action
+    .movie-info-created-at
+*/
+.cmp-torrent-table .movie-info {
+  display: flex;
+  gap: 10px;
+}
+.cmp-torrent-table .movie-info-poster {
+  width: 100px;
+}
+.cmp-torrent-table .movie-info-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 5px;
+  width: 100%;
+}
+.cmp-torrent-table .movie-info-title a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #b0b0b0;
+}
+.cmp-torrent-table .movie-info-title a:hover {
+  color: #ccc;
+}
+.cmp-torrent-table .movie-info-year {
+  color: #777;
+}
+.cmp-torrent-table .movie-info-subtitle {
+  font-size: 15px;
+}
+.cmp-torrent-table .movie-info-facts {
+  border-radius: 5px;
+  display: inline-flex;
+  font-size: 12px;
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  width: fit-content;
+}
+.cmp-torrent-table .movie-info-facts-item {
+  display: flex;
+  padding: 2px 8px;
+  color: #999;
+  align-items: center;
+  gap: 5px;
+}
+.cmp-torrent-table .movie-info-facts-item:not(:last-child) { 
+  border-right: 1px solid #393939;
+}
+.cmp-torrent-table .movie-info-facts-item a {
+  color: #999;
+}
+.cmp-torrent-table a:hover {
+  color: #64b5f6;
+}
+.cmp-torrent-table .movie-info-facts-item .icon {
+  width: 12px;
+  height: 12px;
+}
+.cmp-torrent-table .movie-info-tags {
+  font-size: 12px;
+  line-height: normal;
+  visibility: hidden;
+}
+.cmp-torrent-table .movie-info-tags a {
+  border-radius: 5px;
+  display: inline-block;
+  visibility: visible;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #999;
+  padding: 3px 5px;
+}
+.cmp-torrent-table .movie-info-action {
+  position: absolute;
+  right: 0;
+}
+.cmp-torrent-table .movie-info-created-at {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+
+
+.group_image img {
+  cursor: pointer;
+  position: relative;
+}
+.group_image img {
+  transition: transform 0.2s ease;
+  transition-delay: 0.2s;
+  transition-timing-function: cubic-bezier;
+  z-index: 3000;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.group_image img:hover {
+  transform: scale(2);
+  /* transform-origin: 0 0; */
+  z-index: 9000;
+}
+
+div.group_info > div.torrent_specifications {
+  margin-bottom: 12px;
+  padding-left: 26px;
+}
+
+/* description
+TOC
+  .subtitles-container
+    .subtitles-list
+      .subtitles-item
+      ...
+*/
+.cmp-torrent-description .subtitles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cmp-torrent-description .subtitles-list {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.cmp-torrent-description .subtitles-item .icon {
+  width: 20px;
+  height: 20px;
+}
+
+

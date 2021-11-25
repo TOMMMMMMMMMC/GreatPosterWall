@@ -1,0 +1,6447 @@
+/*!
+ * Dolphin for Gazelle v1.0
+ * Copyright 2020 ZexWoo 年份更新过了
+ * Thanks to Redacted
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.5;
+    font-size: 13px;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 400;
+    color: #bbb;
+    text-align: left;
+    height: 100%;
+    background: #1F1F1F url(images/stars.png) repeat 0 0;
+    background-position: top center;
+    background-attachment: fixed;
+    position: relative;
+}
+body::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 10px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+body::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    background-color: #363636;
+    /* background-image: -webkit-linear-gradient(45deg,
+            rgba(255, 255, 255, 0.05) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.05) 50%,
+            rgba(255, 255, 255, 0.05) 75%,
+            transparent 75%,
+            transparent); */
+}
+
+body::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+    background: #000;
+    border-radius: 10px;
+}
+hr.bbcode_hr{
+    border-top: 1px solid #ddd;
+}
+
+/* 元素们 */
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block
+}
+
+option{
+    padding: 4px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 400;
+}
+
+.box h3,
+.box h4,
+.box h5,
+.donation_info_title,
+span.size4,
+span.size5,
+span.size6,
+span.size7,
+span.size8,
+span.size9,
+span.size10 {
+    font-family: apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    line-height: 200%;
+    margin: 0
+}
+
+div.thin > h3:first-child:last-child{
+    margin: 0;
+    padding: 0;
+}
+
+span.size1 {
+    font-size: .8rem
+}
+
+span.size2 {
+    font-size: 1rem
+}
+
+span.size3 {
+    font-size: 1.1rem
+}
+
+span.size4 {
+    font-size: 1.2rem
+}
+
+.box h5,
+span.size5 {
+    font-size: 1.3rem
+}
+
+.box h4,
+span.size6 {
+    font-size: 1.5rem
+}
+
+.box h3,
+span.size7 {
+    font-size: 1.7rem
+}
+
+span.size8 {
+    font-size: 1.9rem
+}
+
+span.size9 {
+    font-size: 2.2px
+}
+
+span.size10 {
+    font-size: 2.5rem
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+div#contentpreview>h3,
+div[id^="preview"]>h3,
+.news_post h3,
+#blog span.size7,
+.forum_post span.size7,
+.content_text h3,
+#wiki .wiki_article h3{
+    color: #3bb8b8;
+    /* display: block; */
+}
+div#contentpreview>h4,
+div[id^="preview"]>h4,
+.news_post h4,
+#blog span.size6,
+.forum_post span.size6,
+.content_text h4,
+#wiki .wiki_article h4{
+    color: #529dc5;
+    /* display: block; */
+}
+div#contentpreview>h5,
+div[id^="preview"]>h5,
+.news_post h5,
+#blog span.size5,
+.forum_post span.size5,
+.content_text h5,
+#wiki .wiki_article h5 {
+    color: #5276ca;
+    /* display: block; */
+}
+strong.important_text>span{
+    color: inherit !important;
+}
+/* .forum_post h3+br,
+.forum_post h4+br,
+.forum_post h5+br, */
+strong.mature {
+    display: none
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    border: none;
+    border-top: 1px solid #555;
+}
+
+ul {
+    margin: 0;
+    padding: 0
+}
+
+ul.nobullet {
+    list-style-type: none
+}
+
+li {
+    margin: 5px 5px 5px 15px;
+}
+
+.nobullet li {
+    margin: 5px
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#rules .header+.box.pad>p:last-child {
+    margin-bottom: 0;
+}
+
+.box.pad>p:first-child:last-child {
+    margin: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    transition: all ease-in-out .3s;
+}
+a.active{
+    color: #009107;
+}
+a:hover {
+    color: #84b3fd;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none
+}
+
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
+    color: inherit;
+    text-decoration: none
+}
+
+a:not([href]):not([tabindex]):focus {
+    outline: 0
+}
+.log_deleted, span[style*="color: red;"] {
+    color: #ec4f4f !important;
+}
+.invalid, .warning, .error, .new {
+    color: #ec4f4f;
+}
+strong.important_text {
+    color: #ec4f4f;
+    font-weight: bold !important;
+}
+
+span.important_text{
+    color: #ec4f4f;
+}
+strong.important_text_alt {
+    color: #b8e88e;
+    font-weight: bold !important;
+}
+span.important_text_alt{
+    color: #b8e88e;
+}
+.log_upload, span[style*="color: green;"] {
+    color: #b8e88e !important;
+}
+span[style*="color: blue;"] {
+    color: #84b3fd !important;
+}
+span[style*="color: #d39911;"] {
+    color: #e7dd47 !important;
+}
+
+
+pre{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: unset;
+    word-break: break-all;
+}
+.last_read {
+    display: inline-block;
+    height: 22px;
+    margin-left: 5px;
+    vertical-align: middle;
+    width: 14px;
+}
+.last_read a {
+    background: url(assets/icons/Forum-Jump-to-last.svg) no-repeat 50%;
+    background-size: 14px 14px;
+    border: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: sans-serif;
+    font-size: 100%;
+    margin: 0
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=text],
+input[type=url] {
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    height: 26px;
+    margin: 5px 2px;
+    max-width: 100%;
+    transition: all .3s ease;
+    background: #111;
+    color: #bbb;
+    border: 1px solid transparent;
+    padding: 4px 7px
+}
+
+textarea {
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    margin: 5px 0;
+    max-width: 100%;
+    transition: all .3s ease-in-out;
+    background: #111;
+    color: #bbb;
+    border: 1px solid transparent;
+    padding: 4px 7px;
+    line-height: 1.5rem;
+    resize: vertical;
+    width: 100%;
+    min-height: 200px;
+}
+
+#torrents .edit_form textarea {
+    min-height: 300px;
+}
+
+input[style*="width: 98%"],
+textarea[style*="width: 98%"] {
+    width: 100% !important
+}
+
+input[type=email]:hover,
+input[type=number]:hover,
+input[type=password]:hover,
+input[type=search]:hover,
+input[type=text]:hover,
+input[type=url]:hover,
+select:hover,
+textarea:hover {
+    background-color: #111;
+}
+
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=text]:focus,
+input[type=url]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    background-color: #111;
+    border: 1px solid #444;
+    color: #bbb
+}
+
+.sidebar input[type=email],
+.sidebar input[type=number],
+.sidebar input[type=password],
+.sidebar input[type=search],
+.sidebar input[type=text],
+.sidebar input[type=url],
+.sidebar textarea,
+.sidebar select {
+    /* background-color: #ffffff; */
+}
+
+.sidebar input[type=email]:focus,
+.sidebar input[type=number]:focus,
+.sidebar input[type=password]:focus,
+.sidebar input[type=search]:focus,
+.sidebar input[type=text]:focus,
+.sidebar input[type=url]:focus,
+.sidebar textarea:focus,
+.sidebar selcet:focus {
+    /* background-color: #ffffff; */
+    border: 1px solid #444;
+}
+
+button,
+input[type=button],
+input[type=submit],
+#top10 .thin .linkbox:nth-of-type(2) a,
+#user h3 a:not(:first-of-type),
+.random_links a {
+    cursor: pointer;
+    outline: 0;
+    transition: all .3s ease-in-out;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2);
+    color: #ffffff;
+    padding: 2px 10px;
+    margin: 5px 2px;
+    height: 26px;
+    font-size: 13px;
+}
+
+button:hover,
+input[type=button]:hover,
+input[type=submit]:hover,
+#top10 .thin .linkbox:nth-of-type(2) a:hover,
+#user h3 a:not(:first-of-type):hover,
+.random_links a:hover {
+    background: #ddd;
+    color: #444;
+}
+
+button:active,
+button:focus,
+input[type=button]:active,
+input[type=button]:focus,
+input[type=submit]:active,
+input[type=submit]:focus,
+#top10 .thin .linkbox:nth-of-type(2) a:active,
+#top10 .thin .linkbox:nth-of-type(2) a:focus,
+#user h3 a:not(:first-of-type):active,
+#user h3 a:not(:first-of-type):focus,
+.random_links a:active,
+.random_links a:focus {
+    box-shadow: none;
+}
+
+input[type=password]:invalid,
+input[type=text]:invalid {
+    /* border: 1px solid #444; */
+    background-color: #292929;
+    color: #999;
+}
+input[type=password]:required,
+input[type=text]:required {
+    /* border: 1px solid #999; */
+    background-color: #111;
+    color: #bbb;
+}
+input[type=password]:required:hover,
+input[type=text]:required:hover {
+    background-color: #111;
+    color: #bbb;
+}
+
+input[type=email]:disabled,
+input[type=password]:disabled,
+input[type=search]:disabled,
+input[type=text]:disabled,
+input[type=url]:disabled,
+textarea:disabled {
+    font-style: italic;
+    color: #808080;
+    text-shadow: 1px 1px 1px #ffffff;
+}
+
+input[type=checkbox],
+input[type=checkbox]+label {
+    cursor: pointer;
+    margin: 3px;
+    vertical-align: middle
+}
+
+input[type=radio],
+input[type=radio]+label {
+    cursor: pointer;
+    margin: 3px;
+    /* vertical-align: middle; */
+}
+
+input[type=radio]+label,
+input[type=checkbox]+label {
+    margin: 0 10px 0 0;
+    /* display: inline-block; */
+    transition: all .3s ease all;
+    color: #bbb
+}
+
+input[type=checkbox]:checked+label {
+    color: #bbb
+}
+
+select {
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 2px;
+    background-color: #111;
+    color: #bbb;
+    border: 1px solid transparent;
+    padding: 0 7px;
+    height: 26px;
+}
+
+select:hover {
+    background-color: #111;
+}
+
+select:focus {
+    background-color: #111;
+    border: 1px solid #444;
+}
+
+blockquote {
+    border-radius: 3px;
+    margin: 4px 5px 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .1);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+}
+
+h4 blockquote {
+    padding: 3px;
+}
+
+table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+table.layout {
+    /* table-layout: fixed; */
+}
+
+table td,
+table th {
+    padding: .5rem;
+}
+
+td.label {
+    text-align: right;
+    vertical-align: middle;
+    /* white-space: nowrap; */
+}
+div.table_container.border>table>tbody>tr.colhead{
+    background-color: #292929;
+}
+div.table_container.border>table>tbody>tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+.head>strong,
+.sidebar .box .body strong,
+div.linkbox strong,
+#torrents .thin table#user_seeding_torrents strong,
+#collage #discog_table>tbody>tr>td strong,
+#requests #request_table>tbody>tr strong,
+#forums .thin>div>.forum_index>tbody>tr>td strong,
+#top10 div.table_container.border strong,
+#top10 h3+table#discog_table strong,
+#torrent_table strong,
+#artist strong,
+td.label>strong,
+#user td>strong,
+#upload #content>h1:first-child+p>strong,
+#torrent_details strong {
+    font-weight: normal;
+}
+#torrent_details .reportinfo_table strong{
+    font-weight: bold;
+}
+
+#torrents .torrentdetails table tbody tr,
+#artist .log_section blockquote pre span,
+#torrents .log_section blockquote pre span,
+#user .invitetree p[style="font-weight: bold;"],
+#reportsv2 #torrent_details tr.torrentdetails table tbody tr {
+    font-weight: normal !important;
+}
+
+
+#torrents .torrentdetails_peers table > tbody > tr > td{
+    white-space: nowrap;
+}
+
+.nobullet>li>h2 {
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+
+/* 元素们 */
+
+/* 字号定义 */
+#forums h3.reward_head {
+    margin-top: 2rem;
+    font-size: 12px;
+    padding: 0;
+    color: #555;
+    text-align: right;
+}
+
+#forums .reward_head+dl.rate {
+    /* border-top: 1px solid #555; */
+    padding: .5rem;
+}
+
+#forums .reward_head+dl.rate table.ratl th,
+#forums .reward_head+dl.rate table.ratl td {
+    padding: 4px;
+}
+
+#forums .reward_head+dl.rate table.ratl thead th:nth-child(1) {
+    width: 100px;
+}
+
+#forums .reward_head+dl.rate table.ratl thead th:nth-child(2) {
+    width: 70px;
+}
+
+#sortable li,
+.album_votes span,
+#torrents .edit_form #releasetype {
+    font-size: 1rem;
+}
+
+#acc_2fa_tr .warning {
+    font-size: 1rem !important;
+}
+
+.colhead td,
+.colhead_dark td {
+    font-size: 1.1rem;
+}
+
+#torrents .torrent_table .group td div.group_info {
+    font-size: 15px;
+}
+#artist .torrent_table .group td div.group_info{
+    font-size: 15px;
+}
+
+#staff .thin div.box.pad>h3 {}
+
+
+.donation_info_title,
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+#userform td:not(.label)>strong{
+    font-weight: bold;
+}
+
+#user div.preview_wrapper {
+    position: relative;
+    display: inline-block;
+    width: 29%;
+    height: 120px;
+    margin: 0 10px 10px;
+}
+#user div.preview_image{
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    display: block;
+    height: 100px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#rules #irc,
+#rules #forums,
+#inbox .thin>h2:first-child {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 0 auto 0;
+    padding: 0 0 5px;
+}
+
+/* 字号定义 */
+
+/* 文字对齐 */
+
+#forums .forum_list .forum_index .colhead td:last-child,
+
+/* #collage .thin .collage_table .colhead td:nth-last-child(1), */
+/* #collage .thin .collage_table .colhead td:nth-last-child(2), */
+#collage .thin .collage_table .colhead td:nth-last-child(3),
+#collage .thin .collage_table .colhead td:nth-last-child(4),
+#forums .forum_list .forum_index .colhead td:nth-last-child(2),
+#torrents .torrentdetails table.filelist_table>tbody>tr>td:nth-child(2) {
+    text-align: right;
+}
+
+#bonus #bprates_overview tr>td,
+#user #userform tr:not(.colhead_dark) td:first-of-type[colspan="2"],
+#torrents .thin div.header+div>form.search_form>table.cat_list td,
+#requests #content .search_form[name="requests"]>table:nth-of-type(2) td {
+    text-align: center;
+}
+
+
+
+div.edited_and_bonus {
+    padding-top: .5rem;
+    margin-top: auto;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+}
+div.edited_and_bonus hr{
+    margin-top: 2rem;
+    margin-bottom: 3px;
+    width: 100%;
+    order: 1;
+}
+div.edited_and_bonus div.last_edited{
+    margin-left: auto;
+    padding: 0;
+    order: 3;
+}
+div.edited_and_bonus div.bonus_as_reward{
+    order: 2;
+}
+
+/* 文字对齐 */
+
+/* 奇怪的家伙们 */
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}
+
+.nobr {
+    white-space: nowrap;
+}
+
+.favoritecount_small {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.head {
+    background: transparent;
+    font-family: apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    font-size: 1.1rem;
+    padding: .5rem 10px;
+}
+
+#rules h4,
+#rules h5,
+.sidebar .colhead_dark,
+.sidebar .head {
+    font-family: apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    padding: 2px 5px 7px 4px;
+    vertical-align: middle;
+}
+
+strong.tl_notice{
+    font-weight: bold !important;
+}
+strong.tl_reported {
+    color: #d39911;
+    /* font-weight: bold !important; */
+}
+strong.tl_trumpable{
+    color: #d46d3d !important;
+    /* font-weight: bold !important; */
+}
+strong.tl_snatched{
+    color: #009107 !important;
+    /* font-weight: bold !important; */
+}
+strong.tl_free{
+    font-weight: bold !important;
+}
+
+.wide_input_text {
+    width: 100%;
+}
+
+.unread {
+    background-image: url(assets/icons/Forum-Unread.svg);
+}
+
+.read {
+    background-image: url(assets/icons/Forum-Read.svg);
+}
+
+.read_locked {
+    background-image: url(assets/icons/Forum-Locked-Read.svg);
+}
+
+.unread_locked {
+    background-image: url(assets/icons/Forum-Locked-Unread.svg);
+}
+
+.read_sticky {
+    background-image: url(assets/icons/Forum-Pinned-Read.svg);
+}
+
+.unread_sticky {
+    background-image: url(assets/icons/Forum-Pinned-Unread.svg);
+}
+
+.read_locked_sticky {
+    background-image: url(assets/icons/Forum-Pinned-Locked-Read.svg);
+}
+
+.unread_locked_sticky {
+    background-image: url(assets/icons/Forum-Pinned-Locked-Unread.svg);
+}
+
+.read,
+.unread,
+.read_locked,
+.unread_locked,
+.read_sticky,
+.unread_sticky,
+.read_locked_sticky,
+.unread_locked_sticky {
+    align-self: center;
+    justify-self: center;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    height: 20px;
+    width: 20px;
+    min-width: 20px;
+}
+
+.header h2,
+.header h2 strong,
+h3 strong {
+    font-weight: 300;
+}
+
+h1+p {
+    margin-bottom: 0;
+}
+
+/* 奇怪的家伙们 */
+
+/* 脑袋 */
+#header {
+    display: grid;
+    padding-bottom: 10px;
+    width: 100%;
+    position: relative;
+    grid-template-columns: 220px auto 220px;
+    grid-template-rows: auto 53px auto auto;
+}
+
+#userinfo {
+    background: #121416;
+    border-bottom: 1px solid #282828;
+    order: -1;
+    grid-column: 1 / 4;
+    /* width: 100%; */
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .3);
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 310px 1fr auto auto;
+    grid-template-rows: auto;
+    cursor: default;
+    height: 34px;
+    padding: 0 5px;
+    text-align: center;
+}
+
+#userinfo ul {
+    padding: 0;
+}
+
+#userinfo ul li {
+    margin: 0;
+    text-align: left;
+    list-style: none;
+}
+
+#userinfo_stats {
+    font-size: .95rem;
+    line-height: 34px;
+    order: 2;
+    vertical-align: middle;
+    overflow: hidden;
+    justify-self: center;
+}
+
+#userinfo_stats li {
+    display: inline-block !important;
+    font-size: .95rem;
+    margin: 0 auto !important;
+    padding: 0 0 0 22px;
+    color: #ffffff;
+}
+
+#userinfo_stats li:first-child {
+    padding-left: 0;
+}
+
+#userinfo_stats li a {
+    color: #ffffff;
+
+}
+
+#userinfo_stats li span {
+    color: #eeeeee;
+
+}
+
+ul#userinfo_major {
+    order: 3;
+    white-space: nowrap;
+    margin-left: auto;
+    z-index: 200;
+}
+
+#userinfo_major li {
+    display: inline-block;
+}
+
+#rules .rule_summary ul>li {
+    list-style: none;
+}
+
+#footer-future span {
+    color: #eeeeee;
+    flex: 1 1 50%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap
+}
+
+#userinfo_major a {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    border-radius: 5px;
+    display: inline-block;
+    height: 30px;
+    margin: 2px;
+    outline: 0;
+    text-indent: -9999px;
+    transition: background-color .2s ease-in-out;
+    visibility: visible;
+    width: 30px;
+}
+
+#userinfo_major a:hover {
+    background-color: rgba(255, 255, 255, .1)
+}
+
+#nav_upload a {
+    background-image: url(assets/icons/Header-Upload-torrent.svg);
+    filter: brightness(200%)
+}
+#nav_image a {
+    background-image: url(assets/icons/Header-Images.svg);
+    filter: brightness(200%)
+}
+
+#nav_logchecker a {
+    background-image: url(assets/icons/Header-Logchecker.svg);
+    filter: brightness(200%)
+}
+
+#nav_invite a {
+    background-image: url(assets/icons/Header-Invite.svg);
+    filter: brightness(200%)
+}
+
+#nav_bonus a {
+    background-image: url(assets/icons/Header-Bonus.svg);
+    filter: brightness(200%);
+}
+
+#nav_donate a {
+    background-image: url(assets/icons/Header-Donate.svg);
+    filter: brightness(200%)
+}
+
+ul#userinfo_username {
+    padding-right: 5px !important;
+    text-align: right;
+    z-index: 100;
+    height: 34px;
+    order: 4;
+    padding: 0 !important;
+    justify-self: right;
+}
+
+ul#userinfo_username:not(:hover)>* {
+    height: 0;
+    visibility: hidden;
+}
+
+ul#userinfo_username #nav_userinfo {
+    display: flex;
+    line-height: 34px;
+    /* position: relative; */
+    /* background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 24px 24px; */
+    /* width: 100%; */
+}
+
+#nav_userinfo {
+    height: 34px !important;
+    visibility: visible !important;
+}
+
+ul#userinfo_username li#nav_userinfo a {
+    background: transparent url(assets/icons/drop-down-3.svg) no-repeat right 8px center;
+    background-size: 12px 12px;
+    display: inline-block;
+    padding: 0 36px 0 10px;
+    margin-left: auto;
+    color: #ffffff;
+}
+
+ul#userinfo_username li#nav_useredit {
+    padding: 2px 2px 1px 2px;
+    background: #333;
+    border-left: none;
+    border-right: none;
+    min-width: 100px;
+    max-width: 130px;
+    margin-left: auto;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2)
+}
+ul#userinfo_username li#nav_ssp {
+    padding: 1px 2px 1px 2px;
+    background: #333;
+    border-left: none;
+    border-right: none;
+    min-width: 100px;
+    max-width: 130px;
+    margin-left: auto;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2)
+}
+
+ul#userinfo_username li#nav_logout {
+    padding: 1px 2px 2px 2px;
+    background: #333;
+    border-left: none;
+    border-right: none;
+    min-width: 100px;
+    max-width: 130px;
+    margin-left: auto;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2)
+}
+
+ul#userinfo_username li:not(#nav_userinfo) a {
+    display: block;
+    height: 26px;
+    padding: 3px 10px;
+    text-align: right;
+    background: #222;
+    color: #bbb;
+    border-radius: 5px;
+}
+
+ul#userinfo_username li:not(#nav_userinfo) a:hover {
+    background-color: #000;
+}
+
+#userinfo_minor {
+    background: transparent url(assets/icons/drop-down-menu.svg) no-repeat left -22px center;
+    background-size: 165px 24px !important;
+    width: 150px;
+    height: 34px;
+    order: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+
+#userinfo_minor li {
+    display: none;
+    width: 130px;
+    padding: 1px 2px;
+    background-color: #292929;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2)
+}
+
+#userinfo_minor li:first-of-type {
+    margin-top: 34px
+}
+
+.r00,
+.r01 {
+    color: #cc364e
+}
+
+.r02 {
+    color: #ff2600
+}
+
+.r03 {
+    color: #ff5e00
+}
+
+.r04 {
+    color: #ff7100
+}
+
+.r05 {
+    color: #ff9700
+}
+
+.r06 {
+    color: #fa0
+}
+
+.r07 {
+    color: #74c42e
+}
+
+.r08,
+.r09,
+.r10,
+.r20,
+.r50,
+.r99 {
+    color: #7dae32
+}
+
+#userinfo_minor:hover li {
+    display: block;
+}
+
+#userinfo_minor li:first-of-type {
+    padding-top: 2px;
+}
+
+#userinfo_minor li:nth-last-child(2) {
+    padding-bottom: 2px;
+}
+
+#userinfo_minor li a {
+    display: block;
+    padding: 3px 10px;
+    z-index: 800;
+    width: auto;
+    height: 26px;
+    color: #bbb;
+    background-color: #222;
+    border-radius: 5px;
+    transition: ease-in-out all .3s;
+}
+
+#userinfo_minor li a:hover {
+    background-color: #000;
+    /* color: #bbb; */
+}
+
+@media only screen and (max-width: 1100px) {
+    #userinfo_stats #stats_required {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    #userinfo_stats #fl_tokens {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 835px) {
+    #userinfo_stats #stats_ratio {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 803px) {
+    #userinfo {
+        grid-template-columns: 1fr auto 1fr;
+        grid-template-rows: 34px 34px;
+        height: 68px;
+    }
+
+    #userinfo_stats {
+        order: 4;
+        grid-column: 1 / 4;
+    }
+
+    #userinfo_stats #stats_required {
+        display: inline-block !important;
+    }
+
+    #userinfo_stats #fl_tokens {
+        display: inline-block !important;
+    }
+
+    #userinfo_stats #stats_ratio {
+        display: inline-block !important;
+    }
+}
+@media only screen and (max-width: 580px){
+    #userinfo_stats #fl_tokensl,
+    #userinfo_major #nav_donate {
+        display: none !important;
+    }
+}
+
+#logo {
+    padding-left: 10px;
+    padding-top: 7px;
+}
+
+#logo a {
+    display: block;
+    width: 200px;
+    height: 68px;
+    background: url(https://greatposterwall.com/static/styles/public/images/loginlogo.png) center no-repeat;
+    background-size: cover;
+}
+
+#alerts {
+    grid-column: 1 / 4;
+}
+
+#alerts .alertbar {
+    color: #eeeeee;
+    padding-bottom: 15px;
+}
+
+#alerts .alertbar>a {
+    display: inline-block;
+    text-align: center;
+    padding: 2px 8px;
+    margin: 2px 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #ffffff;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .07);
+    transition: all .3s ease
+}
+
+#alerts .alertbar>a:hover {
+    display: inline-block;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0);
+    color: #a2c3fa;
+    box-shadow: none;
+}
+
+#searchbars {
+    width: 100%;
+    text-align: center;
+    grid-column: 1 / 4;
+    margin-top: 3px;
+}
+
+#searchbars ul {
+    display: grid;
+    margin: 0 auto;
+    max-width: 735px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 26px;
+}
+
+@media only screen and (max-width: 803px) {
+    #searchbars ul {
+        grid-column: 1 / 4;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 26px 26px;
+        row-gap: 10px;
+        max-width: 370px;
+    }
+}
+
+#searchbars ul li {
+    display: inline;
+    list-style: none;
+    position: relative;
+    margin: 2px 5px;
+    visibility: hidden;
+}
+
+#searchbars ul li form {
+    display: inline;
+}
+
+#searchbars input {
+    box-shadow: none;
+    box-sizing: border-box;
+    font-size: 1rem;
+    height: 26px;
+    margin: 0;
+    padding: 2px 9px;
+    position: relative;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+#searchbars input:focus {
+    background: #eeeeee;
+    color: #222;
+}
+
+#searchbars input,
+#searchbars ul li ul {
+    visibility: visible;
+}
+
+#menu {
+    grid-column: 2 / 3;
+    line-height: 1.5rem;
+    z-index: 3;
+    padding: 5px 0;
+    display: grid;
+    justify-items: center;
+}
+
+@media only screen and (max-width:1150px) {
+    #header {
+        grid-template-rows: auto auto auto auto;
+    }
+
+    #menu {
+        grid-column: 2 / 4;
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width:1150px) {
+    #header {
+        grid-template-rows: auto auto auto auto auto;
+    }
+
+    #logo {
+        grid-column: 1 / 4;
+        padding-left: 0;
+    }
+
+    #logo a {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #menu {
+        grid-column: 1 / 4;
+        text-align: center;
+    }
+}
+
+#menu>ul {
+    display: grid;
+    grid-template-columns: repeat(8, 90px);
+}
+
+@media only screen and (max-width:803px) {
+    #menu>ul {
+        grid-template-columns: repeat(4, 90px);
+        grid-template-rows: auto auto;
+    }
+}
+
+#menu ul * {
+    box-sizing: border-box;
+    transition: all .25s ease
+}
+
+#menu ul li {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    visibility: collapse;
+}
+
+#menu ul li.active {
+    font-weight: bold;
+}
+
+#menu ul li,
+#menu ul li a {
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    text-align: center;
+}
+
+#menu ul li a {
+    border-radius: 5px;
+    font-family: apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    min-width: 85px;
+    overflow: hidden;
+    padding: 11px 5px;
+    transition: all .3s ease;
+    visibility: visible;
+    color: #ffffff;
+
+}
+
+#menu ul li a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .07);
+    color: #ffffff;
+}
+
+#menu ul li a:after {
+    background: linear-gradient(90deg, #81adf8 0, #4285f4);
+    border-radius: 5px;
+    bottom: 3px;
+    content: "";
+    display: block;
+    height: 3px;
+    position: absolute;
+    right: 3px;
+    transition: all .3s ease;
+    width: 0;
+    z-index: 3
+}
+
+#menu ul li a:hover:after {
+    left: 3px;
+    right: unset;
+    width: 78px;
+    z-index: 3
+}
+
+.alertbar {
+    text-align: center;
+}
+
+/* 脑袋 */
+
+/* 主体结构 */
+#content,
+#wrapper {
+    margin: 0 auto
+}
+
+#wrapper {
+    min-width: 500px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    height: 100%;
+}
+
+#content {
+    margin: 15px 20px 0;
+    max-width: 1200px;
+    min-width: 460px;
+    width: 97%;
+    padding: 20px;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    /* overflow: hidden; */
+    background-color: #181818;
+    border: 1px solid #333;
+}
+.grid_container{
+	display: grid;
+    grid-template-columns: 1fr 270px;
+    grid-template-rows: auto;
+    width: auto;
+    grid-column-gap: 20px;
+}
+.grid_container>.main_column {
+    grid-column: 1 / 2;
+    order: 1;
+}
+.grid_container>.sidebar{
+	grid-column: 2 / 3;
+    order: 2;
+    margin-bottom: 0;
+}
+@media only screen and (max-width:803px) {
+	.grid_container{
+		display: block;
+	}
+    .grid_container>.sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .grid_container>.sidebar .box {
+        margin-bottom: 0 !important;
+    }
+}
+
+@media only screen and (max-width:536px) {
+    .grid_container>.sidebar {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto;
+        gap: 15px;
+    }
+}
+
+.header {
+    grid-column: 1 / 3;
+}
+
+.search_form {
+    grid-column: 1 / 3;
+    max-width: 1160px;
+}
+
+.header h2 {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 0 auto 10px;
+    padding: 0 0 5px;
+}
+
+.confirm_form ul{
+    list-style-type: none;
+}
+
+#torrents #content .thin:last-child{
+    margin-bottom: 0;
+}
+
+.filter_torrents {
+    border: none;
+    margin: 0 auto 10px;
+    border-bottom: 1px dotted #999999;
+}
+
+.filter_torrents .head {
+    /* min-height: 35px; */
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #555;
+}
+
+.filter_torrents .head span:last-child {
+    margin-left: auto;
+}
+
+.filter_torrents tbody {
+    overflow: unset;
+}
+
+div.linkbox {
+    grid-column: 1 / 3;
+    /* margin-bottom: 5px; */
+    margin: 6px 4px;
+    text-align: center;
+}
+
+div.linkbox>br:first-child,
+div.linkbox>br:nth-child(2) {
+    display: none;
+}
+
+#torrent_table+div.linkbox {
+    margin-bottom: 0;
+}
+
+
+#torrents .torrent_table,
+#collage .thin .collage_table,
+#bookmarks table.collage_table {
+    grid-column: 1 / 3;
+    max-width: 1160px;
+}
+
+/* 主体结构 */
+
+/* 侧边栏 */
+#content .sidebar .box {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #292929;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1)
+}
+
+#content .sidebar .box:last-child {
+    margin-bottom: 0
+}
+
+#content .sidebar .box .head {
+    padding: 2px 5px 7px 4px;
+    border-bottom: 1px solid #555;
+    font-size: 1.1rem;
+}
+#content .sidebar .box_image .head > span{
+    float: right;
+}
+
+#content .sidebar .box .head+.body {
+    margin-top: 1rem;
+}
+
+#content .sidebar img {
+    width: auto;
+    height: auto;
+    max-height: 400px;
+    max-width: 100% !important;
+}
+td.avatar {
+    /* width: 150px!important; */
+}
+td.avatar img {
+    max-height: 400px;
+    max-width: 150px !important;
+    width: unset;
+}
+
+/* #artistcomments img,
+#request_comments img,
+#torrent_comments img {
+    max-width: 100%;
+} */
+
+#content .sidebar .pad {
+    overflow-wrap: break-word;
+    /* padding: 10px; */
+    margin-top: 10px;
+}
+#content .sidebar .head+.pad{
+    margin: 10px 5px 0 5px;
+}
+#content .sidebar div.box_info.pad {
+    margin-top: 0;
+}
+
+#content .sidebar .pad > a.tooltip{
+    width: 100%;
+}
+
+#content .sidebar .pad textarea {
+    width: 99%;
+}
+
+.sidebar .box #covers p {
+    margin: 0;
+}
+
+/* 侧边栏 */
+
+/* 主要列 */
+#content .main_column>.box {
+    min-width: 400px;
+    width: auto;
+}
+
+#content .main_column .head,
+.blog_post .head {
+    min-width: 350px;
+    padding: 4px 10px 5px;
+    border-bottom: 1px solid #555;
+}
+/* #artist #similar_artist_map>#flipper_head, */
+#artist #artist_information>div#info{
+    /* min-height: 35px; */
+    display: flex;
+    align-items: center;
+}
+#content .main_column .head strong:first-child,
+.blog_post .head strong:first-child {
+    margin-right: 1rem;
+}
+
+#content .main_column .pad,
+.blog_post .pad {
+    padding: 10px;
+    min-width: 350px;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+#content .main_column .pad blockquote pre,
+.blog_post .pad blockquote pre {
+    white-space: pre-wrap;
+}
+
+#content .main_column .pad img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.news_post {
+    line-height: 1.5em;
+    margin-bottom: 40px !important;
+}
+
+.news_post .head {
+    /* min-height: 35px; */
+    font-size: 1.1rem;
+    /* display: flex; */
+    /* align-items: center; */
+}
+.news_post .head>strong{
+    color: #84b3fd;
+    font-weight: bold;
+}
+
+.news_post .head span:last-child {
+    margin-left: auto;
+}
+
+#artist table#requests{
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#artist table#requests > tbody{
+    display: block;
+}
+#artist table#requests > tbody>tr{
+    display: grid;
+    grid-template-columns: 55% 15% 15% 15%;
+    align-items: center;
+}
+#artist table#requests > tbody>tr.colhead_dark{
+    background-color: #292929;
+}
+#artist table#requests > tbody>tr.colhead_dark~tr{
+    border-top: 1px solid #555;
+}
+#artist table#requests > tbody>tr.colhead_dark~tr:nth-child(odd){
+    background-color: #e9e9e9;
+}
+
+#requests .main_column table.layout:first-child>tbody>tr>td:first-child{
+    width: 15%;
+}
+
+/* 主要列 */
+
+/* Tags */
+.sitehistory_event_container .tags,
+table .tags{
+    font-size: 12px;
+    line-height: normal;
+    padding: 2px 0 0;
+    visibility: hidden;
+}
+.sitehistory_event_container .tags a,
+table .tags a{
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    visibility: visible;
+    background: rgba(0, 0, 0, .08);
+    border: 1px solid #555;
+    color: #bbb;
+    padding: 2px 5px;
+}
+.sitehistory_event_container .tags a:hover,
+table .tags a:hover{
+    background:#fff;
+    color: #000;
+}
+
+/* Tags */
+
+/* 盒子 */
+#inbox .thin div.box.vertical_space:not(#preview) {
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+}
+
+/* 盒子 */
+
+/* 边距 */
+#rules .rule_summary li>p,
+#rules .rule_summary:last-child,
+#rules .header>.general:last-child,
+#staff .thin div.box.pad:last-of-type,
+#rules .rule_table>table:last-child,
+#top10 div.table_container.border:last-of-type,
+#comments table.forum_post:last-of-type,
+#rules #actual_rules .box.pad:last-child,
+#staff .thin div.box.pad>table.staff:last-child,
+#requests .thin>.header~.box.pad:last-of-type,
+#friends .thin .box.pad form[name="friends"]:last-of-type,
+#friends .thin .box.pad form[name="friends"]:last-of-type>div.mgb,
+#collage table.forum_post.box.vertical_margin:last-of-type,
+#user .thin>h3+div.box.pad:last-of-type>table[width="100%"],
+#userhistory #content table.forum_post.vertical_margin:last-of-type,
+#tools #content .permissions .permission_container>.permission_subcontainer:last-of-type {
+    margin-bottom: 0;
+}
+
+#artist form.add_form .field_div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+#artist .thin>.header~.box.pad:last-of-type,
+#torrents .thin>.header~.box.pad:last-of-type {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+#artist #content>.thin>.header:first-child+table.border{
+    grid-column: 1 / 3;
+}
+#artist #content>.thin>.header:first-child+table.border tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+
+
+
+#reportsv2 #report-torrent-body>table.layout {
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #999999;
+}
+
+#friends .thin .box.pad form[name="friends"]>.friends_table>tbody>tr:nth-child(2)>td:nth-child(3)>input:first-of-type {
+    margin-top: 0;
+}
+
+#rules #actual_rules .box.pad {
+    padding-top: 0 !important;
+    margin-bottom: 1rem;
+}
+
+#inbox #searchbox {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dotted #999999;
+}
+
+#top10 .search_form {
+    padding: .5rem 0;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #999999;
+}
+
+.forum_post .navigation_list {
+    float: right;
+    margin-bottom: 10px !important;
+    margin-left: 1rem;
+    margin-right: 5px;
+    margin-top: 5px;
+    background: #111;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    width: 50%;
+    max-width: 300px;
+}
+div.mgb~div.mgb{
+    margin-top: 20px;
+}
+#forums div.mgb+div.breadcrumbs{
+    margin-top: 20px;
+}
+#report_post_table_container,
+#report_comment_table_container{
+    margin-bottom: 20px;
+}
+
+div#coverart,
+#torrents table#collages,
+#top10 div.table_container.border,
+#rules .rule_table>table,
+#comments table.forum_post,
+#reportsv2 #torrent_details,
+
+#collage #discog_table>table,
+#torrents table#torrent_details,
+#user #content .main_column .box,
+#torrents table#personal_collages,
+#artist .thin>.header~.box.pad,
+#requests .thin>.header~.box.pad,
+#staff .thin div.box.pad>table.staff,
+#friends .thin .box.pad form[name="friends"],
+#user #content .main_column table#session_box,
+#user #content .main_column table#donation_box,
+#requests .main_column table.layout:first-child,
+#user #content .main_column table#user_info_box,
+#user #content .main_column table#warn_user_box,
+#user #content .main_column table#user_privs_box,
+#user #content .main_column table#donor_points_box,
+#user .thin>h3+div.box.pad>table[width="100%"],
+#user #content .main_column table#warn_user_box+table.layout,
+#tools #content .permissions .permission_container>.permission_subcontainer {
+    margin-bottom: 20px;
+}
+
+#forums .forum_list .forum_index{
+    margin-bottom: 20px;
+}
+#user #content .main_column #recent_uploads,
+#user #content .main_column #recent_snatches,
+#user #content .main_column #recent_uploads~table.layout.recent {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#better #lists+div.box.pad {
+    padding: 0 !important;
+}
+
+#rules .rule_table {
+    padding: 0 !important;
+    margin-bottom: 20px;
+}
+
+#rules .rule_summary {
+    padding: 1rem !important;
+    margin-bottom: 20px;
+}
+
+#requests #content .search_form[name="requests"] {
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+#requests #content .search_form[name="requests"]>table:first-of-type tr {
+    align-items: center;
+}
+
+#requests #content .search_form[name="requests"]>table:last-child {
+    border-bottom: 1px dotted #999999;
+}
+
+#inbox #message_table_container {
+    margin: 15px 0;
+}
+
+#torrents .thin div.header+div:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+div.torrentdetails {
+    margin: 0 auto 15px;
+    width: 96%;
+}
+
+#staff .thin div.box.pad {
+    padding: 5px 0 !important;
+    margin-bottom: 20px;
+}
+
+#upload #content>div:first-child {
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 20px !important;
+}
+
+#friends .thin .box.pad,
+#torrents #reply_box .pad,
+#forums #reply_box>div.box.pad,
+#inbox .thin>h2:first-child+div.linkbox+div.box.pad {
+    padding: 0;
+}
+
+#torrents #torrent_details .torrentdetails>td{
+    padding: 0;
+    display: block !important;
+}
+#reportsv2 #torrent_details tr.torrentdetails>td{
+    padding: 10px;
+    display: block !important;
+}
+
+#rules .rule_summary>ol,
+.sidebar .box ol,
+.sidebar .box ul,
+.sidebar .box ol,
+.sidebar .box ul {
+    padding: 0;
+    margin: 0;
+}
+
+#torrents #edition_title>td:nth-child(2)>input {
+    margin-left: 0;
+}
+
+#torrents #misc>td.nobr.ft_misc>select.ft_freetorrent.fti_advanced {
+    margin-right: 0;
+}
+
+#user #content .main_column .box>.head>a:nth-child(2) {
+    margin-left: 10px;
+}
+
+#torrents #tagfilter>td:nth-child(2)>input[type=radio] {
+    margin-left: 10px;
+    margin-right: 2px;
+}
+
+#torrents .filter_torrents .submit {
+    display: flex;
+    margin-top: .5rem;
+    padding-left: .5rem;
+}
+
+#upload tr>td[style="vertical-align: top !important; text-align: right !important;"] {
+    padding-top: 11px !important;
+}
+
+#upload .thin {
+    padding: 0 1rem;
+}
+
+#torrents #torrent_table tr.group td:first-of-type {
+    padding: 0 5px 0 10px;
+}
+
+#artist #artist_information .body,
+#staffpm #inbox .vertical_space .body {
+    padding: 3px 10px 10px;
+}
+
+#torrents #torrent_details>tbody>tr>td {
+    padding: .5rem;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+}
+
+.torrent_description .body {
+    padding: 5px 10px 5px;
+    border-bottom: 1px solid #555;
+    word-wrap: break-word;
+    word-break:break-all;
+}
+
+
+
+.nobullet>li>#submit,
+.nobullet>li>#settings_search,
+#forums .reward_head+dl.rate,
+#torrents #reply_box .pad textarea,
+#rules .rule_table>table>tbody>tr>td>h4,
+#forums .thin>.forum_index>tbody>tr>td>h4,
+#forums .forum_list .forum_index>tbody>tr>td>h4,
+#staff .thin div.box.pad>table.staff>tbody>tr>td>h4,
+#friends .thin .box.pad form[name="friends"]>.friends_table>tbody>tr:nth-child(2)>td:nth-child(2)>textarea {
+    margin: 0;
+}
+
+#artist .log_section blockquote,
+#torrents .log_section blockquote {
+    max-height: 500px;
+    overflow-y: auto;
+    margin: 7px;
+}
+
+#torrents .thin div.header+div>form.search_form {
+    border-bottom: 1px dotted #999999;
+    padding: 1rem;
+}
+
+#requests #content .search_form[name="requests"]>table:nth-of-type(1) tr#tagfilter td input[type="radio"],
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr:nth-last-child(2) td input[type="radio"],
+#collage .thin .header+div>.search_form[name="collages"]>table:nth-of-type(1) tr#tagfilter td input[type="radio"] {
+    margin-left: 10px;
+    margin-right: 2px;
+}
+
+#collage .thin .header+div>.search_form[name="collages"] {
+    padding: 10px 0;
+}
+
+#collage .thin .header+div>.search_form[name="collages"]>table {
+    border-bottom: 1px dotted #999999;
+}
+
+.navigation_list ol {
+    padding: 0;
+    margin: 0 0 0 15px;
+}
+div.sidebar > div.box_image > div.head + div {
+    padding: 0 !important;
+    margin: 12px auto 4px !important;
+    overflow: hidden;
+    width: 248px;
+}
+div.sidebar > div.box_image > div.head + div img{
+    border-radius: 5px;
+}
+#torrent_details .torrentdetails > td > blockquote strong{
+    font-weight: bold;
+}
+div.sidebar > div.box_image > div#covers > div{
+    margin: 0 !important;
+}
+
+#top10 .search_form table.layout.border tbody tr#tagfilter>td.ft_taglist {
+    padding: .5rem .5rem .5rem 0;
+}
+
+#top10 .search_form table.layout.border tbody tr#yearfilter+tr>td,
+#top10 .search_form table.layout.border tbody tr#yearfilter>td.ft_year {
+    padding: .5rem 0;
+}
+
+#top10 div.table_container.border tbody tr td.big_info .group_info>span:first-child {
+    float: right;
+    margin-left: 5px;
+}
+
+#rules .header>#general+p {
+    padding-left: 10px;
+}
+
+
+
+#reportsv2 #all_reports form.manage_form>table.box.layout {
+    margin: 0;
+}
+
+#staffpm #inbox,
+#reportsv2 #report-torrent-body {
+    padding: 0;
+}
+
+#reportsv2 #report-torrent-body>table.layout~* {
+    padding: 0 1rem;
+}
+
+#reportsv2 #report-torrent-body #dynamic_form>ul {
+    margin-left: 10px;
+}
+
+.brackets {
+    text-indent: 0px;
+    white-space: nowrap;
+}
+
+#log .box.pad>form[name="log"] {
+    margin: 0 0 20px;
+    /* border-bottom: 1px dotted #999999; */
+}
+
+/* 边距 */
+
+/* 表格 */
+#artist .torrent_table{
+    display: block;
+}
+
+
+#torrents #torrent_table,
+#torrents table#collages,
+#bookmarks #torrent_table,
+#reportsv2 #torrent_details,
+#top10 h3+table#discog_table,
+#torrents table#torrent_details,
+#torrents table#personal_collages,
+#torrents .thin .header+table.border,
+#torrents .thin table#user_seeding_torrents{
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+    /* overflow-x: auto;
+    overflow-y: hidden; */
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+}
+
+
+div.post_container.border{
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+}
+
+#artist .torrent_table:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+.torrent_table>tbody>tr.colhead,
+#artist .torrent_table>tbody>tr.colhead_dark {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 40px auto 70px 50px 50px 50px;
+}
+#better .torrent_table>tbody>tr.colhead{
+    display: table-row;
+}
+
+.torrent_table>tbody>tr.colhead_dark>td:nth-last-child(1),
+.torrent_table>tbody>tr.colhead_dark>td:nth-last-child(2),
+.torrent_table>tbody>tr.colhead_dark>td:nth-last-child(3),
+.torrent_table>tbody>tr.colhead_dark>td:nth-last-child(4) {
+    text-align: right;
+}
+.torrent_table>tbody>tr.colhead>td:nth-last-child(1),
+.torrent_table>tbody>tr.colhead>td:nth-last-child(2),
+.torrent_table>tbody>tr.colhead>td:nth-last-child(3),
+.torrent_table>tbody>tr.colhead>td:nth-last-child(4) {
+    text-align: right;
+}
+
+#artist .torrent_table>tbody>tr.group {
+    border-top: 1px solid #555;
+    background-color: #292929;
+    display: grid;
+    grid-template-columns: 40px auto;
+}
+
+
+
+#artist .torrent_table>tbody>tr.group>td.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+td.big_info {
+    display: block !important;
+}
+#userhistory table.subscribed_collages_table strong{
+    font-weight: normal;
+}
+#userhistory table.torrent_table strong{
+    font-weight: normal;
+}
+.torrent_table>tbody>tr.edition {
+    border-top: 1px solid #555;
+    background-color: #222;
+    display: grid;
+    grid-template-columns: auto;
+}
+.torrent_table>tbody>tr.edition>td>strong{
+    font-weight: normal;
+}
+.torrent_table>tbody>tr.group_torrent[class*=edition_],
+#artist .torrent_table>tbody>tr.torrent_row {
+    border-top: 1px solid #555;
+    display: grid;
+    grid-template-columns: auto 70px 50px 50px 50px;
+}
+
+
+
+
+
+#artist .torrent_table>tbody,
+#collage #discog_table>tbody,
+#torrents #torrent_table>tbody,
+
+#torrents table#collages>tbody,
+#bookmarks #torrent_table>tbody,
+
+#torrents #torrent_details>tbody,
+/* #forums .thin>.forum_index>tbody, */
+#reportsv2 #torrent_details>tbody,
+#collage #discog_table>table>tbody,
+
+#rules .header+.box.pad>table>tbody,
+#torrents table#personal_collages>tbody,
+
+#staff .thin div.box.pad>table.staff>tbody,
+#user #content .main_column #recent_uploads tbody,
+#torrents .thin table#user_seeding_torrents tbody,
+#user #content .main_column #recent_snatches tbody,
+#torrents form.manage_form>table.torrent_table.cats.checkboxes.border.m_table>tbody,
+#user #content .main_column #recent_uploads~table.layout.recent>tbody {
+    width: 100%;
+    display: block;
+}
+
+#torrents #torrent_table>tbody>tr {
+    display: grid;
+}
+
+#forums .forum_post.important_user .colhead_dark {
+    /* min-height: 35px; */
+    background-color: #111;
+    
+    
+}
+#bookmarks table.collage_table>tbody>tr.colhead>td{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+#bookmarks table.collage_table>tbody>tr>td:nth-child(2){
+    /* width: 90%; */
+}
+#bookmarks table.artist_table>tbody>tr.rowa,
+#bookmarks table.artist_table>tbody>tr.rowb,
+#bookmarks table.collage_table>tbody>tr.rowa,
+#bookmarks table.collage_table>tbody>tr.rowb{
+    border-top: 1px solid #555;
+}
+div.torrentdetails table tbody tr.colhead_dark,
+#dnulist .colhead,
+#rules .ratio_table tr.colhead,
+#forums .forum_post .colhead_dark,
+#requests  .forum_post .colhead_dark,
+#rules .rule_table>table .colhead,
+#top10 div.table_container.border tbody .colhead,
+#collage .thin .collage_table .colhead,
+#inbox .thin .box.vertical_space .head,
+#requests #request_table .colhead_dark,
+#bonus .thin table:first-child .colhead,
+#comments table.forum_post .colhead_dark,
+#bonus #bprates_details>thead>tr.colhead,
+#torrents table#collages>tbody>tr.colhead,
+#inbox #messageform .message_table tr.colhead,
+#torrents table#vote_matches>tbody>tr.colhead,
+#staffpm #inbox table.message_table tr.colhead,
+#bookmarks table.artist_table>tbody>tr.colhead,
+#bookmarks table.collage_table>tbody>tr.colhead,
+#better #lists+div.table_container>table>tbody>tr.colhead,
+#torrents table#personal_collages>tbody>tr.colhead,
+#torrents .thin table#user_seeding_torrents tbody tr.colhead,
+#collage table.forum_post.box.vertical_margin tr.colhead_dark,
+#friends .thin .box.pad form[name="friends"] .friends_table>tbody>tr.colhead,
+#artist .main_column #artistcomments table.forum_post.box.vertical_margin tr.colhead_dark,
+#torrents .main_column #torrent_comments table.forum_post.box.vertical_margin tr.colhead_dark {
+    min-height: 30px;
+    vertical-align: middle;
+    background-color: #292929;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+#bonus #bprates_details>thead>tr.colhead{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div>table tr.colhead_dark {
+    /* min-height: 35px; */
+    vertical-align: middle;
+    background-color: #222;
+    
+    
+}
+
+.noty_bar .noty_message,
+#log #log_table tr.colhead,
+#dynamicImg+table .colhead,
+#torrents #torrent_table .colhead,
+#forums .thin>.forum_index .colhead,
+#staffpm #inbox .vertical_space .head,
+#user #content .main_column .box>.head,
+#torrents #torrent_details .colhead_dark,
+#reportsv2 #torrent_details .colhead_dark,
+#forums .forum_list .forum_index .colhead,
+#top10 h3+table#discog_table tr.colhead_dark,
+#staff .thin div.box.pad>table.staff .colhead,
+#collage #discog_table>tbody>tr.colhead_dark,
+#bookmarks #torrent_table>tbody>tr.colhead_dark,
+#user #content .main_column table#submit_box .colhead,
+#user #content .main_column table#session_box .colhead,
+#user #content .main_column table#donation_box .colhead,
+#user #content .main_column table#user_info_box .colhead,
+#user #content .main_column table#warn_user_box .colhead,
+#collage #discog_table>table>tbody>tr.colhead_dark,
+#user #content .main_column table#user_privs_box .colhead,
+#user #content .main_column table#donor_points_box .colhead,
+#wiki #content .thin>.header+table>tbody>tr.colhead,
+#torrents #torrent_details .torrentdetails table tbody tr.colhead_dark,
+#user #content .main_column table#warn_user_box+table.layout .colhead #tools #content .permissions .permission_container>.permission_subcontainer>table tr.colhead{
+    min-height: 30px;
+    vertical-align: middle;
+}
+
+#torrents #torrent_table.no_grouping .colhead{
+    grid-template-columns: 0 auto 30px 100px 90px 50px 50px 50px;
+    background-color: #292929;
+    
+    
+}
+#torrents #torrent_table.no_grouping .colhead~tr{
+    border-top: 1px solid #555;
+    grid-template-columns: 0 auto 30px 100px 90px 50px 50px 50px;
+}
+#torrents #torrent_table.no_grouping .colhead~tr:nth-child(odd){
+    background-color: #222;
+}
+#torrents #torrent_table.no_grouping .colhead~tr > td.m_td_right,
+#torrents #torrent_table.no_grouping .colhead~tr > td.td_time,
+#torrents #torrent_table.no_grouping .colhead~tr > td.td_size{
+    justify-self: flex-end;
+}
+
+div.header + .linkbox + div[align="center"],
+div.header + div[align="center"]{
+    grid-column: 1 / 3;
+}
+
+select[name="HackedEmail"]{
+    width: 100%;
+    max-width: 300px;
+}
+select[name="UserStatus"]{
+    width: 100%;
+    max-width: 120px;
+}
+
+
+#artist #discog_table div.table_container{
+    margin-bottom: 20px;
+}
+#staffpm #inbox .vertical_space .head,
+#inbox .thin .box.vertical_space .head{
+    display: flex;
+    align-items: center;
+}
+#staffpm #inbox .vertical_space .head > *{
+    margin-right: 6px;
+}
+#staffpm #inbox .vertical_space .head > a:last-child{
+    margin-left: 6px;
+}
+
+#torrents #torrent_details>tbody>.colhead_dark,
+#reportsv2 #torrent_details>tbody>.colhead_dark {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 90px 50px 50px 50px;
+}
+
+#collage #discog_table>tbody>tr.colhead_dark {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 40px 0 auto 70px 50px 50px 50px;
+}
+
+#bookmarks #torrent_table>tbody>tr.colhead_dark {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 40px 0 auto 70px 70px 70px 70px;
+}
+
+#collage #discog_table>table>tbody>tr.colhead_dark {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 40px auto 80px 50px 50px 50px;
+}
+
+#torrents .thin table#user_seeding_torrents tbody tr.colhead {
+    display: grid;
+    /* min-width: 700px; */
+    align-items: center;
+    grid-template-columns: 0 auto 100px 90px 35px 35px 35px;
+}
+
+#torrents .thin table#user_seeding_torrents tbody tr.colhead>td:nth-last-child(1),
+#torrents .thin table#user_seeding_torrents tbody tr.colhead>td:nth-last-child(2),
+#torrents .thin table#user_seeding_torrents tbody tr.colhead>td:nth-last-child(3),
+#torrents .thin table#user_seeding_torrents tbody tr.colhead>td:nth-last-child(4) {
+    text-align: right;
+}
+
+#torrent_details tr.torrentdetails {
+    display: grid;
+    border-top: 1px solid #555;
+    min-width: 0 !important;
+}
+
+#dnulist .colhead~tr,
+#log #log_table tr.rowa,
+#log #log_table tr.rowb,
+#user .thin .invite_table .rowa,
+#user .thin .invite_table .rowb,
+#dynamicImg+table .colhead~tr,
+#collage .thin .collage_table .rowa,
+#collage .thin .collage_table .rowb,
+#rules .ratio_table tr.colhead~tr,
+#bonus #bprates_details>tbody>tr,
+#bonus #bprates_overview>tbody>tr,
+#top10 div.table_container.border tbody tr.rowa,
+#top10 div.table_container.border tbody tr.rowb,
+#bonus .thin table:first-child tbody tr,
+#top10 h3+table#discog_table tr.discog,
+#rules .rule_table>table .colhead~tr,
+#forums .thin>.forum_index .colhead~tr,
+#bonus #bonus_purchase_history>tbody>tr,
+#requests #request_table .colhead_dark~tr,
+#staffpm #inbox table.message_table tr.rowa,
+#staffpm #inbox table.message_table tr.rowb,
+#forums .forum_index .colhead~tr,
+#rules .header+.box.pad>table tr.colhead~tr,
+#inbox #messageform .message_table tr.colhead~tr,
+#torrents table#collages>tbody>tr.colhead~tr,
+#staff .thin div.box.pad>table.staff .colhead~tr,
+#torrents table#vote_matches>tbody>tr.colhead~tr,
+#bookmarks #torrent_table>tbody>tr.colhead_dark~tr,
+#torrents .torrentdetails table tbody tr.colhead_dark~tr,
+#user .thin>h3+div.box.pad>table[width="100%"] .rowa,
+#user .thin>h3+div.box.pad>table[width="100%"] .rowb,
+#torrents table#personal_collages>tbody>tr.colhead~tr,
+#better #lists+div.table_container>table>tbody>tr.colhead~tr,
+#wiki #content .thin>.header+table>tbody>tr.colhead~tr,
+#reportsv2 #wrapper #content .thin .two_columns>table tr.colhead~tr,
+#reportsv2 #wrapper #content .thin .two_gigcolumns>table tr.colhead~tr,
+#reportsv2 #torrent_details tr.torrentdetails table tbody tr.colhead_dark~tr,
+#tools #content .permissions .permission_container>.permission_subcontainer>table tr.colhead~tr {
+    border-top: 1px solid #555;
+}
+
+#top10 h3+table#discog_table tr.discog {
+    background-color: #292929;
+}
+
+#rules .rule_table>table tr.rowa,
+#collage .thin .collage_table .rowa,
+#top10 div.table_container.border tbody tr.rowb,
+#inbox #messageform .message_table tr.rowa,
+#staffpm #inbox table.message_table tr.rowa,
+#bonus .thin table:first-child tbody tr.rowb,
+#requests #request_table .colhead_dark~tr:nth-child(odd),
+#bonus #bprates_details>tbody>tr.colhead~tr:nth-child(odd),
+#torrents table#collages>tbody>tr.colhead~tr:nth-child(odd),
+#torrents table#vote_matches>tbody>tr.colhead~tr:nth-child(odd),
+#better #lists+div.table_container>table>tbody>tr.colhead~tr:nth-child(odd),
+#torrents table#personal_collages>tbody>tr.colhead~tr:nth-child(odd),
+#torrents .thin table#user_seeding_torrents tbody tr.colhead~tr:nth-child(odd) {
+    background-color: #222;
+}
+
+#artist .thin>.header~.box.pad,
+#torrents .thin>.header~.box.pad,
+#user #content .main_column table#submit_box .colhead,
+#user #content .main_column table#session_box .colhead,
+#user #content .main_column table#donation_box .colhead,
+#user #content .main_column table#user_info_box .colhead,
+#user #content .main_column table#warn_user_box .colhead,
+#user #content .main_column table#user_privs_box .colhead,
+#user #content .main_column table#donor_points_box .colhead,
+#user #content .main_column table#warn_user_box+table.layout .colhead {
+    border-bottom: 1px solid #555;
+}
+
+#torrents #torrent_table td {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+}
+
+
+/* #forums .thin>.forum_index, */
+#staffpm #inbox .vertical_space,
+/* #forums #thread_notes+a+form, */
+#rules .header+.box.pad>table,
+#staff .thin div.box.pad>table.staff {
+    width: 100%;
+    border: none;
+    display: block;
+}
+
+#user #userform div.main_column table {
+    table-layout: unset;
+}
+
+#user #userform div.main_column table:not(:last-of-type) {
+    border-bottom: 1px solid #555;
+}
+
+#user #userform div.main_column table:last-of-type tr:last-of-type td[colspan="2"] {
+    padding-bottom: 0;
+}
+
+#user #userform div.main_column table:last-of-type tr:last-of-type td[colspan="2"]>input {
+    margin-bottom: 0;
+}
+
+#user div.box.pad>table.session_table {
+    margin-top: 20px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    display: block;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+}
+
+#user div.box.pad>table.session_table>tbody {
+    display: block;
+}
+
+#user div.box.pad>table.session_table>tbody>tr {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    align-items: center;
+}
+#user div.box.pad>table.session_table>tbody>tr>td:last-child{
+    text-align: right;
+}
+
+#user div.box.pad>table.session_table>tbody>tr.colhead {
+    background-color: #292929;
+}
+
+#user div.box.pad>table.session_table>tbody>tr.rowa {
+    border-top: 1px solid #555;
+    background-color: #222;
+}
+
+#user div.box.pad>table.session_table>tbody>tr.rowb {
+    border-top: 1px solid #555;
+}
+
+#torrents #all_reports .create_form table.box.layout>tbody>tr,
+#reportsv2 #all_reports .manage_form table.box.layout>tbody>tr {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    background-color: #222;
+    align-items: center;
+}
+
+#torrents #all_reports .create_form table.box.layout>tbody>tr>td.label+td,
+#reportsv2 #all_reports .manage_form table.box.layout>tbody>tr>td.label+td {
+    border-left: 1px solid #555;
+    border-top: 1px solid #555;
+    /* background-color: #ffffff; */
+    height: 100%;
+}
+
+
+#torrents #all_reports .create_form table.box.layout>tbody>tr:first-child>td.label+td,
+#reportsv2 #all_reports .manage_form table.box.layout>tbody>tr:first-child>td.label+td {
+    border-top: none;
+}
+
+#torrents #all_reports .create_form table.box.layout>tbody>tr>td[colspan="4"],
+#reportsv2 #all_reports .manage_form table.box.layout>tbody>tr>td[colspan="4"] {
+    grid-column: 1 / 3;
+    background-color: #222;
+    border-top: 1px solid #555;
+}
+
+#forums .edit_form>table td.label {
+    width: 20%;
+}
+
+/* 表格 */
+
+/* 行 */
+
+/* 行 */
+
+/* 单元格 */
+#artist form.add_form,
+#comments table.forum_post td,
+#artist form.rename_form>div,
+
+#reportsv2 #torrent_details>tbody>tr>td,
+
+#top10 .search_form table.layout.border tbody tr,
+#collage #content .sidebar div.box.comment .head,
+#top10 h3+table#discog_table tr.colhead_dark td,
+
+#torrents table#collages>tbody>tr.colhead>td,
+#collage #discog_table>tbody>tr.colhead_dark>td,
+
+#bookmarks #torrent_table>tbody>tr.torrent_row>td,
+#top10 h3+table#discog_table tr.discog td:first-child,
+#torrents .thin table#user_seeding_torrents tbody tr td,
+#staff .thin div.box.pad>table.staff>tbody>tr>td,
+#bookmarks #torrent_table>tbody>tr.colhead_dark>td,
+#user #content .main_column #recent_uploads tr.colhead>td,
+#torrents table#personal_collages>tbody>tr.colhead>td,
+#user #content .main_column #recent_snatches tr.colhead>td,
+#collage #discog_table>table>tbody>tr.colhead_dark>td,
+#torrents #ft_container>table.layout:nth-of-type(1) tr>td,
+
+#collage #discog_table>tbody>tr.group.discog>td:first-child,
+#top10 .search_form table.top10_votes_filter>tbody td.ft_taglist,
+#top10 .search_form table.layout.border tbody tr#tagfilter td.ft_taglist,
+#collage #discog_table>table>tbody>tr.group.discog>td:first-child,
+#requests #content .search_form[name="requests"]>table:nth-of-type(1) tr td,
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr td,
+#collage .thin .header+div>.search_form[name="collages"]>table:nth-of-type(1) tr td,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_peers>table tr.colhead_dark>td,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_files>table tr.colhead_dark>td,
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(5)>table tr.colhead_dark>td,
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(4)>table tr.colhead_dark>td,
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(3)>table tr.colhead_dark>td,
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(2)>table tr.colhead_dark>td,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_viewlog>table tr.colhead_dark>td,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_downloads>table tr.colhead_dark>td,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_snatches>table tr.colhead_dark>td,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_reported>table tr.colhead_dark>td {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+}
+.torrentdetails_viewlog.border>table>tbody>tr.colhead_dark{
+    background-color: #292929;
+}
+#torrents tr.torrentdetails div.linkbox div.linkbox>a{
+    padding: 5px 0;
+}
+#torrents #taglist td {
+    text-align: center;
+}
+
+#requests #request_form>table.layout {
+    table-layout: unset;
+}
+
+#requests #request_form>table.layout td.label {
+    width: 20%;
+}
+
+#requests #request_form>table.layout td.center[colspan="2"] {
+    display: table-cell;
+}
+#requests .main_column table.layout:first-child>tbody>tr#bounty{
+    border-bottom: 1px solid #555;
+}
+/* 单元格 */
+
+/* 拒绝换行 */
+.time,
+.td_size,
+#torrents #torrent_table tr.colhead td:nth-child(3),
+#reportsv2 #torrent_details tr.group_torrent td.td_info>a:last-child {
+    white-space: nowrap;
+}
+
+/* 拒绝换行 */
+
+/* 鸡零狗碎 */
+#torrents #taglist a {
+    border-radius: 5px;
+    color: #bbb;
+    display: block;
+    font-size: 12px;
+    padding: 1px 6px;
+    transition: all .3s ease-in-out
+}
+
+#torrents #taglist a:hover {
+    border-radius: 5px;
+    color: #202020;
+    display: block;
+    font-size: 12px;
+    padding: 1px 6px;
+    transition: all .3s ease-in-out;
+    background: rgba(0, 0, 0, 0.08)
+}
+
+#rules .header+.rule_summary img[src="https://greatposterwall.com/static/styles/public/images/chart.png"] {
+    filter: drop-shadow(0 0 5px rgba(0,0,0,.2));
+}
+#wiki img[alt="https://ptpimg.me/bb69ok.png"] {
+    filter: drop-shadow(0 0 5px rgba(0,0,0,.2));
+}
+
+#torrents .merge_form>div>div:last-child,
+#torrents .rename_form>div>div:last-child {
+    display: inline-block;
+}
+
+#user .linkbox>a,
+#torrents .linkbox>a,
+.linkbox>a,
+.linkbox>div.center>a,
+#artist .header>.linkbox>a,
+#artist #discog_table>.center>a,
+#torrents .thin .header>.linkbox>a {
+    display: inline-block;
+    padding: 5px 4px;
+}
+div.linkbox>strong,
+div.linkboxdiv.center>strong {
+    display: inline-block;
+    padding: 5px 4px;
+}
+div.linkbox>a>strong,
+div.linkboxdiv.center>a>strong{
+    padding: 0;
+}
+form>table:not(#notification_settings):not(#paranoia_settings):not(#access_settings) ul,
+#userform>table:not(#notification_settings):not(#paranoia_settings):not(#access_settings) ul li {
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+#userhistory table.subscribed_collages_table{
+    background-color: #222;
+    border-radius: 5px;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    display: block;
+}
+#userhistory table.subscribed_collages_table > tbody{
+    display: block;
+}
+#userhistory table.subscribed_collages_table > tbody > tr{
+    display: grid;
+    align-items: center;
+}
+#userhistory table.subscribed_collages_table ~ table.torrent_table{
+    border-radius: 5px;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    margin: 1rem;
+    width: auto;
+    display: block;
+}
+
+#user #user_2fa_step2_table{
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    border: 1px solid #555;
+    margin-top: 20px;
+}
+#user #user_2fa_step2_table thead{
+    display: block;
+}
+#user #user_2fa_step2_table tbody{
+    display: grid;
+    grid-template-columns: auto auto;
+    border-top: 1px solid #555;
+}
+#user #user_2fa_step2_table tr{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+}
+#user #user_2fa_step2_table tr.colhead_dark{
+    background-color: #292929;
+}
+#user #user_2fa_step2_table tr.colhead_dark td{
+    grid-column: 1 / 3;
+}
+
+#user #user_2fa_step2_table tbody tr td[colspan="2"]{
+    grid-column: 1 / 3;
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+#artist #content>.thin>div.box.pad:last-child>h3,
+#artist .edit_form h3,
+#torrents .edit_form h3,
+#torrents .merge_form h3,
+#torrents .rename_form h3,
+#collage #edit_collage h3 {
+    /* display: inline-block; */
+    font-size: 1.2rem;
+    /* margin-right: 5px; */
+}
+#artist .edit_form>div>h3:first-of-type,
+#artist .edit_form>div>h3:last-of-type{
+    display: inline-block;
+    margin-right: 5px;
+}
+#artist .edit_form>div>textarea{
+    min-height: 300px;
+}
+
+#torrents #content>.thin>form.create_form#upload_table,
+#torrents #content>.thin>form.edit_form,
+#torrents #content>.thin>form.split_form{
+    border-bottom: 1px solid #555;
+}
+#torrents #content>.thin>form.edit_form,
+#torrents #content>.thin>form.split_form{
+    margin-bottom: 20px;
+}
+
+#collage .thin .collage_table>tbody>tr>td>div.tags>a {
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    transition: all .3s ease;
+    visibility: visible;
+    background: rgba(0, 0, 0, .08);
+    border: 1px solid #555;
+    color: #666;
+    padding: 2px 5px;
+}
+ul.collage_images li:not([class^=image_group]) {
+    display: none;
+}
+
+
+td.center[colspan="6"]{
+    display: table-cell;
+}
+
+.tooltipster-default {
+    display: block;
+    background: #111;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .1);
+    color: #bbb
+}
+
+.tooltipster-base{
+    width: auto !important;
+}
+
+.tooltipster-default .tooltipster-content {
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 5px 10px;
+}
+
+#disclaimer_container {
+    flex: 1 1 100%;
+    margin-bottom: 10px !important;
+    text-align: justify !important
+}
+
+
+div.submit_div{
+    text-align: center;
+}
+
+.sidebar .box ol li {
+    clear: both;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+ol.navigation_list li {
+    display: list-item !important;
+    list-style-type: upper-roman !important;
+    margin: 0 0 0 5px !important;
+}
+
+.sidebar .box li ol,
+.sidebar .box li ul {
+    margin: 0 0 0 15px;
+}
+
+.navigation_list,
+.navigation_list ol {
+    list-style-position: inside;
+}
+
+.sidebar .box>li {
+    list-style-type: none;
+    margin-left: 5px;
+}
+
+.postlist {
+    margin: 0;
+    padding-left: 20px;
+}
+
+#user #content .main_column #recent_uploads tr.colhead+tr,
+#user #content .main_column #recent_snatches tr.colhead+tr,
+#user #content .main_column #recent_uploads~table.layout.recent tr.colhead+tr {
+    border-top: 1px solid #555;
+    display: flex;
+    flex-flow: wrap;
+    padding: 10px 0 0 0;
+    justify-content: center;
+}
+
+
+
+#user #content .main_column table.layout.linkedaccounts td {
+    border: none !important;
+}
+
+.brackets:after,
+.brackets:before,
+.forum_category:after,
+.forum_category:before,
+.torrent_action_buttons.single .tooltip:after,
+.torrent_action_buttons.single .tooltip:before {
+    content: "" !important;
+}
+
+.group_image img {
+    transition: transform .2s ease;
+    transition-delay: .2s;
+    transition-timing-function: cubic-bezier;
+    z-index: 3000;
+    cursor: pointer;
+}
+
+.group_image img:hover {
+    transform: scale(2);
+    /* transform-origin: 0 0; */
+    z-index: 9000;
+}
+
+#tools #application_record_list tr.rowa,
+#tools #application_record_list tr.rowb{
+    border-top: 1px solid #555;
+}
+#tools #application_record_list tr.rowa > td > p,
+#tools #application_record_list tr.rowb > td > p{
+    margin: 0;
+}
+#tools #application_record_list tr.rowa > td > input[type="text"],
+#tools #application_record_list tr.rowb > td > input[type="text"]{
+    width: 99%;
+}
+
+.hide_torrents:focus,
+.show_torrents:focus {
+    outline: none
+}
+
+.show_torrents_link:hover:after,
+.show_torrents_link:hover:before {
+    background-color: #555
+}
+
+.show_torrents_link:before {
+    transform: rotate(90deg);
+    transition-property: background-color, top, transform;
+}
+
+.show_torrents_link:after {
+    transition-property: background-color, bottom, transform;
+}
+
+.hide_torrents .show_torrents_link {
+    background: transparent
+}
+
+.hide_torrents .show_torrents_link:before {
+    top: 12px;
+    transform: rotate(0deg)
+}
+
+.hide_torrents .show_torrents_link:after {
+    bottom: 0;
+    transform: rotate(180deg)
+}
+
+#questions div.box.box2{
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    border-radius: 5px;
+}
+#questions div.box.box2 > div.head{
+    
+    
+    background-color: #292929;
+    /* min-height: 35px; */
+}
+#questions div.box.box2 > div.pad{
+    padding: 1rem;
+    border-top: 1px solid #555;
+}
+
+.snatched_group .show_torrents_link:after,
+.snatched_group .show_torrents_link:before {
+    background-color: #a2c3fa
+}
+
+.group_torrent span a {
+    visibility: visible;
+}
+
+#torrents .filter_torrents .submit span:first-child {
+    margin-right: auto;
+    align-self: center;
+}
+
+#torrents #torrent_table tr:not(.colhead):not(.colhead_dark) td:not(:first-child) {
+    padding-right: 1rem;
+    transition: all .3s ease;
+    vertical-align: middle;
+}
+
+#torrents .torrent_description .body {
+    line-height: 1.5rem;
+}
+
+#requests #request_form table {
+    overflow: hidden;
+}
+
+#requests #request_form table>tbody>tr>td:nth-child(2) {
+    vertical-align: middle;
+}
+
+#requests #request_form table>tbody>tr>td:nth-child(2)>input,
+#requests #request_form table>tbody>tr>td:nth-child(2)>select {
+    vertical-align: middle;
+}
+
+#forums .content_text {
+    table-layout: fixed;
+    overflow: hidden;
+    word-wrap: break-word;
+    width: 100%;
+}
+.forum_post>tbody>tr>td.body>div {
+    table-layout: fixed;
+    overflow: hidden;
+    word-wrap: break-word;
+    width: 100%;
+}
+.forum_post>tbody>tr>td.body>div>blockquote{
+    max-width: 100%;
+}
+.forum_post>tbody>tr>td.body>div>blockquote>img{
+    width: auto;
+    height: auto;
+}
+.forum_post>tbody>tr>td.body>div>span.last_edited{
+    text-align: right;
+    border-top: 1px solid #555;
+    margin-top: auto;
+}
+
+ol.navigation_list li {
+    display: list-item !important;
+    list-style-type: upper-roman !important;
+    margin: 0 0 0 5px !important
+}
+
+ol.navigation_list li li {
+    list-style-type: upper-alpha !important
+}
+
+#wiki .box.pad:first-child .field_div #body {
+    min-height: 300px !important;
+}
+
+#wiki .sidebar .pad .search_form+br+a {
+    margin-left: 3px;
+}
+
+#staff .thin div.box.pad>h3>i {
+    font-style: normal;
+}
+
+#comments table.forum_post>tbody>tr:nth-child(2)>td {
+    align-items: flex-start;
+}
+
+#inbox .thin .box.vertical_space .body {
+    border-top: 1px solid #555;
+    padding: 1rem;
+}
+
+
+
+#settings_sections {
+    margin-bottom: 20px;
+}
+
+#settings_sections.fixed {
+    position: fixed !important;
+    top: 6px;
+    width: 280px;
+}
+
+#upload .thin>p:first-child>a:hover {
+    outline: none;
+    border: 1px solid #84b3fd !important;
+    color: #fff !important
+}
+
+
+
+#user form[name="invite"]>div>div.label {
+    justify-self: end;
+}
+
+#torrents form.edit_form div.yadg_div input#yadg_submit {
+    margin: 5px 2px !important;
+    display: inline-block !important;
+}
+
+#torrents .thin>.header~.box.pad:not(:last-of-type) {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#torrents .thin>.header~.box.pad h3 {
+    font-size: 1rem;
+}
+
+#torrents .thin>.header~.box.pad>form.edit_form>table {
+    table-layout: unset;
+}
+
+#torrents .thin>.header~.box.pad>form.edit_form>table td.label {
+    width: 30%;
+}
+
+#torrents .thin>.header~.box.pad>form.rename_form,
+#torrents .thin>.header~.box.pad>form.merge_form {
+    display: flex;
+    justify-content: center;
+}
+
+.filelist_table td:first-child > div.filelist_path{
+    float: none !important;
+}
+
+.paranoia_override {
+    font-style: normal;
+}
+
+.sidebar .box li {
+    list-style-type: none;
+    margin-left: 5px;
+}
+
+#user form.send_form[name="invite"]{
+    margin: 20px 0;
+}
+
+#user form[name="notification"] > table.layout td.label,
+#user form#filter_form > table.layout td.label{
+    width: 20%;
+}
+
+#rules h5{
+    font-size: 13px;
+    /* color: #2f3a61; */
+}
+
+.breadcrumbs{
+    font-weight: normal;
+}
+
+/* 鸡零狗碎 */
+
+/* 给爷爬 */
+.hidden,
+#concerts,
+#nav_userclass,
+#acc_2fa_tr br,
+#menu #nav_irc,
+#torrents .edit_form>br,
+.filelist_title,
+#menu #nav_index,
+#collage .linkbox br+br,
+#staffpm .header~br,
+#artist form.add_form br,
+#bookmarks div.linkbox br,
+#artist form.merge_form br,
+#upload p.min_padding+br,
+#torrents .torrentdetails h4,
+.linkbox a[href$="#concerts"],
+#user .thin>.edit_form+br,
+#top10 div.table_container.border+br,
+#staff .thin div.box.pad+br,
+#staff .thin div.box.pad>p+br,
+#user .thin>.edit_form+br+br,
+#wiki .sidebar .pad .search_form+br,
+#rules .rule_summary>br:first-child,
+#staff .thin div.box.pad>#compose+br,
+#staff .thin div.box.pad>br:first-child,
+#staff .thin div.box.pad>table.staff+br,
+#torrents .box_addtag br:first-of-type+br,
+/* #collage .thin .header+div+.linkbox>br, */
+#artist form.edit_form>div>br:last-of-type,
+#torrents #torrent_table tr.group td:nth-child(4),
+#torrents #torrent_table tr.group td:nth-child(5),
+#torrents #torrent_table tr.group td:nth-child(6),
+#torrents #torrent_table tr.group td:nth-child(7),
+#torrents #torrent_table tr.group td:nth-child(8),
+#torrents .box_addartists .add_form #AddArtists br,
+#reportsv2 #report-torrent-body #dynamic_form>br,
+#rules .header+.rule_summary>br:nth-last-child(1),
+#rules .header+.rule_summary>br:nth-last-child(2),
+#collage #content .sidebar div.box.comment .head>br,
+#torrents div.sidebar div.box_addtag form.add_form~br,
+#top10 h3+table#discog_table tr.discog td:last-child>br,
+#inbox .thin>h2:first-child+div.linkbox>a.brackets+br,
+#inbox #messageform .message_table>tbody>tr>td:last-child,
+#reportsv2 #wrapper #content .thin .two_gigcolumns>div.box.pad,
+#top10 h3+table#discog_table tr.colhead_dark td:nth-last-child(1),
+#top10 h3+table#discog_table tr.colhead_dark td:nth-last-child(2),
+#top10 h3+table#discog_table tr.colhead_dark td:nth-last-child(3),
+#top10 h3+table#discog_table tr.colhead_dark td:nth-last-child(4),
+#reportsv2 #wrapper #content .thin .two_gigcolumns>h3:nth-of-type(5),
+#friends .thin .box.pad form[name="friends"] .friends_table>tbody>tr:nth-child(2)>td:nth-child(3)>br {
+    display: none !important;
+}
+
+/* 给爷爬 */
+
+/* 浮动 */
+#torrents .torrentdetails table.filelist_table>tbody>tr>td:first-child>div.filelist_path {
+    float: none !important;
+}
+
+.group_torrent span.time {
+    float: none;
+    visibility: visible;
+}
+
+#torrents #torrent_details tr.group_torrent td.td_info span:first-child,
+#torrenreportsv2ts #torrent_details tr.group_torrent td.td_info span:first-child {
+    float: right;
+}
+
+.group_torrent span {
+    float: right;
+    visibility: hidden;
+}
+
+/* 浮动 */
+
+/* Block */
+#settings_sections .nobullet>li,
+#torrents #torrent_table .group td.big_info,
+#torrents #torrent_details tr.group_torrent td.td_info,
+#reportsv2 #torrent_details tr.group_torrent td.td_info,
+#reportsv2 #torrent_details>tbody>tr.torrent_row>td:first-child,
+#torrents .thin table#user_seeding_torrents tbody tr.colhead~tr td:nth-child(2),
+#torrents form.manage_form>table.torrent_table.cats.checkboxes.border.m_table>tbody>tr.colhead~tr>td:nth-child(3) {
+    display: block;
+}
+
+/* Block */
+
+/* Flex 对齐 */
+#top10 .search_form table.layout.border,
+#staffpm #inbox #messageform .message_table>tbody>tr>td:last-child,
+#torrents .thin div.header+div>form.search_form>div.submit:last-child {
+    display: flex;
+}
+
+#torrents #torrent_table tr.group_torrent td.td_info {
+    /* display: flex; */
+    /* white-space: nowrap; */
+    /* flex-flow: wrap; */
+    display: block;
+}
+
+
+#top10 table.top10_tags_tables:nth-of-type(2) tr.colhead>td:nth-child(2) {
+    justify-content: flex-start;
+}
+
+
+#rules .header+.box.pad>table>tbody>tr>td {
+    padding: .5rem;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#top10 .torrent_table tbody .colhead td:nth-last-child(1),
+#top10 .torrent_table tbody .colhead td:nth-last-child(2),
+#top10 .torrent_table tbody .colhead td:nth-last-child(3),
+#top10 .torrent_table tbody .colhead td:nth-last-child(4),
+#torrents #ft_container>table:nth-child(4)>tbody>tr>td {
+    justify-content: center;
+}
+
+#torrents #ft_container>table.layout:nth-of-type(2) td {
+    text-align: center;
+    justify-content: center;
+}
+
+#top10 .torrent_table tbody .torrent td:nth-child(1),
+#top10 .torrent_table tbody .torrent td:nth-last-child(1),
+#top10 .torrent_table tbody .torrent td:nth-last-child(2),
+#top10 .torrent_table tbody .torrent td:nth-last-child(3),
+#top10 .torrent_table tbody .torrent td:nth-last-child(4),
+#top10 .torrent_table tbody .torrent td:nth-last-child(5),
+#top10 .torrent_table tbody .torrent td:nth-last-child(6) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#top10 h3+table#discog_table tr.discog td:last-child {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+#top10 h3+table#discog_table tr.discog td:first-child{
+    padding-right: 0;
+}
+
+#torrents table#collages>tbody>tr.colhead>td:last-child,
+#collage #discog_table>tbody>tr.colhead_dark>td:nth-child(4),
+#collage #discog_table>tbody>tr.colhead_dark>td:nth-child(5),
+#collage #discog_table>tbody>tr.colhead_dark>td:nth-child(6),
+#collage #discog_table>tbody>tr.colhead_dark>td:nth-child(7),
+#torrents table#personal_collages>tbody>tr.colhead>td:last-child,
+#bookmarks #torrent_table>tbody>tr.torrent_row>td:nth-last-child(1),
+#bookmarks #torrent_table>tbody>tr.torrent_row>td:nth-last-child(2),
+#bookmarks #torrent_table>tbody>tr.torrent_row>td:nth-last-child(3),
+#bookmarks #torrent_table>tbody>tr.colhead_dark>td:nth-last-child(1),
+#bookmarks #torrent_table>tbody>tr.colhead_dark>td:nth-last-child(2),
+#bookmarks #torrent_table>tbody>tr.colhead_dark>td:nth-last-child(3),
+#collage #discog_table>table>tbody>tr.colhead_dark>td:nth-child(3),
+#collage #discog_table>table>tbody>tr.colhead_dark>td:nth-child(4),
+#collage #discog_table>table>tbody>tr.colhead_dark>td:nth-child(5),
+#collage #discog_table>table>tbody>tr.colhead_dark>td:nth-child(6),
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_files>table tr.colhead_dark>td:last-child,
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(2)>table tr.colhead_dark>td:last-child,
+v2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(5)>table tr.colhead_dark>td:nth-last-child(2),
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(5)>table tr.colhead_dark>td:nth-last-child(3),
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_peers>table tr.colhead_dark>td:nth-last-child(2),
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_peers>table tr.colhead_dark>td:nth-last-child(3) {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+#torrents #torrent_table tr.colhead td:nth-last-child(1),
+#torrents #torrent_table tr.colhead td:nth-last-child(2),
+#torrents #torrent_table tr.colhead td:nth-last-child(3),
+#torrents #torrent_table tr.colhead td:nth-last-child(4),
+#torrents #torrent_table tr.colhead td:nth-last-child(5),
+
+
+#forums .forum_list .forum_index>tbody>tr>td:last-child,
+#torrents #torrent_table tr.group_torrent td:nth-last-child(1),
+#torrents #torrent_table tr.group_torrent td:nth-last-child(2),
+#torrents #torrent_table tr.group_torrent td:nth-last-child(3),
+#torrents #torrent_table tr.group_torrent td:nth-last-child(4),
+#torrents #torrent_table tr.group_torrent td:nth-last-child(5),
+#torrents #torrent_table tr.torrent td:nth-last-child(1),
+#torrents #torrent_table tr.torrent td:nth-last-child(2),
+#torrents #torrent_table tr.torrent td:nth-last-child(3),
+#torrents #torrent_table tr.torrent td:nth-last-child(4),
+#torrents #torrent_table tr.torrent td:nth-last-child(5),
+
+
+#forums .forum_list .forum_index>tbody>tr>td:nth-last-child(2),
+#inbox #messageform .message_table>tbody>tr>td:nth-last-child(2),
+#torrents #torrent_details>tbody>tr.colhead_dark>td:nth-last-child(1),
+#torrents #torrent_details>tbody>tr.colhead_dark>td:nth-last-child(2),
+#torrents #torrent_details>tbody>tr.colhead_dark>td:nth-last-child(3),
+#torrents #torrent_details>tbody>tr.colhead_dark>td:nth-last-child(4),
+#torrents #torrent_details>tbody>tr.group_torrent>td:nth-last-child(1),
+#torrents #torrent_details>tbody>tr.group_torrent>td:nth-last-child(2),
+#torrents #torrent_details>tbody>tr.group_torrent>td:nth-last-child(3),
+#torrents #torrent_details>tbody>tr.group_torrent>td:nth-last-child(4),
+#reportsv2 #torrent_details>tbody>tr.colhead_dark>td:nth-last-child(1),
+#reportsv2 #torrent_details>tbody>tr.colhead_dark>td:nth-last-child(2),
+#reportsv2 #torrent_details>tbody>tr.colhead_dark>td:nth-last-child(3),
+#reportsv2 #torrent_details>tbody>tr.colhead_dark>td:nth-last-child(4),
+#reportsv2 #torrent_details>tbody>tr.group_torrent>td:nth-last-child(1),
+#reportsv2 #torrent_details>tbody>tr.group_torrent>td:nth-last-child(2),
+#reportsv2 #torrent_details>tbody>tr.group_torrent>td:nth-last-child(3),
+#reportsv2 #torrent_details>tbody>tr.group_torrent>td:nth-last-child(4) {
+    padding-right: 1rem;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+#reportsv2 #report-torrent-body #dynamic_form>table.layout tr td.label {
+    width: 150px;
+}
+#reportsv2 #report-torrent-body #dynamic_form>table.layout tr td.label > strong{
+    font-weight: bold;
+}
+#reportsv2 #report-torrent-body #dynamic_form>table.layout tr td > textarea{
+    max-width: 750px;
+}
+
+
+#artist #artist_information #info.head>a:last-child,
+#inbox .thin .box.vertical_space .head div:last-child,
+#user #content .main_column .box>.head>a:last-child,
+#forums .forum_post tr.colhead_dark>td>div:last-child,
+#user #content .main_column .box>.head>span:last-child,
+#collage #content .sidebar div.box.comment .head>a:last-child,
+#torrents #ft_container>table.layout:nth-of-type(1) tr>td:nth-child(1),
+#torrents #ft_container>table.layout:nth-of-type(1) tr>td:nth-child(3),
+#forums .forum_list .forum_index>tbody>tr>td.td_latest>a:last-child,
+
+#forums .forum_list .forum_index>tbody>tr>td.td_latest>span.last_poster,
+#requests #content .search_form[name="requests"]>table:nth-of-type(1) tr td:first-child,
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr td:first-child,
+#collage .thin .header+div>.search_form[name="collages"]>table:nth-of-type(1) tr td:first-child{
+    margin-left: auto;
+    justify-self: flex-end;
+}
+
+#torrents .edit_form input[type="submit"],
+#torrents .thin div.header+div>form.search_form>div.submit:last-child>input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#requests #content .search_form[name="requests"]>table:nth-of-type(3) tr td:first-child {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Flex 对齐 */
+
+
+/* Grid 占位 */
+#content .sidebar div.box_zipdownload .download_form select[name="preference"] {
+    grid-column: 1 / 3;
+    width: 97% !important;
+}
+#content .sidebar div.box_zipdownload .download_form select[name="preference"] + input{
+    grid-column: 3 / 4;
+    width: 31px !important;
+}
+
+#artist h2,
+#artist .box.pad,
+#user .thin>h3,
+#user .thin>.box,
+#collage #reply_box,
+#collage .create_form,
+#user .thin>.edit_form,
+#user .thin>.header+h3,
+#wiki .box.pad:first-child,
+#torrents form.manage_form,
+#user .thin>#filter_form,
+#collage .thin .header+div,
+#torrents .thin>.header~h3,
+#torrents .thin div.header+div,
+#bookmarks .header+table.layout,
+#bookmarks #drag_drop_collage_form,
+#requests .thin>.header~.box.pad,
+#torrents .thin>.header~.box.pad,
+#torrents .thin div.header+div+div.center,
+#collage #content .sidebar div.box_addtorrent .add_form>span {
+    grid-column: 1 / 3;
+}
+
+#artist #content .sidebar div.box_zipdownload .download_form select#formats,
+#collage #content .sidebar div.box_zipdownload .download_form select#formats {
+    grid-column: 1 / 3;
+    width: 97% !important;
+}
+
+
+
+#wiki .wiki_article_table {
+    grid-column: 1 / 3;
+    margin-bottom: 0 !important;
+}
+#wiki .wiki_article_table tr.colhead{
+    background-color: #292929;
+}
+#wiki .wiki_article_table tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+#wiki .wiki_article_table tr.colhead~tr:hover{
+    background-color: rgba(0, 0, 0, .04);
+}
+
+#wiki #alpha_beta_switcher {
+    grid-column: 1 / 3;
+    border-bottom: 1px dotted #999999;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+#wiki #alpha_beta_switcher>p{
+    margin: 5px;
+}
+
+#torrents .thin .header+table.border {
+    z-index: 99;
+    grid-column: 1 / 3;
+}
+
+#torrents #yadg_div div.body form.add_form #yadg_input,
+#torrents #yadg_div div.body form.add_form #yadg_submit~*,
+#artist #content .sidebar div.box_zipdownload .download_form ul#list,
+#collage #content .sidebar div.box_zipdownload .download_form ul#list,
+#requests #content .search_form[name="requests"]>table:nth-of-type(3) tr:last-child td,
+#collage .thin .header+div>.search_form[name="collages"]>table:nth-of-type(1) tr:last-child td {
+    grid-column: 1 / 4;
+}
+
+#requests #content .search_form[name="requests"]>table:nth-of-type(3) tr:last-child td,
+#collage .thin .header+div>.search_form[name="collages"]>table:nth-of-type(1) tr:last-child td {
+    margin-right: auto;
+}
+
+#torrents #ft_container>table.layout:nth-of-type(1) tr>td:nth-child(2),
+#torrents #ft_container>table.layout:nth-of-type(1) tr>td:nth-child(4) {
+    margin-right: auto;
+    width: 100%;
+}
+
+#user #content .main_column table#donation_box .colhead~tr>td[colspan="2"],
+#user #content .main_column table#donor_points_box .colhead~tr>td[colspan="2"],
+#user #content .main_column table#submit_box .colhead~tr>td[colspan="2"] {
+    grid-column: 1 / 4;
+    text-align: center;
+}
+
+#torrents #edition_expand>td:nth-child(1) {
+    grid-column: 1 / 6;
+    margin-left: auto;
+    margin-right: auto !important;
+}
+
+#top10 .torrent_table tbody td[colspan="9"] {
+    grid-column: 1 / 9;
+}
+
+#requests #content .search_form[name="requests"]>table:nth-of-type(3) tr td:nth-child(2) {
+    grid-column: 2 / 4;
+}
+
+#content .sidebar div.box_zipdownload .download_form select[name="preference"]+input[value="Download"] {
+    grid-column: 2 / 4;
+    width: 97% !important;
+}
+
+#wiki div.header + form[action="wiki.php"]{
+    grid-column: 1 / 3;
+}
+
+#wiki div.header + form[action="wiki.php"] > table tr.colhead{
+    height: 35px;
+}
+#wiki div.header + form[action="wiki.php"] > table tr.colhead + tr{
+    border-top: 1px solid #555;
+}
+#wiki div.header + form[action="wiki.php"] > table td.center[colspan="6"]{
+    display: table-cell;
+}
+#wiki #wiki_create_language_box > div{
+    display: inline-block;
+}
+#wiki #wiki_create_language_box > div > input#fatherLink{
+    width: 99% !important;
+    max-width: 580px !important;
+}
+
+#torrents #order>td:nth-child(2),
+#torrents #tagfilter>td:nth-child(2),
+#torrents #file_list>td:nth-child(2),
+#torrents #artist_name>td:nth-child(2),
+#torrents #search_terms>td:nth-child(2),
+#torrents #record_label>td:nth-child(2),
+#torrents #rip_specifics>td:nth-child(2),
+#torrents #edition_label>td:nth-child(2),
+#torrents #edition_catalogue>td:nth-child(2),
+#torrents #album_torrent_name>td:nth-child(2),
+#torrents #torrent_description>td:nth-child(2) {
+    grid-column: 2 / 5;
+    width: 100%
+}
+
+#torrents #misc>td.nobr.ft_misc {
+    grid-column: 2 / 6;
+    width: 100%
+}
+#inbox #messageform .message_table tr.unreadpm{
+    background-color: #000;
+}
+#content .sidebar div.box_zipdownload .download_form select#formats+button {
+    grid-column: 3 / 4;
+}
+
+/* Grid 占位 */
+
+/* Grid 排布 */
+#torrents #ft_container #taglist tbody tr {
+    grid-template-columns: repeat(7, 1fr)
+}
+
+#torrents #ft_container>table.layout:nth-of-type(1) tr {
+    display: grid;
+    position: relative;
+    align-items: center;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 320px 110px 80px 1fr;
+}
+
+#torrents #torrent_table tr.colhead {
+    grid-template-columns: 40px 0 auto 30px 100px 90px 50px 50px 50px;
+    align-items: center;
+}
+
+#torrents #torrent_table tr.group {
+    grid-template-columns: 40px 0 auto 0 0 0 0 0;
+    align-items: center;
+    border-top: 1px solid #555;
+    background-color: #292929;
+}
+
+#torrents #torrent_table tr.torrent{
+    grid-template-columns: 40px 0 auto 30px 100px 90px 50px 50px 50px;
+    align-items: center;
+    border-top: 1px solid #555;
+    background-color: #292929;
+}
+
+#torrents #torrent_table tr.group_torrent {
+    grid-template-columns: auto 30px 100px 90px 50px 50px 50px;
+    align-items: center;
+    border-top: 1px solid #555;
+}
+
+#torrents #torrent_table tr.group_torrent.edition {
+    border-top: 1px solid #555;
+    background-color: #222;
+    grid-template-columns: auto;
+    justify-content: flex-start;
+}
+
+#torrents #torrent_details tr.group_torrent {
+    display: grid;
+    grid-template-columns: auto 90px 50px 50px 50px;
+    align-items: center;
+    border-top: 1px solid #555;
+}
+
+#torrents #torrent_details tr.group_torrent.edition {
+    display: grid;
+    border-top: 1px solid #555;
+    background-color: #222;
+    grid-template-columns: auto;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_viewlog>table tr.colhead_dark,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_viewlog>table tr,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_reported>table tr.colhead_dark,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_reported>table tr {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_peers>table tr.colhead_dark,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_peers>table tr {
+    display: grid;
+    /* grid-template-columns: 100px 100px 100px 130px 60px auto; */
+    grid-template-columns: repeat(5, 1fr) 2fr;
+}
+
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_downloads>table tr.colhead_dark,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_downloads>table tr {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr 120px;
+}
+
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_snatches>table tr.colhead_dark,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_snatches>table tr {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr 120px;
+}
+
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_files>table tr.colhead_dark,
+#torrents #torrent_details .torrentdetails>td[colspan="5"]>div.torrentdetails_files>table tr {
+    display: grid;
+    grid-template-columns: auto 80px;
+}
+
+#torrents table#collages>tbody>tr,
+
+#torrents table#personal_collages>tbody>tr {
+    display: grid;
+    grid-template-columns: auto 90px;
+    width: 100%;
+}
+
+#torrents .box_addartists .add_form #AddArtists {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+}
+
+
+#torrents #yadg_div div.body form.add_form {
+    display: grid;
+    grid-template-columns: auto 20px 54px;
+    align-items: center;
+}
+
+#torrents div.sidebar div.box_addtag form.add_form {
+    display: grid;
+    grid-template-columns: auto 35px;
+    align-items: center;
+}
+
+/* #collage table.forum_post.box.vertical_margin tr.colhead_dark+tr,
+#torrents .main_column #torrent_comments table.forum_post.box.vertical_margin tr.colhead_dark+tr {
+    border-top: 1px solid #555;
+    display: grid;
+    grid-template-columns: 160px auto;
+} */
+
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 600px 1fr;
+    grid-template-rows: auto;
+    position: relative;
+}
+
+#torrents .thin table#user_seeding_torrents tbody tr.colhead~tr {
+    display: grid;
+    grid-template-columns: 0 auto 100px 90px 35px 35px 35px;
+    border-top: 1px solid #555;
+    /* min-width: 700px; */
+}
+
+#torrents .thin table#user_seeding_torrents tbody tr.colhead~tr>td:nth-last-child(1),
+#torrents .thin table#user_seeding_torrents tbody tr.colhead~tr>td:nth-last-child(2),
+#torrents .thin table#user_seeding_torrents tbody tr.colhead~tr>td:nth-last-child(3),
+#torrents .thin table#user_seeding_torrents tbody tr.colhead~tr>td:nth-last-child(4) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#forums .forum_post .colhead_dark td[colspan="2"] > div[style="float: right;"]{
+    height: 20px;
+}
+#forums .forum_post .colhead_dark td[colspan="2"] > div[style="float: right;"] > input{
+    margin-top: 0;
+    margin-bottom: 0
+}
+#artist .remove-artist-failed{
+    grid-column: 1 / 3;
+}
+#torrents .thin table#user_seeding_torrents tbody tr.colhead~tr>td:nth-last-child(5) {
+    display: flex;
+    align-items: center;
+}
+
+#torrents form.manage_form>table.torrent_table.cats.checkboxes.border.m_table>tbody>tr {
+    grid-template-columns: 30px 0 1fr 50px 120px 90px 35px 35px 35px;
+}
+
+#collage .thin .header+div>.search_form[name="collages"]>table:nth-of-type(1) tr {
+    display: grid;
+    grid-template-columns: 1fr 510px 1fr;
+    grid-template-rows: auto;
+    position: relative;
+    align-items: center;
+}
+
+#collage .thin .header+div>.search_form[name="collages"]>table:nth-of-type(1) tr#search_name_description>td:nth-child(2) {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+}
+
+#collage .thin .header+div>.search_form[name="collages"]>table:nth-of-type(1) tr#search_name_description>td:nth-child(2)>input {
+    margin-right: 6px;
+}
+
+#collage #discog_table>tbody>tr.group {
+    display: grid;
+    grid-template-columns: 40px 0 auto;
+    border-top: 1px solid #555;
+    background-color: #292929;
+}
+
+#logchecker table.forum_post{
+    display: table;
+    box-shadow: none;
+}
+#tools #content .thin>table#scores tr:first-child~tr{
+    border-top: 1px solid #555
+}
+
+#userhistory table.subscribed_collages_table + table.torrent_table>tbody > tr.group.discog>td.center:first-child{
+    display: flex;
+    padding: 0 5px 0 10px;
+    align-items: center;
+}
+#userhistory table.subscribed_collages_table + table.torrent_table>tbody > tr.group.discog>td>div>strong{
+    font-weight: normal;
+}
+td.center {
+    vertical-align: middle;
+}
+
+td.center[colspan="2"] {
+    display: table-cell;
+}
+
+td.center[colspan="2"]>span[style="float: right;"] {
+    float: none !important;
+    margin-left: 20px;
+}
+
+#collage #discog_table>tbody>tr.group_torrent,
+#collage #discog_table>table>tbody>tr.group_torrent {
+    display: grid;
+    grid-template-columns: auto 80px 50px 50px 50px;
+    border-top: 1px solid #555;
+}
+
+#collage #discog_table>tbody>tr.group_torrent.edition {
+    background-color: #222;
+    grid-template-columns: auto;
+    border-top: 1px solid #555;
+}
+
+#collage #content .sidebar div.box_zipdownload .download_form {
+    display: grid;
+    grid-template-columns: auto 55px 35px;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+}
+
+#collage #content .sidebar div.box_addtorrent .add_form {
+    display: grid;
+    grid-template-columns: auto 50px;
+    align-items: center;
+}
+
+#collage #discog_table>table>tbody>tr.group.discog {
+    display: grid;
+    grid-template-columns: 40px auto;
+    border-top: 1px solid #555;
+    background-color: #292929;
+}
+
+#collage #discog_table>table>tbody>tr.group_torrent.edition {
+    background-color: #222;
+    grid-template-columns: auto;
+}
+
+#requests #content .search_form[name="requests"]>table:nth-of-type(1) tr,
+#requests #content .search_form[name="requests"]>table:nth-of-type(3) tr {
+    display: grid;
+    position: relative;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 510px 1fr;
+}
+
+
+
+/* #forums .forum_list .forum_index>tbody>tr {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30px 170px auto 60px 60px;
+} */
+.forum_post>tbody>tr:nth-child(2){
+    padding: 3px;
+    border-top: 1px solid #555;
+}
+
+#forums .reward_head+dl.rate table.ratl > tbody{
+    display: block;
+}
+#forums .reward_head+dl.rate table.ratl tr {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100px 50px auto;
+}
+
+#top10 .search_form table.layout.border tbody {
+    display: grid;
+    grid-template-columns: auto 170px 122px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#top10 .torrent_table tbody tr {
+    display: grid;
+    grid-template-columns: 32px 0 auto 75px 75px 30px 30px 30px 30px;
+}
+
+
+
+
+#top10 .search_form table.top10_votes_filter>tbody {
+    grid-template-columns: auto 205px 122px !important;
+}
+
+#top10 h3+table#discog_table tbody tr {
+    display: grid;
+    grid-template-columns: 35px 0 auto 210px;
+}
+
+#top10 h3+table#discog_table tr.edition {
+    grid-template-columns: auto;
+    background-color: #222;
+    border-top: 1px solid #555;
+}
+
+
+#forums form#newthreadform table#newthreadtext tr > td.label{
+    width: 60px;
+}
+#forums #content .thin #newthreadpreview #pollpreview,
+#forums #content .thin>.linkbox+div.box.thin.clear {
+    margin-bottom: 20px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+#forums #content .thin #newthreadpreview #pollpreview>div.colhead_dark,
+#forums #content .thin>.linkbox+div.box.thin.clear>div.colhead_dark{
+    background-color: #111;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+#forums #content .thin #newthreadpreview #pollpreview>#threadpoll,
+#forums #content .thin>.linkbox+div.box.thin.clear>div.colhead_dark+div.pad{
+    border-top: 1px solid #555;
+    padding: .5rem;
+}
+
+
+
+
+#rules .header+.box.pad>table>tbody>tr {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 150px;
+}
+
+#wiki .sidebar .box_addalias .add_form {
+    display: grid;
+    grid-template-columns: auto 35px;
+    align-items: center;
+}
+
+#staff .thin div.box.pad>table.staff>tbody>tr {
+    width: 100%;
+    display: grid;
+    /*  */
+    grid-template-columns: 130px 200px auto;
+}
+#staff .thin div.box.pad>table.staff>tbody>tr>td.nobr:last-child{
+    white-space: normal;
+}
+
+#comments table.forum_post>tbody>tr:nth-child(2) {
+    display: grid;
+    grid-template-columns: 163px auto;
+    padding: .5rem;
+    border-top: 1px solid #555;
+}
+
+/* #inbox #messageform .message_table>tbody>tr {
+    width: 100%;
+    display: grid;
+    
+    grid-template-columns: 40px auto 200px 120px;
+} */
+
+#friends .thin .box.pad form[name="friends"] .friends_table>tbody>tr:nth-child(2) {
+    border-top: 1px solid #555;
+    padding: .5rem;
+}
+#friends .thin .box.pad form[name="friends"] .friends_table>tbody>tr:nth-child(2)>td:first-child{
+    width: 163px;
+}
+#friends .thin .box.pad form[name="friends"] .friends_table>tbody>tr:nth-child(2)>td:last-child{
+    width: 130px;
+}
+#friends .thin .box.pad form[name="friends"] .friends_table>tbody>tr:nth-child(2)>td>div.avatar_container{
+    margin-top: 5px;
+}
+
+#bookmarks #torrent_table>tbody>tr.group.discog {
+    display: grid;
+    grid-template-columns: 40px 0 auto;
+    background-color: #292929;
+}
+
+#bookmarks #torrent_table>tbody>tr.group_torrent.edition {
+    display: grid;
+    grid-template-columns: auto;
+    background-color: #222;
+}
+
+#bookmarks #torrent_table>tbody>tr.torrent_row {
+    display: grid;
+    grid-template-columns: auto 70px 70px 70px 70px;
+}
+
+
+
+#artist #content .sidebar div.box_search ul.nobullet li form.search_form {
+    display: grid;
+    grid-template-columns: auto 35px;
+}
+
+#artist #content .sidebar div.box_zipdownload .download_form {
+    display: grid;
+    grid-template-columns: auto 55px 35px;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+}
+
+#artist #content .sidebar div.box_addartists ul.nobullet li form.add_form {
+    display: grid;
+    grid-template-columns: auto 35px;
+}
+
+
+#wiki #wiki_search_box{
+    margin-bottom: 20px;
+}
+#wiki div.header + div{
+    grid-column: 1 / 3;
+}
+#wiki div.header + div > form[method="get"] > table.layout.border{
+    display: block;
+    border-bottom: 1px dotted #999999;
+}
+#wiki div.header + div > form[method="get"] > table.layout.border > tbody{
+    display: grid;
+    justify-items: center;
+}
+#wiki div.header + div > form[method="get"] > table.layout.border > tbody > tr > td.label:nth-child(3){
+    padding-left: 20px;
+}
+#wiki div.header + div + br{
+    display: none;
+}
+#wiki div.header + div + br + table{
+    grid-column: 1 / 3;
+}
+#wiki div.header + div + br + table tr.colhead ~ tr{
+    border-top: 1px solid #555;
+}
+#wiki div.header + div + br + table tr.colhead > td:first-child{
+    width: auto;
+}
+#wiki div.header + div + br + table tr.colhead > td:nth-child(2),
+#wiki div.header + div + br + table tr.colhead > td:nth-child(3){
+    width: 150px;
+}
+
+#user #content .main_column table#user_info_box .colhead~tr,
+#user #content .main_column table#warn_user_box .colhead~tr,
+#user #content .main_column table#warn_user_box+table.layout .colhead~tr,
+#user #content .main_column table#user_privs_box .colhead~tr,
+#user #content .main_column table#session_box .colhead~tr,
+#user #content .main_column table#donation_box .colhead~tr,
+#user #content .main_column table#donor_points_box .colhead~tr,
+#user #content .main_column table#submit_box .colhead~tr {
+    display: grid;
+    grid-template-columns: 130px auto 130px;
+    align-items: center;
+}
+
+#user #content .main_column table#user_info_box,
+#user #content .main_column table#warn_user_box,
+#user #content .main_column table#user_privs_box,
+#user #content .main_column table#session_box,
+#user #content .main_column table#donation_box,
+#user #content .main_column table#donor_points_box,
+#user #content .main_column table#submit_box {
+    table-layout: unset;
+}
+
+#userhistory table.userhistory_token_history_table>tbody>tr.colhead_dark {
+    background-color: #292929;
+}
+
+#userhistory table.userhistory_token_history_table>tbody>tr.rowa {
+    border-top: 1px solid #555;
+    background-color: #222;
+}
+
+#userhistory table.userhistory_token_history_table>tbody>tr.rowb {
+    border-top: 1px solid #555;
+}
+
+#userhistory #content table.forum_post.vertical_margin>tbody>tr.colhead_dark {
+    background-color: #292929;
+    
+    
+}
+#userhistory #content table.forum_post.vertical_margin>tbody>tr.colhead_dark+tr{
+    border-top: 1px solid #555;
+}
+.forum_post.vertical_margin td.avatar{
+    width: 163px;
+}
+
+#dnulist tr {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+
+#bonus .thin table#custom-title-setting tr{
+    grid-template-columns: auto;
+}
+#bonus .thin table#custom-title-setting>thead>tr{
+    background-color: #292929;
+}
+
+#torrents #torrent_table td>span#unchecked_statistic {
+    /* padding-left: 30px !important; */
+    display: block;
+    width: 70%;
+}
+
+#user form[name="invite"]>div {
+    display: grid;
+    grid-template-columns: 1fr 50% 1fr;
+    align-items: center;
+}
+
+#user form[name="invite"]>div>div.input {
+    display: grid;
+    grid-template-columns: auto 56px;
+    align-items: center;
+    grid-gap: 5px;
+}
+
+#reportsv2 #torrent_details tr.group_torrent {
+    grid-template-columns: auto 90px 50px 50px 50px;
+    border-top: 1px solid #555;
+    display: grid;
+}
+
+#reportsv2 #torrent_details tr.group_torrent.edition {
+    border-top: 1px solid #555;
+    background-color: #222;
+    grid-template-columns: auto;
+    justify-content: flex-start;
+    width: 100%;
+    display: grid;
+}
+
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(5)>table tr {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 130px 60px auto;
+}
+
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(4)>table tr.colhead_dark,
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(4)>table tr,
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(3)>table tr.colhead_dark,
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(3)>table tr {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr 120px;
+}
+
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(2)>table tr.colhead_dark,
+#reportsv2 #torrent_details tr.torrentdetails>td[colspan="5"]>div:nth-last-child(2)>table tr {
+    display: grid;
+    grid-template-columns: auto 80px;
+}
+
+#reportsv2 #wrapper #content .thin .two_gigcolumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 20px;
+}
+
+#reportsv2 #wrapper #content .thin .two_columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    border-top: 1px solid #555;
+}
+
+#reportsv2 #report-torrent-body #dynamic_form>table.layout tr {
+    /* display: grid;
+    grid-template-columns: 177px auto 177px; */
+}
+
+#staffpm #inbox>h2{
+    text-align: center;
+}
+
+
+#staffpm div#inbox > div.box.vertical_space{
+    border-radius: 5px;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+}
+#staffpm div#inbox > div.box.vertical_space > div.head{
+    
+    
+    background-color: #292929;
+}
+#staffpm div#inbox > div.box.vertical_space > div.body{
+    border-top: 1px solid #555;
+}
+
+#forums div#searchthread form.search_form table td:nth-child(2){
+    text-align: left !important;
+}
+#forums div#searchthread form.search_form+br{
+    display: none;
+}
+
+#tools #content{
+    overflow-x: auto;
+}
+
+#tools #forum_control_panel select{
+    width: 100px;
+}
+#tools #forum_control_panel input[name="autolockweeks"]{
+    width: 100px;
+}
+
+#tools #forum_control_panel  tr.colhead ~ tr{
+    border-top: 1px solid #555;
+}
+
+#tools #content>.permissions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+}
+
+#log .box.pad>form[name="log"]>table>tbody>tr {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+}
+
+#log .box.pad>form[name="log"]>table>tbody>tr>td:nth-child(2) {
+    display: grid;
+    grid-template-columns: 4fr 5px 3fr;
+    align-items: center;
+}
+
+#torrents .thin form#upload_table {
+    grid-column: 1 / 3;
+}
+
+#torrents .thin+.thin>* {
+    grid-column: 1 / 3;
+}
+
+#torrents .thin+.thin>br {
+    display: none;
+}
+
+
+#tools table.tags_table tr.colhead_dark ~ tr{
+    border-top: 1px solid #555 !important;
+}
+
+#collage .create_form>table td.label,
+#torrents .thin+.thin>.edit_form>table td.label,
+#torrents .thin+.thin>.split_form>table td.label,
+#torrents .thin+.thin>form:last-of-type>table td.label {
+    width: 20%
+}
+
+#collage .create_form>table tr td.center[colspan="2"] {
+    display: table-cell;
+    text-align: center;
+}
+
+#collage .create_form>table tr:not(:last-of-type) td.center[colspan="2"] {
+    display: table-cell;
+    text-align: center;
+    padding: .5rem !important;
+}
+
+/* #forums .forum_post .colhead_dark+tr>td.body{
+    display: block;
+    width: 100%;
+    height: 100%;
+} */
+
+/* Grid 排布 */
+
+/* 指定宽高 */
+.torrent_table td.cats_col {
+    padding: 0 !important;
+    width: 0 !important;
+}
+#upload_table>div#dynamic_form>table>tbody>tr>td,
+#upload_table>table>tbody>tr>td {
+    vertical-align: top;
+    
+}
+#upload_table>table>tbody>tr.text_tr>td.label,
+#upload_table>div#dynamic_form>table>tbody>tr.text_tr>td.label{
+    padding-top: 7px;
+}
+#upload_table>div#dynamic_form>table>tbody>tr.tag_tr>td.label{
+    padding-top: 10px;
+}
+#upload_table>div#dynamic_form>table>tbody>tr.group_unknown_tr>td.label{
+    padding-top: 5px;
+}
+#upload_table>table>tbody>tr.file_tr>td.label,
+#upload_table>div#dynamic_form>table>tbody>tr.file_tr>td.label{
+    padding-top: 7px;
+}
+#upload_table>table>tbody>tr>td.label,
+#upload_table>div#dynamic_form>table>tbody>tr>td.label{
+    padding-top: 14px;
+}
+#upload_table>div#dynamic_form>table>tbody>tr>td:first-child,
+#upload_table>table>tbody>tr>td:first-child {
+    width: 20%;
+    text-align: right;
+    min-width: 143px;
+    white-space: normal;
+}
+#upload_table table>tbody>tr.section_tr{
+    border-top: 1px solid #555;
+}
+.show_torrents_link:after,
+.show_torrents_link:before {
+    content: "";
+    display: block;
+    height: 2px;
+    left: 3px;
+    position: absolute;
+    top: 12px;
+    transition-delay: 0, .3s, 0s;
+    transition-duration: .15s, .3s, .3s;
+    width: 22px;
+    background-color: #aaa
+}
+
+.hide_torrents,
+.show_torrents {
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    height: 27px;
+    outline: 0;
+    overflow: hidden;
+    position: relative;
+    text-indent: -9999px;
+    -webkit-transition: all .3s ease !important;
+    -o-transition: all .3s ease !important;
+    transition: all .3s ease !important;
+    width: 27px
+}
+
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr td>select[name="log"],
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr td>select[name="order"],
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr td>select#bitrate,
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr td>select[name="log"]~select,
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr td>select[name="order"]~select,
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr td>select#bitrate~select {
+    width: 19%;
+}
+
+#userform .label {
+    white-space: unset !important;
+    width: 25%;
+}
+
+#upload .thin>p:first-child>a {
+    display: block;
+    line-height: 18px !important;
+    border-radius: 5px !important;
+    margin: 1rem auto;
+    width: 80% !important;
+    height: 26px !important;
+    max-width: 520px !important;
+    border: 1px solid #555 !important;
+    box-shadow: none !important;
+    color: #bbb !important;
+    padding: 3px 7px !important;
+}
+
+table.forum_post.box.vertical_margin tr>td.avatar {
+    width: 163px;
+}
+
+#torrents div.thin > h2.center{
+    grid-column: 1 / 3;
+}
+#torrents div.thin > form[name="edit_log"]{
+    grid-column: 1 / 3;
+}
+
+
+#torrents #edition_title>td:nth-child(2),
+#torrents #catalogue_number_year>td:nth-child(2),
+#requests #content .search_form[name="requests"]>table:nth-of-type(1) tr#tagfilter td input#tags,
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr:nth-last-child(2) td input[type="search"],
+#collage .thin .header+div>.search_form[name="collages"]>table:nth-of-type(1) tr#tagfilter td input#tags {
+    width: 300px;
+}
+
+#torrents #misc>td.nobr.ft_misc>select,
+#torrents #order>td:nth-child(2)>select,
+#torrents #rip_specifics>td:nth-child(2)>select {
+    width: 50% !important;
+    max-width: 120px;
+}
+
+#upload #upload_table #categories,
+/* #upload #dynamic_form #artistfields select[id^=importance], */
+#upload tr>td>#yadg_scraper,
+#upload #year_tr #year,
+#upload #releasetype_tr #releasetype,
+#upload #edition_year #remaster_year,
+#upload tr>td>#format,
+#upload #bitrate_row #bitrate,
+#upload tr>td>#media,
+#upload tr>td>#genre_tags {
+    width: 30%;
+    max-width: 120px;
+}
+
+#log .box.pad>form[name="log"]>table>tbody>tr>td:nth-child(2)>input[type="submit"] {
+    width: 90px;
+}
+
+#reportsv2 #report-torrent-body>table.layout td.label {
+    width: 160px;
+}
+
+#upload #dynamic_form #artistfields #artist,
+#upload #dynamic_form #artistfields input[size="45"],
+#upload #dynamic_form #title_tr>td:nth-child(2) #title,
+#upload #dynamic_form #aliases_tr>td:nth-child(2) #subtitle,
+#upload tr>td>#import_input,
+#upload tr>td>#yadg_input,
+#upload #edition_title #remaster_title,
+#upload #edition_record_label #remaster_record_label,
+#upload #edition_catalogue_number #remaster_catalogue_number,
+#upload tr>td>#tags,
+#upload tr>td>#image {
+    width: 70%;
+    max-width: 380px;
+}
+
+#torrents #tagfilter>td:nth-child(2)>input[type=search] {
+    width: 80%;
+    max-width: 300px;
+}
+
+#settings_sections #submit,
+#settings_sections #settings_search {
+    width: 100%;
+}
+
+#torrents #torrent_table tr {
+    /* min-width: 800px; */
+}
+
+.group_image {
+    margin: 3px 10px 3px 3px;
+    min-height: 90px;
+    min-width: 90px;
+    overflow: visible;
+    position: relative;
+    text-align: center;
+    background: #eeeeee;
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, .1);
+    padding: 1px;
+}
+
+#user .box_image_avatar div:nth-of-type(2) img {
+    max-height: 400px;
+    max-width: 248px !important;
+    width: unset;
+}
+
+/* 指定宽高 */
+
+/* 宽度占满 */
+#user .thin>#filter_form>table,
+#torrents #yadg_div div.body form.add_form select,
+#torrents #file_list>td:nth-child(2)>.inputtext,
+#torrents #search_terms>td:nth-child(2)>.inputtext,
+#torrents #edition_label>td:nth-child(2)>.inputtext,
+#torrents #edition_catalogue>td:nth-child(2)>.inputtext,
+#torrents #album_torrent_name>td:nth-child(2)>.inputtext,
+#torrents #torrent_description>td:nth-child(2)>.inputtext,
+#torrents #yadg_div div.body form.add_form input[type="text"],
+#user form[name="invite"]>div>div.input>input:first-child,
+#collage #content .sidebar div.box_addtorrent .add_form>div>input,
+#reportsv2 #report-torrent-body #dynamic_form>table.layout tr textarea,
+#torrents #ft_container>table.layout:nth-of-type(1) tr>td:nth-child(4)>.inputtext,
+#log .box.pad>form[name="log"]>table>tbody>tr>td:nth-child(2)>input[type="search"] {
+    width: 100%;
+}
+
+#reportsv2 #all_reports,
+
+#torrents #torrent_details .colhead_dark td[width="80%"],
+#reportsv2 #torrent_details .colhead_dark td[width="80%"],
+/* #forums .forum_list .forum_index>tbody>tr.colhead>td, */
+#staff .thin div.box.pad>table.staff>tbody>tr.colhead>td,
+#collage #discog_table>tbody>tr.colhead_dark>td:nth-child(3) {
+    width: 100% !important;
+}
+
+#torrents #artist_name>td:nth-child(2)>.inputtext,
+#torrents #catalogue_number_year>td:nth-child(2)>.inputtext,
+#torrents #edition_title>td.ft_remastertitle>.inputtext,
+#torrents #record_label>td:nth-child(2)>.inputtext {
+    width: 100%;
+    max-width: 300px;
+}
+
+
+
+#forums #quickpost {
+    margin: 0;
+    width: 100%;
+}
+
+#torrents #yadg_div div.body form.add_form>#yadg_submit {
+    width: 100%;
+    margin: 0 !important;
+}
+
+#forums #thread_notes+a+form>#thread_notes_table>tbody>tr:last-child>td #topic_notes {
+    margin-bottom: 1rem !important;
+    width: 100% !important
+}
+
+#torrents .thin div.header+div>form.search_form>table:nth-child(1) tr:first-child td input,
+#requests #content .search_form[name="requests"]>table:nth-of-type(1) tr#search_terms td input,
+#collage .thin .header+div>.search_form[name="collages"]>table:nth-of-type(1) tr#search_terms td input {
+    width: 100%;
+    max-width: 493px;
+}
+
+#top10 .search_form table.layout.border tbody tr#tagfilter #tags,
+#top10 .search_form table.top10_votes_filter>tbody td.ft_taglist>input[type="text"] {
+    width: 100% !important;
+    max-width: 300px !important;
+}
+
+#friends .thin .box.pad form[name="friends"]>.friends_table>tbody>tr:nth-child(2)>td:nth-child(3)>input {
+    margin-top: .5rem;
+    width: 100%;
+}
+
+#user #content .main_column #recent_snatches tr.colhead,
+#user #content .main_column #recent_uploads tr.colhead,
+#user #content .main_column #recent_uploads~table.layout.recent tr.colhead {
+    width: 100%;
+    display: grid;
+    /* min-height: 35px; */
+}
+
+#torrents .box_addartists .add_form {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+div#coverart .collage_images {
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    padding-top: 10px;
+    justify-content: center;
+}
+div#coverart .collage_images img,
+#user #content .main_column #recent_uploads tr.colhead+tr>td>a>img,
+#user #content .main_column #recent_snatches tr.colhead+tr>td>a>img,
+#user #content .main_column #recent_uploads~table.layout.recent tr.colhead+tr>td>a>img {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+div#coverart .collage_images>li>a,
+#user #content .main_column #recent_uploads tr.colhead+tr>td>a,
+#user #content .main_column #recent_snatches tr.colhead+tr>td>a {
+    height: 100%;
+    width: 100%;
+}
+div#coverart .collage_images>li:hover,
+#user #content .main_column #recent_uploads tr.colhead+tr>td:hover,
+#user #content .main_column #recent_snatches tr.colhead+tr>td:hover,
+#user #content .main_column #recent_uploads~table.layout.recent tr.colhead+tr>td:hover {
+    box-shadow: 0 0 6px 0 #000;
+}
+div#coverart .collage_images>li,
+#user #content .main_column #recent_uploads tr.colhead+tr>td,
+#user #content .main_column #recent_snatches tr.colhead+tr>td,
+#user #content .main_column #recent_uploads~table.layout.recent tr.colhead+tr>td {
+    margin: 5px;
+    height: 150px;
+    width: 150px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    transition: all .3s ease;
+    padding: 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+
+#reportsv2 #all_reports form.manage_form {
+    width: 100%;
+    padding: 0;
+}
+
+
+
+
+#collage .thin .collage_table>tbody>tr>td>div.tags {
+    width: 100%;
+    font-size: 12px;
+    padding: 2px 0 0;
+    visibility: hidden;
+    line-height: normal;
+}
+
+.selected a {
+    font-weight: bold !important;
+    text-decoration: none;
+}
+
+.show_torrents_link {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+}
+
+#wiki .sidebar .pad .search_form>input[name="search"] {
+    width: 99%;
+}
+
+#requests #request_form table>tbody>tr>td>select {
+    width: 99%;
+    max-width: 130px;
+}
+
+#requests #request_form table>tbody>tr:nth-child(3)>td>input[type="text"],
+#requests #request_form table>tbody>tr:nth-child(4)>td>input[type="text"],
+#requests #request_form table>tbody>tr:nth-child(5)>td>input[type="text"],
+#requests #request_form table>tbody>tr:nth-child(6)>td>input[type="text"],
+#requests #request_form table>tbody>tr:nth-child(10)>td>input[type="text"],
+#requests #request_form table>tbody>tr:nth-child(11)>td>input[type="text"] {
+    width: 99%;
+    max-width: 313px;
+}
+
+#wiki .sidebar .box_addalias .add_form>input[name="alias"] {
+    width: 97%;
+}
+
+#torrents #torrent_delete_reason{
+    grid-column: 1 / 3;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    
+    border-radius: 5px;
+}
+#torrents div.thin{
+    margin-bottom: 20px;
+}
+#torrents #torrent_delete_reason > div.head{
+    background-color: #292929;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #555;
+}
+#torrents #torrent_delete_reason > div.pad{
+    padding: 1rem;
+}
+#torrents #torrent_delete_reason > div.pad div.field_div{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+    gap: .5rem;
+}
+#torrents #torrent_delete_reason > div.pad div.field_div > strong{
+    margin-left: auto;
+}
+#torrents #torrent_delete_reason > div.pad div.field_div > select{
+    max-width: 150px;
+}
+#torrents #torrent_delete_reason > div.pad div.field_div > input[type="submit"]{
+    grid-column: 1 / 3;
+    justify-self: center;
+    max-width: 120px;
+}
+#torrents #torrent_delete_reason > div.pad div.field_div > input[type="text"]{
+    width: 98%;
+}
+
+#torrents #all_reports > div:not(:last-child){
+    margin-bottom: 20px;
+}
+#torrents #all_reports br{
+    display: none;
+}
+
+
+#torrents .box_addartists .add_form #AddArtists input,
+#torrents .box_addartists .add_form #AddArtists select,
+#torrents #yadg_div div.body form.add_form>select#yadg_scraper,
+#torrents div.sidebar div.box_addtag form.add_form>input#tagname {
+    width: 97%;
+    margin-right: auto;
+}
+
+#collage #content .sidebar div.box_addtorrent .add_form>div {
+    margin: 0;
+    width: 97%;
+}
+
+#footer {
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 20px;
+    width: 97%;
+    max-width: 1200px;
+}
+
+/* 宽度占满 */
+
+/* 次序重排 */
+#reportsv2 #wrapper #content .thin .two_columns>h3:nth-of-type(1) {
+    order: 1;
+}
+
+#reportsv2 #wrapper #content .thin .two_columns>h3:nth-of-type(2) {
+    order: 2;
+}
+
+#reportsv2 #wrapper #content .thin .two_columns>table:nth-of-type(1) {
+    order: 3;
+}
+
+#reportsv2 #wrapper #content .thin .two_columns>table:nth-of-type(2) {
+    order: 4;
+}
+
+#reportsv2 #wrapper #content .thin .two_gigcolumns>h3:nth-of-type(1) {
+    order: 1;
+}
+
+#reportsv2 #wrapper #content .thin .two_gigcolumns>h3:nth-of-type(2) {
+    order: 2;
+}
+
+#reportsv2 #wrapper #content .thin .two_gigcolumns>table:nth-of-type(1) {
+    order: 3;
+}
+
+#reportsv2 #wrapper #content .thin .two_gigcolumns>table:nth-of-type(2) {
+    order: 4;
+}
+
+#reportsv2 #wrapper #content .thin .two_gigcolumns>h3:nth-of-type(3) {
+    order: 5;
+}
+
+#reportsv2 #wrapper #content .thin .two_gigcolumns>h3:nth-of-type(4) {
+    order: 6;
+}
+
+#reportsv2 #wrapper #content .thin .two_gigcolumns>table:nth-of-type(3) {
+    order: 7;
+}
+
+#reportsv2 #wrapper #content .thin .two_gigcolumns>table:nth-of-type(4) {
+    order: 8;
+}
+
+#bookmarks #torrent_table>tbody>tr.torrent_row>td.td_info>span {
+    order: 2;
+    margin-left: auto;
+}
+
+#torrents #torrent_table tr.group_torrent td.td_info span:first-child {
+    order: 5;
+    margin-left: auto;
+}
+
+#tools table.permission_head tbody{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#tools table.permission_head tbody tr{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+#tools table.permission_head tbody tr td.label{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#tools div.permissions{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,auto);
+}
+#tools div.permissions div:nth-child(1),
+#tools div.permissions div:nth-child(2){
+    grid-row: 1 / 3;
+}
+#tools div.permissions div.submit_container{
+    grid-column: 1 / 4;
+    text-align: center;
+}
+@media only screen and (max-width:1040px) {
+    #tools table.permission_head tbody{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    #tools div.permissions{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+    }
+    #tools div.permissions div.submit_container{
+        grid-column: 1 / 3;
+        text-align: center;
+    }
+}
+@media only screen and (max-width:700px){
+    #tools div.permissions{
+        display: block;
+        margin: 0 auto;
+        width: 470px;
+    }
+    #tools div.permissions div.submit_container{
+        text-align: center;
+    }
+}
+
+#forums form.search_form > table.layout{
+    border-bottom: 1px dotted #999999;
+    margin-bottom: 20px;
+}
+#forums form.search_form > table.layout > tbody > tr > td:first-child{
+    width: 20%;
+    text-align: right;
+}
+#forums form.search_form > table.layout > tbody > tr > td:first-child[colspan="2"]{
+    text-align: center;
+}
+
+#forums table.forum_list{
+    border-radius: 5px;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    display: block;
+}
+#forums table.forum_list > tbody{
+    display: block;
+}
+#forums table.forum_list > tbody > tr{
+    display: grid;
+    grid-template-columns: 150px auto 150px 150px;
+    align-items: center;
+}
+#forums table.forum_list > tbody > tr.colhead{
+    background-color: #292929;
+    
+    
+}
+#forums table.forum_list > tbody > tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+#forums table.forum_list > tbody > tr.rowb{
+    background-color: #222;
+}
+#forums table.forum_list > tbody > tr>td[colspan="4"]{
+    grid-column: 1 / 5;
+    text-align: center;
+}
+/* 次序重排 */
+
+/* 响应式布局 */
+@media only screen and (max-width:835px) {
+    #torrents .thin div.header+div>form.search_form>table:nth-child(1) tr {
+        grid-template-columns: 120px auto;
+    }
+
+    #collage .thin .header+div>.search_form[name="collages"]>table:nth-of-type(1) tr {
+        grid-template-columns: 120px auto;
+    }
+
+    #content .search_form[name="requests"]>table:nth-of-type(1) tr {
+        grid-template-columns: 120px auto;
+    }
+}
+
+@media only screen and (max-width:830px) {
+    #top10 .search_form table.layout.border tbody {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    #top10 .search_form table.layout.border tbody tr#tagfilter {
+        grid-column: 1 / 3;
+    }
+
+    #top10 .search_form table.layout.border tbody tr:last-child {
+        justify-content: flex-end;
+    }
+}
+
+@media only screen and (max-width:825px) {
+    #torrents #ft_container>table.layout:nth-of-type(1) tr {
+        display: grid;
+        grid-template-columns: 130px 350px 80px 80px auto;
+        grid-template-rows: auto;
+    }
+}
+
+@media only screen and (max-width:803px) {
+    #content .thin {
+        display: block;
+    }
+
+    #user #userform {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+    }
+
+    #collage .thin .sidebar h3 {
+        grid-column: 1 / 3
+    }
+
+    #user #content .main_column {
+        order: 2;
+    }
+
+    #user #content .sidebar.settings_sidebar {
+        gap: 0;
+        order: 1;
+        max-width: 250px;
+        grid-column: 1 / 2;
+        margin-bottom: 10px;
+        grid-template-rows: auto;
+        grid-template-columns: 100%;
+    }
+    #requests .forum_post>tbody>tr:nth-child(2),
+    #torrents .forum_post>tbody>tr:nth-child(2),
+    #forums .forum_post>tbody>tr:nth-child(2),
+    #torrents .forum_post>tbody>tr:nth-child(2),
+    #userhistory #content table.forum_post.vertical_margin>tbody>tr.colhead_dark+tr {
+        grid-template-columns: auto !important;
+    }
+
+    .forum_post>tbody>tr:nth-child(2)>td.avatar {
+        display: none;
+    }
+
+    #comments table.forum_post>tbody>tr:nth-child(2)>td.avatar {
+        display: none;
+    }
+
+    #comments table.forum_post>tbody>tr:nth-child(2) {
+        grid-template-columns: auto;
+    }
+
+    #friends .thin .box.pad form[name="friends"]>.friends_table>tbody>tr>td.col_avatar {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:791px) {
+    #torrents #taglist td {
+        display: inline-block;
+        font-size: .8em;
+        padding: 1px;
+        width: unset
+    }
+
+    #torrents #taglist tr {
+        display: inline
+    }
+}
+
+@media only screen and (max-width:710px) {
+    #torrents #ft_container>table.layout:nth-of-type(1)>tbody {
+        width: 100%
+    }
+
+    #torrents #ft_container>table.layout:nth-of-type(1) tr {
+        display: flex;
+        flex-flow: column;
+        width: 100%
+    }
+
+    #torrents #ft_container>table.layout:nth-of-type(1) tr>td {
+        margin-left: 0 !important;
+    }
+
+    #torrents #rip_specifics>td:nth-child(2)>select {
+        margin-left: 0;
+    }
+
+    #torrents #misc>td:nth-child(2)>select {
+        margin-left: 0;
+    }
+
+    #torrents #order {
+        flex-flow: row !important;
+    }
+
+    #torrents #order>td:first-child {
+        white-space: nowrap;
+    }
+
+    #torrents #search_group_results {
+        flex-flow: row !important;
+    }
+
+    #torrents #search_group_results>td:first-child {
+        white-space: nowrap;
+    }
+
+    #torrents #catalogue_number_year>td:nth-child(2)>input {
+        width: 100%;
+    }
+
+    #torrents #edition_expand>td {
+        width: 100%;
+    }
+
+    #torrents #edition_expand>td>a {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #torrents #edition_title>td:nth-child(2)>input {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:585px) {
+    #torrents #misc>td:nth-child(2) {
+        display: flex;
+        flex-flow: wrap;
+    }
+
+    #torrents #tagfilter>td:nth-child(2) {
+        display: flex;
+        flex-flow: wrap;
+        align-items: center;
+    }
+
+    #torrents #tagfilter>td:nth-child(2)>input[type=search] {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #torrents #tagfilter>td:nth-child(2)>input#tags_type0 {
+        margin-left: 0;
+    }
+}
+
+/* 响应式布局 */
+
+/* 用户审核 */
+
+
+#dynamicImg+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+#dynamicImg+table p {
+    margin: 0;
+}
+
+#dynamicImg+table .colhead td:nth-child(2) {
+    width: 35px !important;
+}
+
+#dynamicImg+table .colhead td:nth-child(5) {
+    width: 100px !important;
+}
+
+#dynamicImg+table tr td:nth-of-type(6) {
+    width: auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#dynamicImg+table .colhead td:nth-child(7) {
+    width: 35px;
+}
+
+#dynamicImg+table .colhead td:nth-child(10) {
+    max-width: 130px;
+}
+
+/* 用户审核 */
+
+/* 图片放大 */
+/* .curtain,
+.lightbox {
+    opacity: 1;
+    position: fixed;
+    transition: all .1s linear;
+    visibility: visible;
+}
+
+.curtain {
+    background-color: rgba(0, 0, 0, .8);
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10000001;
+}
+
+.lightbox {
+    height: 90%;
+    left: 5%;
+    overflow: auto;
+    padding: 0;
+    text-align: center;
+    top: 5%;
+    width: 90%;
+    z-index: 10000002;
+}
+
+.lightbox img {
+    max-height: 100%;
+    display: block;
+    max-width: 100%;
+    box-shadow: 0 0 32px 6px rgba(0, 0, 0, .32);
+}
+
+.curtain.hidden,
+.lightbox.hidden {
+    display: unset;
+    opacity: 0;
+    visibility: hidden
+} */
+.lightbox {
+    z-index: 1000;
+    position: fixed;
+    display: -ms-flexbox;
+    display: flex;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .8);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.lightbox.hidden {
+    display: none
+}
+
+.lightbox img {
+    display: block;
+    cursor: pointer;
+    max-width: 92%;
+    max-height: 92%;
+    box-shadow: 0 0 32px 6px rgba(0, 0, 0, .32)
+}
+
+/* 图片放大 */
+
+/* 通知弹窗 */
+ul#noty_bottomRight_layout_container > li{
+    background: none !important;
+    border: none !important;
+}
+.noty_bar {
+    background-color: #111;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    color: #bbb;
+    border: 1px solid #555;
+}
+.noty_bar .noty_message{
+    display: flex;
+    align-items: center;
+}
+.noty_bar .noty_buttons {
+    border-top: 1px solid #555 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #111  !important;
+}
+
+/* 通知弹窗 */
+
+/* 页脚 */
+#footer p {
+    flex: 0 1 auto;
+    margin: 5px 0
+}
+
+#footer>div {
+    flex: 1 0 100%;
+    line-height: 1.75em;
+    margin-bottom: 25px
+}
+
+#footer>div a {
+    
+    display: block
+}
+
+#footer>p>a {
+    
+}
+
+#footer>div b {
+    font-weight: 400
+}
+
+#footer #footer-stats {
+    border-radius: 5px;
+    flex-basis: 20%;
+    margin-top: -5px;
+    padding: 5px 15px
+}
+
+#footer-stats>div {
+    display: flex;
+    flex-wrap: wrap
+}
+
+/* 页脚 */
+
+#user form.search_form > table.layout{
+    display: block;
+}
+#user form.search_form > table.layout > tbody{
+    display: block;
+}
+#user form.search_form > table.layout > tbody > tr{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(6, 1fr);
+}
+#user form.search_form > table.layout > tbody > tr > td{
+    width: 100% !important;
+}
+#user form.search_form > table.layout > tbody > tr > td[colspan="6"]{
+    grid-column: 1 / 7;
+}
+
+
+#user div.linkbox + div.box.pad.center > h2:first-child + table tr.colhead ~ tr{
+    border-top: 1px solid #555;
+}
+
+
+
+#reports div.pending_report_v1{
+    margin-bottom: 20px !important;
+}
+#reports div.pending_report_v1 > table{
+    border-radius: 5px;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    display: block;
+}
+#reports div.pending_report_v1 > table > tbody{
+    display: block;
+}
+#reports div.pending_report_v1 > table > tbody > tr{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+#reports div.pending_report_v1 > table > tbody > tr:not(:first-child){
+    border-top: 1px solid #555;
+}
+#reports div.pending_report_v1 > table > tbody > tr:first-child{
+    /* min-height: 35px; */
+    background-color: #292929;
+}
+#reports div.pending_report_v1 > table > tbody > tr:first-child > td:last-child{
+    justify-self: flex-end;
+}
+#reports div.pending_report_v1 > table > tbody > tr > td[colspan="2"]{
+    grid-column: 1 / 3;
+}
+#reports div.pending_report_v1 > table > tbody > tr:last-child > td{
+    justify-self: flex-end;
+}
+div.table_container.border{
+    border-radius: 5px;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    overflow: hidden;
+    grid-column: 1 /3;
+}
+#tools #enable_requests_table{
+}
+#tools #enable_requests_table > tbody{
+}
+#tools #enable_requests_table > tbody > tr{
+}
+#tools #enable_requests_table > tbody > tr.colhead{
+    background-color: #292929;
+}
+#tools #enable_requests_table > tbody > tr.colhead ~ tr{
+    border-top: 1px solid #555;
+}
+#artist_list .remove_artist{
+	padding-top: 3px;
+}
+
+.additional_add_artist a,
+.remove a,
+.vote_album_down,
+.vote_album_up,
+a.small_downvote,
+a.small_upvote,
+a.vote_artist_down,
+a.vote_artist_up,
+a.vote_tag_down,
+a.vote_tag_up {
+    background: url(assets/icons/Torrent-RM-tag-artist.svg) no-repeat 50%;
+    display: inline-block;
+    -webkit-filter: brightness(80%);
+    filter: brightness(80%);
+    font-size: 0 !important;
+    height: 10px;
+    vertical-align: middle;
+    width: 10px
+}
+
+.additional_add_artist a,
+.remove a {
+    background-size: 10px 10px
+}
+
+.additional_add_artist a {
+    background-image: url(assets/icons/plus.svg)
+}
+
+a.small_upvote,
+a.vote_artist_up,
+a.vote_tag_up{
+    background-image: url(assets/icons/Voting-Up.svg);
+    background-size: 9px 9px;
+    -webkit-filter: brightness(60%);
+    filter: brightness(60%)
+}
+.vote_album_up{
+    background-image: url(assets/icons/Voting-Up.svg);
+    background-size: 10px;
+}
+
+a.small_downvote,
+a.vote_artist_down,
+a.vote_tag_down {
+    background-image: url(assets/icons/Voting-Down.svg);
+    background-size: 9px 9px;
+    -webkit-filter: brightness(60%);
+    filter: brightness(60%);
+    margin: 0 2px 0 1px
+}
+.vote_album_down {
+    background-image: url(assets/icons/Voting-Down.svg);
+    background-size: 10px;
+}
+
+.box_addartists > div.head{
+    display: flex;
+    align-items: center;
+}
+.box_addartists > div.head > span[style="float: right;"]{
+    margin-left: auto;
+}
+
+.additional_add_artist a:hover,
+.remove_tag a:hover,
+.remove a:hover,
+a.small_downvote:hover,
+a.small_upvote:hover,
+a.vote_artist_down:hover,
+a.vote_artist_up:hover,
+a.vote_tag_down:hover,
+a.vote_tag_up:hover {
+    filter: saturate(100%) brightness(100%)
+}
+
+
+#tools table#table-select{
+    margin-top: 20px;
+}
+#tools table#table-select a,
+#tools table#table-select span{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+
+#tools div#salary-table{
+    width: 100%;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+#tools div#salary-table > div#table-head-left > div,
+#tools div#salary-table > div#table-right-scroll > div#table-head-top > div,
+#tools div#salary-table > div#table-right-scroll > div#table-content > div{
+    padding: 7px 5px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#tools div#salary-table > div#table-head-left{
+    display: grid;
+    grid-template-columns: 50px 100px;
+    grid-template-rows: 86px;
+    
+    border-bottom-left-radius: 4px;
+}
+#tools div#salary-table > div#table-head-left > div{
+    border-right: 1px solid #555;
+}
+#tools div#salary-table > div#table-head-left > div.group-name{
+    /* background-color: #292929 !important; */
+    align-items: center;
+    border-top: 1px solid #555;
+}
+#tools div#salary-table > div#table-head-left > div.group-name:last-of-type{
+    border-bottom-left-radius: 4px;
+}
+#tools div#salary-table > div#table-head-left > div.group-name:first-of-type~div.group-name,
+#tools div#salary-table > #table-head-left > div:nth-child(2)~div.div-username{
+    border-top: 1px solid #555;
+}
+#tools div#salary-table > div#table-head-left > div{
+    align-items: center;
+}
+#tools div#salary-table > div#table-head-left > div.row1{
+    background-color: #292929;
+}
+#tools div#salary-table > div#table-head-left > div.th-span2{
+    grid-column-start: span 2;
+    background-color: #292929;
+    
+}
+#tools div#salary-table > div#table-head-left > div.row2{
+    border-top: 1px solid #555;
+    background-color: #292929;
+}
+
+
+#tools h2#award-title{
+    margin-bottom: 0;
+}
+#tools div#salary-table > div#table-right-scroll{
+    display: block;
+    overflow-x: auto;
+}
+#tools div#salary-table > div#table-right-scroll::-webkit-scrollbar {
+    display: none
+}
+#tools div#salary-table > div#table-right-scroll > div#table-head-top{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto 53px;
+    background-color: #292929;
+    min-width: 800px;
+    
+}
+#tools div#salary-table > div#table-right-scroll > div#table-head-top.fixed {
+    position: fixed !important;
+    top: 0px;
+}
+#tools div#salary-table > div#table-right-scroll > div#table-head-top > div{
+    border-right: 1px solid #555;
+    border-bottom: 1px solid #555;
+    align-items: center;
+    text-align: center;
+}
+#tools div#salary-table > div#table-right-scroll > div#table-head-top > div.row1.col-tail{
+    
+}
+
+#tools div#salary-table > div#table-right-scroll > div#table-head-top > div.th-span2{
+    grid-column-start: span 2;
+}
+#tools div#salary-table > div#table-right-scroll > div#table-head-top > div.th-span3{
+    grid-column-start: span 3;
+}
+#tools div#salary-table > div#table-right-scroll > div#table-head-top > div.th-span4{
+    grid-column-start: span 4;
+}
+#tools div#salary-table > div#table-right-scroll > div#table-head-top > div.col-tail{
+    border-right: none !important;
+}
+
+#tools div#salary-table > div#table-right-scroll > div#table-content{
+    display: grid;
+    min-width: 800px;
+    border-bottom-right-radius: 4px;
+}
+#tools div#salary-table > div#table-head-left > div.rowodd,
+#tools div#salary-table > div#table-right-scroll > div#table-content > div.rowodd{
+    background-color: #292929;
+}
+#tools div#salary-table > div#table-right-scroll > div#table-content > div{
+    border-right: 1px solid #555;
+    border-top: 1px solid #555;
+}
+#tools div#salary-table > div#table-right-scroll > div#table-content > div:last-child{
+    border-bottom-right-radius: 4px;
+}
+#tools div#salary-table > div#table-right-scroll > div#table-content > div.col-tail{
+    border-right: none;
+}
+#tools div#salary-table > div#table-right-scroll > div#table-content > div.row3{
+    border-top: none;
+}
+
+#wiki div.wiki_article > div.pad > blockquote{
+    /* white-space: pre-wrap; */
+    word-wrap: break-word;
+    /* word-break: break-all; */
+}
+
+
+
+/* 这部分代码试图美化界面的 checkbox 和 radio 的 input，但是因为 php 结构原因失败了。
+input[type="checkbox"],
+input[type="radio"]{
+
+    width: 0;
+    margin: 0 !important;
+}
+td > input[type="radio"]:first-child:last-child,
+td > input[type="checkbox"]:first-child:last-child{
+    width: 13px;
+}
+input[type="checkbox"] + label::before{
+    content: '\a0';
+    display: inline-block;
+    vertical-align: -4px;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    border-radius: 5px;
+    background: #eeeeee;
+    border: 1px solid #aaaaaa;
+}
+input[type="radio"] + label::before{
+    content: '\a0';
+    display: inline-block;
+    vertical-align: -4px;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background: #eeeeee;
+    border: 1px solid #aaaaaa;
+}
+input[type="checkbox"]:checked + label::before{
+    content: '\2713';
+    background: #eeeeee;
+    color: #707070;
+    font-weight: bold;
+    text-indent: 1px;
+    line-height: .7;
+    vertical-align: 1px;
+}
+input[type="radio"]:checked + label::before{
+    content: '\25CF';
+    background: #eeeeee;
+    color: #707070;
+    font-weight: bold;
+    text-indent: 2px;
+    line-height: .7;
+    vertical-align: 1px;
+}
+input[type="checkbox"]:focus + label::before,
+input[type="radio"]:focus + label::before {
+    background: #dddddd;
+}
+input[type="checkbox"]:disabled + label::before,
+input[type="radio"]:disabled + label::before {
+    background: #eeeeee;
+    box-shadow: none;
+    border: 1px solid #eeeeee;
+}
+
+#user p.preview_name > label{
+    cursor: pointer;
+} */
+
+table.forum_post td.body {
+    line-height: 1.75em;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+code {
+    font-family: Consolas,Monospace;
+    line-height: 18px;
+    max-width: 100%!important;
+    padding: 1px 4px;
+    background: rgba(255, 255, 255, .1);
+}
+
+#user input[type=number]{
+    width: 100px;
+}
+
+#torrents div.widethin > form.manage_form > table.torrent_table{
+    display: block;
+    border-radius: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+}
+#torrents div.widethin > form.manage_form > table.torrent_table>tbody{
+    width: 100%;
+    display: block;
+}
+#torrents div.widethin > form.manage_form > table.torrent_table>tbody>tr{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 40px 0 auto 30px 100px 90px 50px 50px 50px;
+    align-items: center;
+}
+#torrents div.widethin > form.manage_form > table.torrent_table>tbody>tr strong{
+    font-weight: normal;
+}
+#torrents div.widethin > form.manage_form > table.torrent_table>tbody>tr.colhead{
+    /* min-height: 35px; */
+    background-color: #292929;
+}
+#torrents div.widethin > form.manage_form > table.torrent_table>tbody>tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+#torrents div.widethin > form.manage_form > table.torrent_table>tbody>tr.colhead~tr:nth-child(odd){
+    background-color: #222;
+}
+
+#torrents div.filter_torrents #ft_container>table.ft_cat_list.cat_list tr{
+    display: flex;
+    justify-content: center;
+}
+#userhistory table.subscribed_collages_table + table.torrent_table>tbody{
+    display: block;
+    width: 100%;
+}
+#userhistory table.subscribed_collages_table + table.torrent_table>tbody > tr.group.discog{
+    display: grid;
+    grid-template-columns: 40px auto;
+    border-top: 1px solid #555;
+    background-color: #292929;
+    width: 100%;
+}
+
+
+
+#better table.torrent_table>tbody>tr.colhead>td{
+    text-align: left;
+}
+
+#better table.torrent_table>tbody>tr:first-child~tr{
+    border-top: 1px solid #555;
+}
+#better table.torrent_table>tbody>tr.colhead{
+    background-color: #292929 !important;
+}
+#better table.torrent_table>tbody>tr:nth-child(odd){
+    background-color: #222;
+}
+#better #content .thin>h3+div.box.pad{
+    margin-bottom: 20px;
+}
+
+
+#staffblog #content>div.box.box2.thin{
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+}
+#staffblog #content>div.box.box2.thin>div.head{
+    height: 35px;
+    background-color: #292929;
+    padding: 8px;
+}
+#staffblog #content>div.box.box2.thin>form#blog_post{
+    border-top: 1px solid #555;
+}
+#staffblog #content>div.box.box2.thin>form#blog_post>div#postform{
+    padding: 10px;
+}
+#staffblog .thin>div.blog_post{
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+}
+#staffblog .thin>div.blog_post:not(:last-child){
+    margin-bottom: 20px;
+}
+#staffblog .thin>div.blog_post>div.head{
+    height: 35px;
+    background-color: #292929;
+    padding: 8px;
+}
+
+
+#upload #image_uploader{
+    text-align: center;
+}
+
+#badges .card_container>.card{
+	background-color: #292929;
+	border: 1px solid #555;
+	box-shadow: 0 0 6px rgba(0, 0, 0, .1);
+}
+#badges .card_container>.card>.card_inside{
+    border: 1px solid #555;
+    background-color: #222;
+}
+#badges .card_container>.card>.card_inside>.badge_title{
+    background: radial-gradient(circle at top left,
+            transparent 13px, #111111 0) top left,
+            radial-gradient(circle at top right,
+            transparent 13px, #111111 0) top right,
+            radial-gradient(circle at bottom right,
+            transparent 13px, #111111 0) bottom right,
+            radial-gradient(circle at bottom left,
+            transparent 13px, #111111 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+#badges .card_container>.card>.card_inside>.badge_introduction{
+    margin: 10px 10px 2px;
+    background-color: #292929;
+    border-radius: 5px;
+}
+#user .badge_log_container,
+#user .badge_store_container{
+    border: 1px solid #555;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+}
+#user .badge_log_container .colhead,
+#user .badge_store_container .colhead{
+    background-color: #292929;
+}
+#user .badge_log_container .rowb,
+#user .badge_store_container .rowb{
+    background-color: #222;
+}
+
+#tools .change_log_entry{
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+}
+#tools .change_log_entry>.head{
+    background-color: #111;
+}
+#tools .change_log_entry>.pad{
+    border-top: 1px solid #555;
+    padding: 10px;
+}
+#tools .change_log_entry:not(:last-of-type){
+    margin-bottom: 20px;
+}
+#donate_information #donate_progress>span,
+#donate_information #donate_progress>span:after,
+.center_poll, .center_poll:after {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 8px;
+}
+#donate_information #donate_progress>span,
+.center_poll {
+    /* box-shadow: 0 0 4px rgba(0,0,0,.1), inset 0 -2px 6px rgba(0,0,0,.6); */
+    float: left;
+    height: 10px;
+    overflow: hidden;
+    position: relative;
+    /* background-image: linear-gradient(180deg,#78acff,#4285f4); */
+    background-color: #4285f4;
+}
+#index li.graph {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8px;
+    margin-top: 4px;
+    /* width: 245px; */
+}
+div#donate_progress{
+    border-radius: 25px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.3)!important;
+    height: 14px;
+    padding: 2px!important;
+    position: relative;
+    background: rgba(0, 0, 0, .1);
+}
+li.graph {
+    border-radius: 25px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.3)!important;
+    height: 14px;
+    padding: 2px!important;
+    position: relative;
+    background: rgba(255, 255, 255, .1);
+}
+#better #content div.thin>h3#general{
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 0 auto 10px;
+    padding: 0 0 5px;
+}
+
+#activity_alert_container>#activity_alert{
+    background-color: rgba(240, 110, 120, .6);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: -1;
+    height: 20px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .3);
+    /* filter: blur(20px); */
+}
+#activity_alert_container>#activity_alert>a{
+    color: #fff;
+    padding-bottom: 3px;
+}
+
+#torrents #content div.requests_list{
+    margin-bottom: 20px;
+}
+
+#torrents #content div.requests_list>table#requests{
+    display: block;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    border: 1px solid #555;
+    border-radius: 5px;
+    width: 95%;
+    margin: 10px auto 0;
+}
+
+#torrents #content div.requests_list>table#requests>tbody{
+    display: block;
+    width: 100%;
+}
+#reports #content .report_details_table>tbody>tr>td:first-child{
+    width: 20%;
+}
+
+#torrents #content div.requests_list>table#requests>tbody>tr{
+    display: grid;
+    grid-template-columns: 80% 1fr 1fr;
+}
+#reports #content .report_details_table>tbody>tr.colhead,
+#torrents #content div.requests_list>table#requests>tbody>tr.colhead{
+    background-color: #292929;
+    
+    
+}
+#reports #content .report_details_table>tbody>tr.colhead~tr{
+    justify-items: center;
+    border-top: 1px solid #555;
+}
+#torrents #content div.requests_list>table#requests>tbody>tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+#reports #content .thin>.header+h3+div.box.pad>ul{
+    margin-left: 10px;
+}
+@media only screen and (max-width: 850px) {
+    #torrents #torrent_table tr.colhead{
+        grid-template-columns: 45px 1fr 2fr 2fr 1fr 1fr 1fr;
+    }
+    #torrents #torrent_table tr.colhead>td.small.cats_col{
+        display: none;
+    }
+    #torrents #torrent_table tr.colhead>td.m_th_left_collapsable{
+        grid-column: 2 / 8;
+    }
+    #torrents #torrent_table tr.colhead>td.m_th_left_collapsable+td{
+        grid-column: 2 / 3;
+    }
+    #torrents #torrent_table tr.group_torrent[class*="edition_"]{
+        grid-template-columns: 45px 1fr 2fr 2fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+    #torrents #torrent_table tr.group_torrent>td.td_info{
+        grid-column: 1 / 8;
+    }
+    #torrents #torrent_table tr.group_torrent>td.td_file_count{
+        grid-column: 2 / 3;
+    }
+}
+#torrents #edit_log_table{
+    table-layout: unset;
+}
+#torrents #edit_log_table tr.colhead:first-child~tr{
+    border-top: 1px solid #555;
+}
+#torrents #edit_log_table tr.colhead td{
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1rem;
+}
+#revision_table>tbody{
+    display: block;
+}
+#revision_table tr{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 60%;
+}
+#revision_table tr.colhead{
+    background-color: #292929;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+#revision_table tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+
+
+
+#userhistory .thin table.forum_list>tbody>tr.colhead{
+    background-color: #292929;
+}
+#userhistory .thin table.forum_list>tbody>tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+
+.sidebar .box_artists #artistmanager_list.stats.nobullet,
+.sidebar .box_artists #artist_list.stats.nobullet{
+	margin-right: 18px;
+}
+#artistmanager_list .remove_artist,
+#artist_list .remove_artist{
+	float: right;
+    margin-right: -18px;
+    margin-top: 4px;
+}
+#artistmanager_list input[type=checkbox],
+#artist_list input[type=checkbox]{
+    margin-top: 0;
+}
+
+#torrents #content>.thin>h1,
+#torrents #content>.thin>h1+p:last-child{
+    grid-column: 1 / 3;
+}
+
+#artist table.torrent_table tr.group>td.td_collapse{
+    padding-right: 0 !important
+}
+
+#donate #donor_ranks_container{
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1)
+}
+#donate #donor_ranks_container>table#donor_ranks_table td.th{
+	background-color: #292929;
+}
+
+#collage .thin>.linkbox+div.box.pad[align="center"]{
+    grid-column: 1 / 3;
+}
+
+#ssp #ssp_panel_container>div.table_container.border tr:first-child~tr{
+	border-top: 1px solid #555;
+}
+#ssp #ssp_panel_container>div.table_container.border tr:nth-of-type(even){
+    background-color: #292929;
+}
+#iphistory tr.colhead,
+#passkeyhistory tr.colhead,
+#passwordhistory tr.colhead,
+#email_history_table tr.colhead{
+    background-color: #292929;
+}
+#iphistory tr.colhead~tr,
+#passkeyhistory tr.colhead~tr,
+#passwordhistory tr.colhead~tr,
+#email_history_table tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+
+#reportsv2 #all_reports>div[id^=report]:not(:last-of-type){
+    margin-bottom: 20px;
+}
+
+#apply div.box{
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
+    border: 1px solid #555;
+}
+#apply div.box>div#quickpost>div.head,
+#apply div.box>div.head{
+    background-color: #292929;
+    border-bottom: 1px solid #555;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#apply #user_application_reply_box>div.head+div.pad{
+    padding: 10px 15px 0;
+}
+#user_application_reply_text{
+    padding: 10px;
+}
+div.box#role_box{
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 0 !important;
+}
+div.box#role_box>div.head{
+    background-color: transparent;
+    font-size: 1.4rem;
+    border: none;
+    padding: .5rem 5px;
+}
+div.box#role_box>div.pad{
+    padding: 10px 15px 0;
+}
+div.box#role_box>div.pad>table td{
+    padding: 0;
+}
+#apply div.role_container{
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
+    border: 1px solid #555;
+    margin-bottom: 20px;
+}
+#apply div.role_container>div.head{
+    border-bottom: 1px solid #555;
+    background-color: #292929;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#apply div.role_container>div.pad{
+    padding: 10px 15px;
+}
+#apply div.box>div#quickpost>div.pad{
+    padding: 10px 15px;
+}
+#apply div.box>div#quickpost>div:nth-child(3){
+    border-top: 1px solid #555;
+    border-radius: 0;
+}
+#apply div.box>div#quickpost>div:nth-child(4){
+    padding-bottom: 0;
+}
+#apply div.box>div#quickpost+div#buttons{
+    padding-bottom: 10px;
+}
+#apply div.box.pad{
+    padding: 10px 20px;
+}
+#apply div.box:not(:last-child){
+    margin-bottom: 20px;
+}
+#shifu #info_container>.info_card{
+    box-shadow: 0 0 6px rgba(0, 0, 0, .1);
+	border-radius: 5px;
+}
+#shifu #info_container>.info_card>.username{
+    background-color: #292929;
+    border-bottom: 1px solid #555;
+}
+#forums #searchthread h3{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+#forums #searchthread form.search_form>table.layout.border>tbody{
+    display: block;
+}
+#forums #searchthread form.search_form>table.layout.border tr{
+    display: grid;
+    grid-template-columns: 1fr 40% 1fr;
+    align-items: center;
+}
+#forums #searchthread form.search_form>table.layout.border tr>td:first-child{
+    width: 100%;
+    text-align: right;
+}
+#forums #searchthread form.search_form>table.layout.border tr>td:first-child:last-child{
+    grid-column: 1 / 4;
+    text-align: center;
+}
+#torrents #history_for_group_table tr.colhead{
+    background-color: #292929;
+}
+#torrents #history_for_group_table tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+
+
+#sitehistory .sitehistory_event_container:not(:last-child){
+    margin-bottom: 20px;
+}
+
+
+#sitehistory .sitehistory_event_container>.head>.title>a.brackets{
+    float: right;
+    margin: 0 5px;
+}
+#sitehistory .sitehistory_event_container>.head>.tags{
+    float: right;
+    margin-top: 8px;
+}
+#sitehistory .sitehistory_event_container>.body{
+    padding: 10px;
+}
+#site_debug{
+    margin: 0 20px 0;
+    max-width: 1200px;
+    min-width: 460px;
+    width: 97%;
+    padding: 0 20px;
+}
+#reset_td>label{
+    /* margin: 0; */
+}
+.group_description_tr div.field_div,
+.torrent_description_tr div.field_div{
+    margin-bottom: 0;
+}
+.group_description_tr div.submit_div,
+.torrent_description_tr div.submit_div{
+    text-align: left;
+}
+strong.how_to_toggle{
+    color: #84b3fd;
+}
+#rules .rules li .rule_short, #rules div ul li>strong {
+    font-weight: normal;
+    color: #84b3fd;
+}
+/* strong.how_to_toggle_container{
+    color: #bbb;
+} */
+
+
+#tools .events_reward_container{
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    padding: 10px;
+    background-color: #292929;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+}
+#tools .events_reward_container>.head{
+    padding: 5px;
+}
+#tools .events_reward_container>.body{
+    padding: 10px 10px 5px;
+    border-top: 1px solid #555;
+}
+#tools #add_to{
+    margin-bottom: 20px;
+}
+#tools .events_reward_container>.body input,
+#tools .events_reward_container>.body select,
+#tools .events_reward_container>.body textarea{
+    /* background-color: #fff; */
+}
+#tools .events_reward_container>.body>div:first-child>label{
+    padding: 3px 0;
+    display: inline-block;
+}
+#tools .events_reward_container>.body>div>input:first-child{
+    margin-left: 0;
+}
+
+#tools #events_reward_history_table tr.colhead{
+    background-color: #292929;
+}
+#tools #events_reward_history_table tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+#tools #events_reward_history_table tr.colhead~tr:nth-child(odd){
+    background-color: #222;
+}
+#tools .scale_image{
+    max-width: unset;
+}
+#badges .badge_progress>.head>h3{
+    color: #bbb;
+}
+
+#apply form>.box>.pad>table>tbody>tr>td>div.pad:first-child:last-child{
+    border: 1px solid #555;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    margin: 0 15px 10px;
+}
+#torrents .divide_score_reasons{
+    border-top: 1px solid #555;
+}
+.autocomplete-suggestions{
+    background: #111;
+    border: 1px solid #555;
+}
+.autocomplete-selected {
+	background: #222;
+}
+#musicbrainz_popup{
+    background: #111;
+    border: 1px solid #555;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    border-radius: 5px;
+}
+table#dnu>tbody.ui-sortable:last-child>tr{
+    border-top: 1px solid #555;
+}
+
+#tools #content #recommended.box{
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+}
+#tools #content #recommended.box>div.head.colhead_dark{
+    background-color: #292929;
+}
+#tools #content #recommended.box>.add_form{
+    border-top: 1px solid #555;
+}
+#tools #content>.thin>.box{
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+}
+#tools #content>.thin>.box>.head{
+    background-color: #292929;
+}
+#tools #content>.thin>.box>.pad{
+    border-top: 1px solid #555;
+    padding: 10px;
+}
+
+div.table_container.border>table>tbody>tr.colhead{
+    background-color: #292929;
+}
+div.table_container.border>table>tbody>tr.colhead~tr{
+    border-top: 1px solid #555;
+}
+
+div.torrent_imdb_info_container{
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
+    margin-bottom: 20px !important;
+    overflow: hidden;
+}
+div.torrent_imdb_info_container .body{
+    border-top: 1px solid #555;
+}

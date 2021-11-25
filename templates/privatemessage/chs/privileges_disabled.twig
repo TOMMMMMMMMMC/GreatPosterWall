@@ -1,0 +1,7 @@
+{% block subject %}
+你的{{ PrivilegeName }}权限已被封禁
+{% endblock %}
+{% block body %}
+你的{{ PrivilegeName }}权限已被封禁。理由如下：[quote]{{ UserReason }}[/quote]
+如果你想要讨论此事，请加入我们 IRC 网络中的 {{ BOT_DISABLED_CHAN }} 频道。相关指南请参阅 [url={{ SITE_URL }}/wiki.php?action=article&amp;name=irc]本文[/url]。
+{% endblock %}

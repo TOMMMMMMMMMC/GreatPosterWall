@@ -1,0 +1,65 @@
+/*
+TOC
+  common
+  tags-list
+  artists-list
+*/
+
+/* common */
+.sidebar .artbox,
+.sidebar .box {
+  margin-bottom: 20px;
+  background: var(--box-bg);
+  border: var(--box-border);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  padding: var(--box-padding);
+}
+.sidebar .artbox:last-child,
+.sidebar .box:last-child {
+  margin-bottom: 0;
+}
+.sidebar .artbox .sec-title,
+.sidebar .box .head {
+  padding: 10px;
+  background: var(--box-header);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: var(--box-border);
+  font-size: 1.1rem;
+}
+.sidebar .artbox .stats,
+.sidebar .artbox .body,
+.sidebar .box .pad,
+.sidebar .box .body,
+.sidebar .box .stats {
+  padding: 7px 10px;
+}
+
+.sidebar .box_image .sec-title > span {
+  float: right;
+}
+.sidebar img {
+  width: auto;
+  height: auto;
+  max-height: 400px;
+  max-width: 100% !important;
+  border-radius: 5px;
+}
+
+.sidebar .pad > a.tooltip {
+  width: 100%;
+}
+.sidebar .pad textarea {
+  width: 99%;
+}
+.sidebar .box #covers p {
+  margin: 0;
+}
+
+/* tags-list */
+.sidebar .tags-list .tags-score {
+  display: inline-block;
+  width: 20px;
+  text-align: right;
+}

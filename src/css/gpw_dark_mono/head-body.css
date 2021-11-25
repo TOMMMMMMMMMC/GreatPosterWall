@@ -1,0 +1,120 @@
+body:not(#staff):not(#snatchlist):not(#friends) .blog_post > .pad,
+body:not(#staff):not(#snatchlist):not(#friends) .news_post > .pad {
+  /* background: var(--box-bg); */
+  border: var(--box-border);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: none;
+  margin: 0 auto;
+  padding: 10px;
+}
+body:not(#staff):not(#snatchlist):not(#friends) .blog_post:not(.generic-form),
+body:not(#staff):not(#snatchlist):not(#friends) .news_post:not(.generic-form) {
+  /* margin-bottom: 10px; */
+  background: var(--box-bg);
+  padding: 0px;
+  border: 0px solid #363636;
+  border-radius: 5px;
+  color: #aaa;
+}
+
+.blog_post .head,
+.news_post .head {
+  padding: 10px;
+  background: #111;
+  color: #aaa;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: var(--box-border);
+  text-align: left;
+}
+
+/* HeadBody
+.box
+  .head
+  .pad
+ */
+#index .main_column .box,
+#user .main_column .box,
+#wiki .main_column .box,
+#sitehistory .main_column .box,
+#requests .requests__description.box,
+#forums #content .box {
+  margin-bottom: 20px;
+  background: var(--nbbox-shadow);
+  border: var(--nbbox-border);
+  border-radius: 5px;
+}
+#index .main_column .box .head,
+#user .main_column .box .head,
+#sitehistory .main_column .box .head,
+#requests .requests__description.box .head,
+#forums #content .box .head {
+  padding: 10px;
+  background: var(--nbbox-bg);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: var(--nbbox-border);
+  font-size: 1.1rem;
+}
+#index .main_column .box .pad,
+#user .main_column .box .pad,
+#wiki .main_column .box .pad,
+#sitehistory .main_column .box .pad,
+#requests .requests__description.box .pad,
+#forums #content .box .pad {
+  padding: 7px 10px;
+}
+/* fix */
+#index .main_column .box#more_news .head {
+  border-bottom: none; /* 修复首页公告加载更多 */
+  border-radius: 5px;
+}
+#rules div.before_rules {
+  margin-bottom: 20px;
+}
+#rules div#actual_rules {
+  background: var(--box-bg);
+  border: var(--box-border);
+  border-radius: 5px;
+  padding: 7px 10px;
+}
+#rules div#actual_rules > h4 {
+  margin: 20px 0 10px;
+  text-align: center;
+}
+#rules div#actual_rules div.box.pad {
+  background: none;
+  border: none;
+}
+#rules div#actual_rules div.box.pad > h5 {
+  font-weight: normal;
+  color: #aaa;
+  padding: 5px;
+}
+
+/* Body
+.box.pad
+*/
+#donate .box.pad,
+#rules .box.pad,
+#staff .box.pad {
+  background: var(--box-bg);
+  border: var(--box-border);
+  border-radius: 5px;
+  padding: 15px 10px;
+  overflow: hidden;
+}
+#staff .box.pad > .box.pad {
+  border: none;
+  background: none;
+}
+.news_post .head a,
+.table--panel-like thead a {
+  /* color: #3d81b1; */
+}
+
+.news_post .head a:hover,
+.table--panel-like thead a:hover {
+  color: #fff;
+}
